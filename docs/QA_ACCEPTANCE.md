@@ -15,7 +15,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | Process | Deliverable | Implementer | Reviewer 1 | Reviewer 2 | Accepted |
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
-| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PENDING | PENDING | PENDING | NO |
+| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
@@ -90,3 +90,28 @@ Candidate commit: `18537ac95acee46586372eca3ee34d242b7e5072`
 ### Post-acceptance invalidation
 
 The preceding Process-2 acceptance was invalidated during Process-3 raw parsing. The accepted evidence incorrectly described Figure 3E/S1C as a complete 280-file batch. Independent filesystem and parsed-output checks found three zero-byte 0.99 no-control files (replicates 5, 7 and 9) and no non-empty replacements. The usable lineage is 277 simulations, with `n = 17` in that cell. Process 2 is reopened and requires a new three-party review of a repaired candidate.
+
+## Process 2 re-accepted review record
+
+Candidate commit: `9c514de91a94aa19483fcc08a419f737e814ae2a`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: 280 expected non-raw paths; 277 non-empty outputs; zero-byte files limited to h=0.99 no-control replicates 5, 7 and 9; no non-empty replacement in the workspace; actual raw-rebuilt cell counts; true globs retained in the panel map; non-empty filtering and no-imputation rule retained in lineage documentation.
+- Blocking findings: none.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: corrected F3E/S1C globs, `OBSERVED_MISSINGNESS_N17` status, raw-lineage selection rule, 277 usable simulations and the three zero-byte outputs.
+- Blocking findings: none after the path-selector repair in `9c514de`.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: same-candidate diff, raw batch and final-20 endpoint counts, n=17 observed missingness, no-imputation rule and `git diff --check`.
+- Blocking findings: none.
