@@ -23,7 +23,7 @@ The panel inventory frozen for the first-pass map is:
 | Figure 3 | A–E |
 | Figure 4 | A–C |
 | Figure 5 | A–B |
-| Figure 6 | A–F |
+| Figure 6 | A–D |
 | Supplementary Figure S1 | A–C |
 | Supplementary Figure S2 | A–C |
 | Supplementary Figure S3 | A–D |
