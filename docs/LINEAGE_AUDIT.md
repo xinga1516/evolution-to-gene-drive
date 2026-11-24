@@ -18,16 +18,17 @@ Acceptance requires all of the following:
 
 ## Resolution summary
 
-- 37 rows have a directly resolved visual, source, statistics and code lineage.
+- 35 rows have a directly resolved visual, source, statistics and code lineage.
 - four Supplementary Figure S3 rows have resolved data and plotting logic, but the six-panel workbench function must be refactored to emit only the accepted four-panel publication figure in Process 5.
 - Supplementary Figure S1B has a complete raw trajectory lineage, but its current points, black means and significance values are stale because its loader consumes the duplicated cached trajectory table. The panel must be rebuilt from raw outputs.
 - Figure 2E, Figure 3E and Supplementary Figure S1C have complete raw trajectory lineages but their existing association products use the wrong final-100 NNI window. They are explicitly marked for rebuild and are not accepted as final-20 Source Data.
+- Figure 6D has resolved final-20 Source Data but requires a final-20 permutation test; Supplementary Table S2 is quarantined for complete reconstruction after all Process-4 tests are accepted.
 
 There are no remaining `PENDING_TRACE` values in the panel map.
 
 ## Material finding: association-window mismatch
 
-The current axis labels for Figure 2E and Figure 3E say final 20 weeks. However, the CSV files consumed by the current redraw scripts identify their control metric as `arithmetic mean NNI over final 100 weeks per simulation`. Supplementary Figure S1B already requests final 20 weeks, but its current loader reads a cache in which the neutral 0.70 filenames collide across two batches. Its `tail(20)` operation therefore selects two records per week from only ten weeks rather than one record per week from twenty weeks.
+The current axis labels for Figure 2E and Figure 3E say final 20 weeks. However, the CSV files consumed by the current redraw scripts identify their control metric as `arithmetic mean NNI over final 100 weeks per simulation`. Supplementary Figure S1B already requests final 20 weeks, but its current loader reads a cache in which the neutral 0.70 filenames collide across two batches. Its time-window filter therefore mixes two distinct trajectories within the same nominal replicate rather than using one trajectory over the final 20 weeks.
 
 The affected stale files are:
 
@@ -38,7 +39,13 @@ The affected stale files are:
 - the current S1B loader in `code/redraw_s1_three_panels_unified.py`;
 - the current S1C loader in `code/redraw_s1_figure3e_refined.py`.
 
-These files and affected current panels remain historical provenance only. Changing labels or recomputing only the significance stars would not correct the values.
+These files and affected current panels remain historical provenance only. Figure 2E, Figure 3E and S1B-C are explicit rebuild targets. Changing labels or recomputing only the significance stars would not correct the values.
+
+## Other quarantined statistics
+
+- Figure 6D has final-20 Source Data but its archived test used the superseded `N_long_term_relative` endpoint. Its two-sided independent permutation test must be recomputed from `Figure6_panelD_source_data.csv` in Process 4.
+- Supplementary Table S2 contains final-100 S1 entries and the superseded Figure 2E/3E association p values. The entire table is a rebuild target after Process 4; it is not a resolved statistical authority.
+- Figure 1B-C and Figure 2B-C use the panel-specific final-20 statistical files stored beside their final-20 source tables. The older consolidated `LATEST_FINAL_PACKAGE/S1_continuous_tests.csv` is not used for these four panels because its source batches and sample counts differ.
 
 ## Correct raw lineages for the rebuild
 
