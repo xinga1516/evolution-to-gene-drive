@@ -125,3 +125,17 @@ used one broad Figure-6 parent directory for Figure 6 and S4-S6.  Because this
 fails the requirement for one authoritative lineage per frozen publication
 item, the Process-2 gate is `NO` again.  The expanded manifest must receive a
 new same-candidate PASS from the implementer and both reviewers.
+
+## Process 2 expanded-lineage failed review record
+
+Candidate commit: `e375e0cbf42088d67ffbac1ab0b11f7deb584f85`
+
+- Reviewer: independent data/code-provenance reviewer (`github_structure_reviewer`)
+- Decision: `FAIL`
+- Evidence checked: 22 lineage paths and all distinct inputs consumed by
+  `scripts/build_source_data.py`; replicate and trajectory counts in the
+  declared Figure 6C and 6D sources.
+- Blocking findings: Figure 6C was incorrectly described as 20 replicates per
+  condition although observed counts are P70_L=14, S70_L=20 and S85_L=20.
+  Figure 6D must likewise state P70_L=14 and five other cells at n=20 rather
+  than use a vague availability qualifier.
