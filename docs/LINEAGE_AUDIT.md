@@ -62,7 +62,7 @@ Use the complete non-raw rerun batch in:
 
 `D:/champer实验室工作/文章figure终版/figure4（全部缺失）/rerun_logs/logs4`
 
-Selection is restricted to filenames beginning with `spatial_control_` or `spatial_nocontrol_` and containing the `308231` seed stem. This gives exactly 20 outputs for each cohort at each of seven settings: 0.70, 0.75, 0.80, 0.85, 0.90, 0.95 and 0.99 (280 files total). The older `raw_spatial_` batch is not used because its 0.99 no-control cell has only 17 outputs.
+Selection is restricted to every non-raw filename beginning with `spatial_control_` or `spatial_nocontrol_`. This gives exactly 20 outputs for each cohort at each of seven settings: 0.70, 0.75, 0.80, 0.85, 0.90, 0.95 and 0.99 (280 files total). Seed stems differ between the two cohorts, so they are not used as a selection filter. The older `raw_spatial_` batch is not used because its 0.99 no-control cell has only 17 outputs.
 
 The same final-20 rules above are applied after parsing `WT_ALLELES::`, `POPULATION_SIZE:` and `average attribute:` records. The NNI normalization follows the existing parser: observed mean NNI divided by `0.5 / sqrt(population) * area`.
 
