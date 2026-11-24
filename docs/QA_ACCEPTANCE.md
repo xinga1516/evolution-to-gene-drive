@@ -15,7 +15,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | Process | Deliverable | Implementer | Reviewer 1 | Reviewer 2 | Accepted |
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
-| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PENDING | PENDING | PENDING | NO |
+| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
@@ -60,4 +60,29 @@ Candidate commit: `527acd902c96e07c5fe38fa93ef92c03b101d278`
 - Reviewer: independent statistics/reproducibility reviewer
 - Decision: `PASS`
 - Evidence checked: all 45 rows; Figure 3 10,000-permutation outputs/scripts; Figure 6A and 6D endpoints; S1, S3, S4/Table S3, S5 and S6 rules; independent-unit and matched-origin definitions.
+- Blocking findings: none.
+
+## Process 2 accepted review record
+
+Candidate commit: `18537ac95acee46586372eca3ee34d242b7e5072`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: 45 unique map rows; no `PENDING_TRACE`, `TODO` or `UNKNOWN`; existence of every resolved path; 13 unique raw-lineage dataset IDs; F1/F2 panel-specific counts; complete 280-file raw batches for Figure 2E/S1B and Figure 3E/S1C; final-20 source/statistics consistency; `git diff --check` and clean worktree.
+- Blocking findings: none after the repairs through `18537ac`.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: 45/45 map entries; all declared paths; raw batch counts; S1B duplicated-cache quarantine; F1A and F1D lineages; F2A, F2B-C and F2D counts; F6D final-20 statistics rebuild flag; S3 four-panel refactor requirement.
+- Blocking findings: none.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: panel-specific final-20 statistics for F1B-C and F2B-C; 800-run F1A source; final-100 isolation for Figure 2E, Figure 3E and S1B-C; Figure 6D test rebuild; complete Table S2 quarantine; descriptive-panel `not applicable` decisions; split F1/F2 lineage manifests and observed replicate counts.
 - Blocking findings: none.
