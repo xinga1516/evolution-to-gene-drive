@@ -164,6 +164,12 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def normalized_text_sha256(path: Path) -> str:
+    """Hash text with LF newlines so Git checkout policy cannot change it."""
+    text = path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
 def continuous_modifier_tests(item: str, source: Path, metric: str, *, seed_base: int, panel: str):
     data = pd.read_csv(source)
     rows = []
@@ -768,7 +774,7 @@ def table_s3():
     source_relative = source.relative_to(REPO).as_posix()
     source_hash = file_sha256(source)
     script_relative = Path(__file__).resolve().relative_to(REPO).as_posix()
-    script_hash = file_sha256(Path(__file__).resolve())
+    script_hash = normalized_text_sha256(Path(__file__).resolve())
     labels = {
         "virtual_haploid_load": "Virtual haploid load",
         "copies_per_individual": "Mutation copies per individual",

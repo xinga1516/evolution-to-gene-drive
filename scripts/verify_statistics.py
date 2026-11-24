@@ -23,6 +23,11 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def normalized_text_sha256(path: Path) -> str:
+    text = path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
 def main() -> None:
     data = pd.read_csv(OUT / "all_inferential_tests.csv")
     checks: list[tuple[str, bool]] = []
@@ -68,6 +73,8 @@ def main() -> None:
     check("Table S3 all pass 5%", stability.pass_epsilon_0p05.all())
     check("Table S3 source provenance", stability.source_file.notna().all() and stability.source_sha256.notna().all())
     check("Table S3 script provenance", stability.analysis_script.notna().all() and stability.analysis_script_sha256.notna().all())
+    script_path = REPO / stability.analysis_script.iloc[0]
+    check("Table S3 normalized script hash", stability.analysis_script_sha256.eq(normalized_text_sha256(script_path)).all())
 
     figure4_coefficients = pd.read_csv(OUT / "Figure4_model_coefficients_HC3.csv")
     check("Figure4 coefficient P values nonzero", not figure4_coefficients.p_value.eq(0).any())
