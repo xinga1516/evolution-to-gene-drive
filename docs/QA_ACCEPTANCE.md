@@ -17,7 +17,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
 | 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
-| 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
+| 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PASS | PASS | PASS | YES |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
 | 6 | Build parameterized SLiM runner, run manifest and short run guide | PENDING | PENDING | PENDING | NO |
 | 7 | End-to-end clean-room reproduction and repository completeness audit | PENDING | PENDING | PENDING | NO |
@@ -172,6 +172,43 @@ Candidate commit: `cd7665e329b97bb2fe990098d8ca7686a6bf9053`
   neutral-0.70 files; 277 Figure-3E/S1C endpoints with n=17 in the declared
   cell; Figure-6 outcome counts and structural exclusions; no final-100 input
   substituted into a final-20 rebuild; `git diff --check`.
+- Blocking findings: none.
+
+## Process 4 accepted review record
+
+Candidate commit: `df1162922907d646808c64d4597dd73efc9daad5`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: deterministic rebuild of 111 inferential records and 8
+  stability diagnostics; 63/63 statistical checks; 15/15 Source Data workbook
+  checks; exact Figure 2E/Figure 3E enumeration; actual-n and missingness rules;
+  Figure 4 common-support HC3 outputs and dual-input hashes; Figure 6D
+  final-20 outcome-conditioned tests; Table S2 generated view; Table S3
+  threshold diagnostics and provenance.
+- Blocking findings: none after repairs through `df11629`.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer
+  (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: clean Windows clone; full statistics rebuild and verifier;
+  normalized script hash; Table S3 hash match; clean `git status --short` after
+  regeneration; retention of all prior statistical/provenance repairs.
+- Blocking findings: none.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer
+  (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: independent clean clone and numerical recomputation of
+  Figure 2E/Figure 3E, S1, Figure 6D, Figure 4 HC3 common-support sample sizes,
+  S4/Table S3, S2 family mapping, Table S2 identity, nonzero P values and
+  cross-platform normalized hashes; 63/63 checks and clean worktree.
 - Blocking findings: none.
 
 ### Reviewer 1
