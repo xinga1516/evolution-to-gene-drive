@@ -20,14 +20,14 @@ Acceptance requires all of the following:
 
 - 37 rows have a directly resolved visual, source, statistics and code lineage.
 - four Supplementary Figure S3 rows have resolved data and plotting logic, but the six-panel workbench function must be refactored to emit only the accepted four-panel publication figure in Process 5.
-- Supplementary Figure S1B has a complete raw trajectory lineage; its displayed significance values must be recomputed from final-20 values in Process 4.
+- Supplementary Figure S1B has a complete raw trajectory lineage, but its current points, black means and significance values are stale because its loader consumes the duplicated cached trajectory table. The panel must be rebuilt from raw outputs.
 - Figure 2E, Figure 3E and Supplementary Figure S1C have complete raw trajectory lineages but their existing association products use the wrong final-100 NNI window. They are explicitly marked for rebuild and are not accepted as final-20 Source Data.
 
 There are no remaining `PENDING_TRACE` values in the panel map.
 
 ## Material finding: association-window mismatch
 
-The current axis labels for Figure 2E and Figure 3E say final 20 weeks. However, the CSV files consumed by the current redraw scripts identify their control metric as `arithmetic mean NNI over final 100 weeks per simulation`.
+The current axis labels for Figure 2E and Figure 3E say final 20 weeks. However, the CSV files consumed by the current redraw scripts identify their control metric as `arithmetic mean NNI over final 100 weeks per simulation`. Supplementary Figure S1B already requests final 20 weeks, but its current loader reads a cache in which the neutral 0.70 filenames collide across two batches. Its `tail(20)` operation therefore selects two records per week from only ten weeks rather than one record per week from twenty weeks.
 
 The affected stale files are:
 
@@ -35,9 +35,10 @@ The affected stale files are:
 - `文章终稿数据/Figure3/processed_source/Figure3_panelE_exact_spearman.csv`;
 - `new_main_figure_task/.endpoint20_raw/Figure4/unique/11/11d1e8b802dc31b4f9dccc5c1f735f97b52e3a0f139fa91b1d0bf57ba3b05b0a_Figure4_source_panelE_association.csv`;
 - `文章终稿数据/Figure4/processed_source_final/Figure4_panelE_exact_spearman.csv`;
+- the current S1B loader in `code/redraw_s1_three_panels_unified.py`;
 - the current S1C loader in `code/redraw_s1_figure3e_refined.py`.
 
-These files remain historical provenance only. Changing their labels would not correct the values.
+These files and affected current panels remain historical provenance only. Changing labels or recomputing only the significance stars would not correct the values.
 
 ## Correct raw lineages for the rebuild
 
