@@ -36,6 +36,20 @@ The panel inventory frozen for the first-pass map is:
 
 Historical Word legends and the earlier combined PowerPoint are not treated as a single authoritative source because they still contain superseded numbering and endpoint definitions, including deck Figure 2–7 numbering and final-100-week wording.
 
+The historical combined deck is retained only as visual provenance. Its old-to-current mapping is:
+
+| Current item | Historical v174 item | Slide |
+|---|---:|---:|
+| Figure 1 | Figure 2 | 1 |
+| Figure 2 | Figure 3 | 3 |
+| Figure 3 | Figure 4 | 5 |
+| Figure 4 | Figure 5 | 7 |
+| Figure 5 | Figure 7 | 10 |
+| Figure 6 | Figure 6 | 9 |
+| Supplementary Figures S1–S5 | same historical label | 13–17 |
+
+It must not be entered as a current visual authority candidate in the panel map.
+
 For archive construction, authority is resolved in this order:
 
 1. The user's latest explicit figure-by-figure instruction.
