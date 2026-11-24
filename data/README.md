@@ -107,10 +107,12 @@ plotted quantile summaries and a simulation-level final-20 table.
 
 ## Supplementary Table S2 dependency
 
-The previous final-100-week Table S2 is quarantined. `Table_S2.xlsx` must be
-generated only after Process 4 accepts the rebuilt final-20 statistical
-outputs. Until then, its absence is intentional and Process 3 cannot be marked
-accepted.
+The previous final-100-week Table S2 is quarantined. The current
+`Table_S2.xlsx` is generated only from
+`results/statistics/all_inferential_tests.csv`, which is rebuilt from the
+canonical final-20 Source Data by `scripts/compute_final_statistics.py`.
+`results/statistics/Table_S2.csv` and the workbook are generated views rather
+than independently edited statistical records.
 
 ## Regeneration
 
@@ -118,11 +120,13 @@ Run, in order:
 
 ```text
 python scripts/build_source_data.py
+python scripts/compute_final_statistics.py
 python scripts/build_workbook_tables.py
 python scripts/build_external_raw_manifest.py
 node scripts/build_source_workbooks.mjs
 node scripts/verify_source_workbooks.mjs
 python scripts/verify_source_data.py
+python scripts/verify_statistics.py
 ```
 
 Workbook export uses the repository's spreadsheet-artifact workflow. All

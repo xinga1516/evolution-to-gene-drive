@@ -1,0 +1,46 @@
+﻿record_id,publication_item,panel,current_content,statistics_status,statistics_file
+F1A,Figure 1,A,outcome composition,recomputed,results/statistics/all_inferential_tests.csv
+F1B,Figure 1,B,final drive conversion,recomputed,results/statistics/all_inferential_tests.csv
+F1C,Figure 1,C,final relative population size,recomputed,results/statistics/all_inferential_tests.csv
+F1D,Figure 1,D,trajectory,descriptive_not_applicable,not applicable
+F2A,Figure 2,A,outcome composition,recomputed,results/statistics/all_inferential_tests.csv
+F2B,Figure 2,B,final embryo resistance,recomputed,results/statistics/all_inferential_tests.csv
+F2C,Figure 2,C,final relative population size,recomputed,results/statistics/all_inferential_tests.csv
+F2D,Figure 2,D,spatial trajectory,descriptive_not_applicable,not applicable
+F2E,Figure 2,E,NNI versus embryo-resistance association,recomputed,results/statistics/all_inferential_tests.csv
+F3A,Figure 3,A,outcome composition,recomputed,results/statistics/all_inferential_tests.csv
+F3B,Figure 3,B,final female heterozygote fitness,recomputed,results/statistics/all_inferential_tests.csv
+F3C,Figure 3,C,final relative population size,recomputed,results/statistics/all_inferential_tests.csv
+F3D,Figure 3,D,spatial trajectory,descriptive_not_applicable,not applicable
+F3E,Figure 3,E,NNI versus female-fitness association,recomputed,results/statistics/all_inferential_tests.csv
+F4A,Figure 4,A,drive-conversion architecture path comparison,recomputed,results/statistics/all_inferential_tests.csv
+F4B,Figure 4,B,embryo-resistance architecture path comparison,recomputed,results/statistics/all_inferential_tests.csv
+F4C,Figure 4,C,female-fitness architecture path comparison,recomputed,results/statistics/all_inferential_tests.csv
+F5A,Figure 5,A,dispersal outcome composition,recomputed,results/statistics/all_inferential_tests.csv
+F5B,Figure 5,B,adult dispersal change,recomputed,results/statistics/all_inferential_tests.csv
+F6A,Figure 6,A,minimum post-release relative population size,recomputed,results/statistics/all_inferential_tests.csv
+F6B,Figure 6,B,recessive-load outcome probabilities,recomputed,results/statistics/all_inferential_tests.csv
+F6C,Figure 6,C,haploid inbreeding load trajectory,descriptive_not_applicable,not applicable
+F6D,Figure 6,D,final relative population size,recomputed,results/statistics/all_inferential_tests.csv
+S1A,Supplementary Figure S1,A,Figure 1 spatial final NNI,descriptive_not_applicable,not applicable
+S1B,Supplementary Figure S1,B,Figure 2E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
+S1C,Supplementary Figure S1,C,Figure 3E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
+S2A,Supplementary Figure S2,A,outcome composition setting group A,covered_by_companion_panel_or_table,not applicable
+S2B,Supplementary Figure S2,B,outcome composition setting group B,covered_by_companion_panel_or_table,not applicable
+S2C,Supplementary Figure S2,C,outcome composition setting group C,covered_by_companion_panel_or_table,not applicable
+S3A,Supplementary Figure S3,A,adult mean dispersal change,descriptive_not_applicable,not applicable
+S3B,Supplementary Figure S3,B,within-population dispersal SD ratio,descriptive_not_applicable,not applicable
+S3C,Supplementary Figure S3,C,expected heterozygosity retained,descriptive_not_applicable,not applicable
+S3D,Supplementary Figure S3,D,segregating modifier loci retained,descriptive_not_applicable,not applicable
+S4A,Supplementary Figure S4,A,pre-release virtual haploid load,covered_by_companion_panel_or_table,not applicable
+S4B,Supplementary Figure S4,B,pre-release mutation copies per individual,covered_by_companion_panel_or_table,not applicable
+S4C,Supplementary Figure S4,C,pre-release population size,covered_by_companion_panel_or_table,not applicable
+S4D,Supplementary Figure S4,D,pre-release mean genetic viability W_load,covered_by_companion_panel_or_table,not applicable
+S5A,Supplementary Figure S5,A,virtual haploid load,descriptive_not_applicable,not applicable
+S5B,Supplementary Figure S5,B,mutation copies per individual,descriptive_not_applicable,not applicable
+S5C,Supplementary Figure S5,C,recorded mean genetic viability,descriptive_not_applicable,not applicable
+S6A,Supplementary Figure S6,A,panmictic population trajectories by replicate,descriptive_not_applicable,not applicable
+S6B,Supplementary Figure S6,B,spatial population trajectories by replicate,descriptive_not_applicable,not applicable
+TS1,Supplementary Table S1,table,default and figure-specific simulation parameters,descriptive_not_applicable,not applicable
+TS2,Supplementary Table S2,table,all reported exact P values,recomputed,results/statistics/Table_S2.csv
+TS3,Supplementary Table S3,table,pre-release stability sensitivity at 2.5 5 and 10 percent,recomputed,results/statistics/Table_S3.csv

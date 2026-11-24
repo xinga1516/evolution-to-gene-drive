@@ -1,0 +1,112 @@
+﻿publication_item,panel,test_id,independent_unit,n_group1,n_group2,n_total,status,notes
+Figure 1,A,Figure1A_Pan_0.7_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[0, 100], [2, 98]]"
+Figure 1,A,Figure1A_Pan_0.85_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[99, 1], [100, 0]]"
+Figure 1,A,Figure1A_Spatial_0.7_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[100], [100]]"
+Figure 1,A,Figure1A_Spatial_0.85_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[100], [100]]"
+Figure 1,B,Figure1B_Panmictic_0.7_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,B,Figure1B_Panmictic_0.85_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,B,Figure1B_Spatial_0.7_final20_attribute_weighted,simulation,100.0,99.0,199.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,B,Figure1B_Spatial_0.85_final20_attribute_weighted,simulation,100.0,93.0,193.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,C,Figure1C_Panmictic_0.7_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,C,Figure1C_Panmictic_0.85_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,C,Figure1C_Spatial_0.7_final20_n_over_k,simulation,100.0,99.0,199.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 1,C,Figure1C_Spatial_0.85_final20_n_over_k,simulation,100.0,93.0,193.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,A,Figure2A_Panmictic_0.7_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[15, 85], [3, 97]]"
+Figure 2,A,Figure2A_Panmictic_0.85_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[100, 0], [99, 1]]"
+Figure 2,A,Figure2A_Spatial_0.7_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[100], [100]]"
+Figure 2,A,Figure2A_Spatial_0.85_outcome,simulation,100.0,100.0,200.0,tested,"fixed-margin exact test; table=[[100], [100]]"
+Figure 2,B,Figure2B_Panmictic_0.7_final20_attribute_weighted,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,B,Figure2B_Panmictic_0.85_final20_attribute_weighted,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,B,Figure2B_Spatial_0.7_final20_attribute_weighted,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,B,Figure2B_Spatial_0.85_final20_attribute_weighted,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,C,Figure2C_Panmictic_0.7_final20_n_over_k,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,C,Figure2C_Panmictic_0.85_final20_n_over_k,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,C,Figure2C_Spatial_0.7_final20_n_over_k,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,C,Figure2C_Spatial_0.85_final20_n_over_k,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 2,E,Figure2E_exact_spearman,modifier setting,7.0,,7.0,tested,"Final-20-record setting means. Observed per-cell simulation n: 0.7: neutral 20, variable 20; 0.75: neutral 20, variable 20; 0.8: neutral 20, variable 20; 0.85: neutral 20, variable 20; 0.9: neutral 20, variable 20; 0.95: neutral 20, variable 20; 0.99: neutral 20, variable 20"
+Figure 3,A,F3A_Panmictic_0.7_outcome,simulation,100.0,100.0,200.0,tested,"2x2 table=[[7, 93], [0, 100]]"
+Figure 3,A,F3A_Panmictic_0.99_outcome,simulation,100.0,100.0,200.0,tested,"2x2 table=[[100, 0], [100, 0]]"
+Figure 3,A,F3A_Spatial_0.7_outcome,simulation,100.0,100.0,200.0,tested,"2x2 table=[[0, 100], [0, 100]]"
+Figure 3,A,F3A_Spatial_0.99_outcome,simulation,100.0,100.0,200.0,tested,"2x2 table=[[0, 100], [0, 100]]"
+Figure 3,B,Figure3B_Panmictic_0.7_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,B,Figure3B_Panmictic_0.99_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,B,Figure3B_Spatial_0.7_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,B,Figure3B_Spatial_0.99_final20_attribute_weighted,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,C,Figure3C_Panmictic_0.7_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,C,Figure3C_Panmictic_0.99_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,C,Figure3C_Spatial_0.7_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,C,Figure3C_Spatial_0.99_final20_n_over_k,simulation,100.0,100.0,200.0,tested,Monte-Carlo plus-one P value; final 20 records
+Figure 3,E,Figure3E_exact_spearman,modifier setting,7.0,,7.0,tested,"Final-20-record setting means. Observed per-cell simulation n: 0.7: neutral 20, variable 20; 0.75: neutral 20, variable 20; 0.8: neutral 20, variable 20; 0.85: neutral 20, variable 20; 0.9: neutral 20, variable 20; 0.95: neutral 20, variable 20; 0.99: neutral 20, variable 17"
+Figure 4,A,F4A_dc_realized_sd,simulation,384.0,400.0,784.0,tested,"df=2; empirical common support [0.01293363, 0.08202849]"
+Figure 4,A,F4A_dc_architecture,simulation,384.0,400.0,784.0,tested,"df=2; empirical common support [0.01293363, 0.08202849]"
+Figure 4,A,F4A_dc_interaction,simulation,384.0,400.0,784.0,tested,"df=nan; empirical common support [0.01293363, 0.08202849]"
+Figure 4,B,F4B_er_realized_sd,simulation,396.0,399.0,795.0,tested,"df=2; empirical common support [0.0347831, 0.2405065]"
+Figure 4,B,F4B_er_architecture,simulation,396.0,399.0,795.0,tested,"df=2; empirical common support [0.0347831, 0.2405065]"
+Figure 4,B,F4B_er_interaction,simulation,396.0,399.0,795.0,tested,"df=nan; empirical common support [0.0347831, 0.2405065]"
+Figure 4,C,F4C_sf_realized_sd,simulation,392.0,400.0,792.0,tested,"df=2; empirical common support [0.0263802, 0.20092]"
+Figure 4,C,F4C_sf_architecture,simulation,392.0,400.0,792.0,tested,"df=2; empirical common support [0.0263802, 0.20092]"
+Figure 4,C,F4C_sf_interaction,simulation,392.0,400.0,792.0,tested,"df=nan; empirical common support [0.0263802, 0.20092]"
+Figure 4,A,F4A_dc_contrast_low,simulation,,,,tested,"realized SD=0.022908439999999926; CI [-0.0004751088296580134, 0.005061101964088345]"
+Figure 4,A,F4A_dc_contrast_mid,simulation,,,,tested,"realized SD=0.03297087; CI [-0.0008309776753249714, 0.004452305493626453]"
+Figure 4,A,F4A_dc_contrast_high,simulation,,,,tested,"realized SD=0.048977; CI [-0.004258046045365506, 0.0063448977523847885]"
+Figure 4,B,F4B_er_contrast_low,simulation,,,,tested,"realized SD=0.06531632; CI [-0.005294835420680916, 0.006210071961342251]"
+Figure 4,B,F4B_er_contrast_mid,simulation,,,,tested,"realized SD=0.09369822; CI [-0.000994755523040884, 0.010161381063876325]"
+Figure 4,B,F4B_er_contrast_high,simulation,,,,tested,"realized SD=0.14194365; CI [3.489615348177717e-05, 0.023157985924466044]"
+Figure 4,C,F4C_sf_contrast_low,simulation,,,,tested,"realized SD=0.0527256849999999; CI [-0.0036341003110957728, 0.0068436464044236344]"
+Figure 4,C,F4C_sf_contrast_mid,simulation,,,,tested,"realized SD=0.076897855; CI [-0.002446222793733366, 0.008271368484973458]"
+Figure 4,C,F4C_sf_contrast_high,simulation,,,,tested,"realized SD=0.1166475; CI [-0.007500636143051042, 0.01762697429980637]"
+Figure 4,A,F4A_dc_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,A,F4A_dc_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support; numerical P underflow reported as <1e-300; numerical P underflow reported as <1e-300
+Figure 4,A,F4A_dc_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
+Figure 5,A,F5A_0.95_elimination,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=7; fixed-only=0
+Figure 5,A,F5A_0.95_drive_loss,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=0; fixed-only=0
+Figure 5,A,F5A_0.99_elimination,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=18; fixed-only=1
+Figure 5,A,F5A_0.99_drive_loss,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=6; fixed-only=1
+Figure 5,B,F5B_0.75_LTP,matched origin seed,100.0,100.0,100.0,tested,Pairing by origin_seed
+Figure 5,B,F5B_0.85_LTP,matched origin seed,100.0,100.0,100.0,tested,Pairing by origin_seed
+Figure 5,B,F5B_0.95_LTP,matched origin seed,93.0,93.0,93.0,tested,Pairing by origin_seed
+Figure 5,B,F5B_0.95_Non-LTP,matched origin seed,7.0,7.0,7.0,tested,Pairing by origin_seed
+Figure 5,B,F5B_0.95_Non-LTP_exact_sign_flip_sensitivity,matched origin seed,7.0,7.0,7.0,tested,Sensitivity analysis reported alongside the primary paired t test
+Figure 5,B,F5B_0.99_LTP,matched origin seed,76.0,76.0,76.0,tested,Pairing by origin_seed
+Figure 5,B,F5B_0.99_Non-LTP,matched origin seed,24.0,24.0,24.0,tested,Pairing by origin_seed
+Figure 6,A,F6A_P70,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Figure 6,A,F6A_P85,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Figure 6,A,F6A_S70,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Figure 6,A,F6A_S85,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Figure 6,B,F6B_P70_elimination,simulation,20.0,20.0,40.0,tested,"2x2 table=[[6, 14], [0, 20]]"
+Figure 6,D,F6D_P70,simulation,14.0,20.0,34.0,tested,Outcome-conditioned final-20-week relative population size; plus-one P value
+Figure 6,D,F6D_S70,simulation,20.0,20.0,40.0,tested,Outcome-conditioned final-20-week relative population size; plus-one P value
+Figure 6,D,F6D_S85,simulation,20.0,20.0,40.0,tested,Outcome-conditioned final-20-week relative population size; plus-one P value
+Figure 6,D,F6D_P85,simulation,0.0,0.0,0.0,not estimable,Both P85 conditions ended in population elimination; no persistent endpoint exists.
+Supplementary Figure S1,B,S1B_0.7,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.75,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.8,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.85,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.9,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.95,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,B,S1B_0.99,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.7,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.75,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.8,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.85,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.9,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.95,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S1,C,S1C_0.99,simulation,17.0,20.0,37.0,tested,Monte-Carlo plus-one P value
+Supplementary Figure S2,DC,S2_dc_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,DC,S2_dc_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,DC,S2_dc_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,DC,S2_dc_5,setting mean,,,1.0,not estimable,Only one setting in stratum
+Supplementary Figure S2,ER,S2_er_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,ER,S2_er_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,ER,S2_er_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,ER,S2_er_5,setting mean,,,1.0,not estimable,Only one setting in stratum
+Supplementary Figure S2,SF,S2_sf_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,SF,S2_sf_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,SF,S2_sf_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,SF,S2_sf_5,setting mean,,,1.0,not estimable,Only one setting in stratum

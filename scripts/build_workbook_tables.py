@@ -167,11 +167,15 @@ def build() -> dict:
     add("Figure_S6", "Replicate_final20", final20_population_summary(), "Supplementary Figure S6A-B")
     add("Table_S1", "Parameters", pd.read_csv(FILES / "Table_S1/parameter_definitions.csv"), "Supplementary Table S1")
     add("Table_S3", "Stability_inputs", pd.read_csv(FILES / "Figure_S4/pre_release_block_replicates.csv"), "Supplementary Table S3")
-
-    # Table S2 is intentionally not populated from the quarantined final-100
-    # table.  Process 4 will add the accepted exact statistics and then rerun
-    # the workbook builder before Process 3 can be accepted.
-    manifest["Table_S2"] = []
+    statistics = REPO / "results" / "statistics"
+    table_s2 = statistics / "Table_S2.csv"
+    table_s3 = statistics / "Table_S3.csv"
+    if not table_s2.is_file() or not table_s3.is_file():
+        raise FileNotFoundError(
+            "Run scripts/compute_final_statistics.py before building Table S2/S3 workbooks"
+        )
+    add("Table_S2", "All_P_values", pd.read_csv(table_s2), "Supplementary Table S2")
+    add("Table_S3", "Stability_diagnostics", pd.read_csv(table_s3), "Supplementary Table S3")
 
     path = SOURCE / "workbook_manifest.json"
     path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")

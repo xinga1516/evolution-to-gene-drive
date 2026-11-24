@@ -522,12 +522,14 @@
     "expected_sheets": [
       "README",
       "INDEX",
-      "Stability_inputs"
+      "Stability_inputs",
+      "Stability_diagnostics"
     ],
     "actual_sheets": [
       "README",
       "INDEX",
-      "Stability_inputs"
+      "Stability_inputs",
+      "Stability_diagnostics"
     ],
     "sheets": [
       {
@@ -536,6 +538,42 @@
         "actual_rows": 160,
         "expected_columns": 10,
         "actual_columns": 10,
+        "header_match": true,
+        "formula_error_tokens": 0,
+        "pass": true
+      },
+      {
+        "sheet": "Stability_diagnostics",
+        "expected_rows": 8,
+        "actual_rows": 8,
+        "expected_columns": 23,
+        "actual_columns": 23,
+        "header_match": true,
+        "formula_error_tokens": 0,
+        "pass": true
+      }
+    ],
+    "pass": true
+  },
+  {
+    "workbook": "data/source_data/Table_S2.xlsx",
+    "expected_sheets": [
+      "README",
+      "INDEX",
+      "All_P_values"
+    ],
+    "actual_sheets": [
+      "README",
+      "INDEX",
+      "All_P_values"
+    ],
+    "sheets": [
+      {
+        "sheet": "All_P_values",
+        "expected_rows": 111,
+        "actual_rows": 111,
+        "expected_columns": 32,
+        "actual_columns": 32,
         "header_match": true,
         "formula_error_tokens": 0,
         "pass": true
