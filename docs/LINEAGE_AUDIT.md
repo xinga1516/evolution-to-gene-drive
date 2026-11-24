@@ -70,7 +70,9 @@ Use the complete non-raw rerun batch in:
 
 `D:/champer实验室工作/文章figure终版/figure4（全部缺失）/rerun_logs/logs4`
 
-Selection is restricted to every non-raw filename beginning with `spatial_control_` or `spatial_nocontrol_`. This gives exactly 20 outputs for each cohort at each of seven settings: 0.70, 0.75, 0.80, 0.85, 0.90, 0.95 and 0.99 (280 files total). Seed stems differ between the two cohorts, so they are not used as a selection filter. The older `raw_spatial_` batch is not used because its 0.99 no-control cell has only 17 outputs.
+Selection is restricted to every **non-empty**, non-raw filename beginning with `spatial_control_` or `spatial_nocontrol_`. There are 20 usable outputs for each cohort at settings 0.70--0.95 and for the 0.99 control cohort. The 0.99 no-control cohort has 17 usable outputs: replicates 5, 7 and 9 are present only as zero-byte files and no non-empty replacement exists anywhere in the workspace. The authoritative rebuild therefore contains 277 simulations, not 280. Seed stems differ between the two cohorts, so they are not used as a selection filter. The older `raw_spatial_` batch has the same 17 usable 0.99 no-control runs and is not substituted.
+
+This shortfall is retained as observed missingness. It must not be filled by copying another condition, and all downstream sample-size tables and permutation/bootstrap procedures must report the actual `n = 17` for that cell.
 
 The same final-20 rules above are applied after parsing `WT_ALLELES::`, `POPULATION_SIZE:` and `average attribute:` records. The NNI normalization follows the existing parser: observed mean NNI divided by `0.5 / sqrt(population) * area`.
 

@@ -15,7 +15,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | Process | Deliverable | Implementer | Reviewer 1 | Reviewer 2 | Accepted |
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
-| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
+| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PENDING | PENDING | PENDING | NO |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
@@ -86,3 +86,7 @@ Candidate commit: `18537ac95acee46586372eca3ee34d242b7e5072`
 - Decision: `PASS`
 - Evidence checked: panel-specific final-20 statistics for F1B-C and F2B-C; 800-run F1A source; final-100 isolation for Figure 2E, Figure 3E and S1B-C; Figure 6D test rebuild; complete Table S2 quarantine; descriptive-panel `not applicable` decisions; split F1/F2 lineage manifests and observed replicate counts.
 - Blocking findings: none.
+
+### Post-acceptance invalidation
+
+The preceding Process-2 acceptance was invalidated during Process-3 raw parsing. The accepted evidence incorrectly described Figure 3E/S1C as a complete 280-file batch. Independent filesystem and parsed-output checks found three zero-byte 0.99 no-control files (replicates 5, 7 and 9) and no non-empty replacements. The usable lineage is 277 simulations, with `n = 17` in that cell. Process 2 is reopened and requires a new three-party review of a repaired candidate.
