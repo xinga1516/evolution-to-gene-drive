@@ -43,11 +43,11 @@ These files remain historical provenance only. Changing their labels would not c
 
 ### Figure 2E and Supplementary Figure S1B
 
-Use:
+Use the raw batch in:
 
-`文章终稿数据/Figure3/raw_or_authoritative_source/source_tables/Figure3_panelE_logs14_trajectory_tidy.csv.gz`
+`D:/champer实验室工作/文章figure终版/figure3 (待补充erMut）/rerun_logs/panelE_logs14/logs14`
 
-The table contains `file`, `h`, `treatment`, `rep`, `week`, `nni`, `pop_size` and `zbar`. The approved 20 filenames per setting and cohort are the filenames recorded in `Figure3_source_panelE_replicate_level.csv`; this resolves the duplicated neutral 0.70 batch without selecting by row order.
+Selection is restricted to files beginning with `raw_fig3F_er_spt_control_` or `raw_fig3F_er_spt_functional_`. This gives exactly 20 raw outputs for each cohort at each of seven settings (280 files total). The cached `Figure3_panelE_logs14_trajectory_tidy.csv.gz` is not used as the rebuild authority because its neutral 0.70 filenames collide across two parsed batches and therefore contain two distinct trajectories per filename/week. Parsing the raw files removes that ambiguity.
 
 For every retained simulation:
 
