@@ -80,7 +80,7 @@ Later single-panel SVGs are used where the user explicitly requested a panel-onl
 
 ## Descriptive panels
 
-Trajectory-only and reference-diagnostic panels without a prespecified inferential test are marked `not applicable` in the statistics column. This applies to Figure 1D, Figure 2D, Figure 3D, Figure 6C-D, Supplementary Figure S1A, Supplementary Figure S3 and Supplementary Figures S5-S6. Summary values and uncertainty bands will still be deposited as Source Data.
+Trajectory-only and reference-diagnostic panels without a prespecified inferential test are marked `not applicable` in the statistics column. This applies to Figure 1D, Figure 2D, Figure 3D, Figure 6C, Supplementary Figure S1A, Supplementary Figure S3 and Supplementary Figures S5-S6. Figure 6D is excluded from this list because its final-20 endpoint requires a rebuilt permutation test. Summary values and uncertainty bands will still be deposited as Source Data.
 
 ## Required downstream work
 
