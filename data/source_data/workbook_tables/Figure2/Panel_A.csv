@@ -1,0 +1,801 @@
+﻿model_std,h,treatment,replicate,outcome,elimination,persistence,final_embryo_resistance,n_over_k,source_record_id
+Panmictic,0.85,Neutral control,1,Elimination,True,False,0.3882195546875,0.0,er_pan_result.xlsx::raw_row_2
+Panmictic,0.85,Neutral control,2,Elimination,True,False,0.425043773049645,0.0,er_pan_result.xlsx::raw_row_3
+Panmictic,0.85,Neutral control,3,Elimination,True,False,0.375186317460317,0.0,er_pan_result.xlsx::raw_row_4
+Panmictic,0.85,Neutral control,4,Elimination,True,False,0.401720355932203,0.0,er_pan_result.xlsx::raw_row_5
+Panmictic,0.85,Neutral control,5,Elimination,True,False,0.401387863945578,0.0,er_pan_result.xlsx::raw_row_6
+Panmictic,0.85,Neutral control,6,Elimination,True,False,0.390916614678899,0.0,er_pan_result.xlsx::raw_row_7
+Panmictic,0.85,Neutral control,7,Elimination,True,False,0.411216845528455,0.0,er_pan_result.xlsx::raw_row_8
+Panmictic,0.85,Neutral control,8,Elimination,True,False,0.418645612499999,0.0,er_pan_result.xlsx::raw_row_9
+Panmictic,0.85,Neutral control,9,Elimination,True,False,0.3787222578125,0.0,er_pan_result.xlsx::raw_row_10
+Panmictic,0.85,Neutral control,10,Elimination,True,False,0.399298363636363,0.0,er_pan_result.xlsx::raw_row_11
+Panmictic,0.85,Neutral control,11,Elimination,True,False,0.391769871794871,0.0,er_pan_result.xlsx::raw_row_12
+Panmictic,0.85,Neutral control,12,Elimination,True,False,0.414345584507042,0.0,er_pan_result.xlsx::raw_row_13
+Panmictic,0.85,Neutral control,13,Elimination,True,False,0.40310306779661,0.0,er_pan_result.xlsx::raw_row_14
+Panmictic,0.85,Neutral control,14,Elimination,True,False,0.4003953539823,0.0,er_pan_result.xlsx::raw_row_15
+Panmictic,0.85,Neutral control,15,Elimination,True,False,0.400889112,0.0,er_pan_result.xlsx::raw_row_16
+Panmictic,0.85,Neutral control,16,Elimination,True,False,0.38941054054054,0.0,er_pan_result.xlsx::raw_row_17
+Panmictic,0.85,Neutral control,17,Elimination,True,False,0.382056142857142,0.0,er_pan_result.xlsx::raw_row_18
+Panmictic,0.85,Neutral control,18,Elimination,True,False,0.4057390078125,0.0,er_pan_result.xlsx::raw_row_19
+Panmictic,0.85,Neutral control,19,Elimination,True,False,0.396429723076923,0.0,er_pan_result.xlsx::raw_row_20
+Panmictic,0.85,Neutral control,20,Elimination,True,False,0.413573127272727,0.0,er_pan_result.xlsx::raw_row_21
+Panmictic,0.85,Neutral control,21,Elimination,True,False,0.406063568965517,0.0,er_pan_result.xlsx::raw_row_22
+Panmictic,0.85,Neutral control,22,Elimination,True,False,0.406943981818181,0.0,er_pan_result.xlsx::raw_row_23
+Panmictic,0.85,Neutral control,23,Elimination,True,False,0.407423880733944,0.0,er_pan_result.xlsx::raw_row_24
+Panmictic,0.85,Neutral control,24,Elimination,True,False,0.395462598360655,0.0,er_pan_result.xlsx::raw_row_25
+Panmictic,0.85,Neutral control,25,Elimination,True,False,0.391882973214285,0.0,er_pan_result.xlsx::raw_row_26
+Panmictic,0.85,Neutral control,26,Elimination,True,False,0.375533691666666,0.0,er_pan_result.xlsx::raw_row_27
+Panmictic,0.85,Neutral control,27,Elimination,True,False,0.406401362962963,0.0,er_pan_result.xlsx::raw_row_28
+Panmictic,0.85,Neutral control,28,Elimination,True,False,0.392046850877192,0.0,er_pan_result.xlsx::raw_row_29
+Panmictic,0.85,Neutral control,29,Elimination,True,False,0.401710790697674,0.0,er_pan_result.xlsx::raw_row_30
+Panmictic,0.85,Neutral control,30,Elimination,True,False,0.394942245901639,0.0,er_pan_result.xlsx::raw_row_31
+Panmictic,0.85,Neutral control,31,Elimination,True,False,0.391143078260869,0.0,er_pan_result.xlsx::raw_row_32
+Panmictic,0.85,Neutral control,32,Elimination,True,False,0.389771563909774,0.0,er_pan_result.xlsx::raw_row_33
+Panmictic,0.85,Neutral control,33,Elimination,True,False,0.406035290076335,0.0,er_pan_result.xlsx::raw_row_34
+Panmictic,0.85,Neutral control,34,Elimination,True,False,0.363272362573099,0.0,er_pan_result.xlsx::raw_row_35
+Panmictic,0.85,Neutral control,35,Elimination,True,False,0.392800634920634,0.0,er_pan_result.xlsx::raw_row_36
+Panmictic,0.85,Neutral control,36,Elimination,True,False,0.403415317460317,0.0,er_pan_result.xlsx::raw_row_37
+Panmictic,0.85,Neutral control,37,Elimination,True,False,0.406232560975609,0.0,er_pan_result.xlsx::raw_row_38
+Panmictic,0.85,Neutral control,38,Elimination,True,False,0.397302762295081,0.0,er_pan_result.xlsx::raw_row_39
+Panmictic,0.85,Neutral control,39,Elimination,True,False,0.416410635761589,0.0,er_pan_result.xlsx::raw_row_40
+Panmictic,0.85,Neutral control,40,Elimination,True,False,0.388414617391304,0.0,er_pan_result.xlsx::raw_row_41
+Panmictic,0.85,Neutral control,41,Elimination,True,False,0.388840842975206,0.0,er_pan_result.xlsx::raw_row_42
+Panmictic,0.85,Neutral control,42,Elimination,True,False,0.388890444444444,0.0,er_pan_result.xlsx::raw_row_43
+Panmictic,0.85,Neutral control,43,Elimination,True,False,0.412463922413793,0.0,er_pan_result.xlsx::raw_row_44
+Panmictic,0.85,Neutral control,44,Elimination,True,False,0.383285703999999,0.0,er_pan_result.xlsx::raw_row_45
+Panmictic,0.85,Neutral control,45,Elimination,True,False,0.378769489510489,0.0,er_pan_result.xlsx::raw_row_46
+Panmictic,0.85,Neutral control,46,Elimination,True,False,0.400638021621621,0.0,er_pan_result.xlsx::raw_row_47
+Panmictic,0.85,Neutral control,47,Elimination,True,False,0.392115974137931,0.0,er_pan_result.xlsx::raw_row_48
+Panmictic,0.85,Neutral control,48,Elimination,True,False,0.400345224999999,0.0,er_pan_result.xlsx::raw_row_49
+Panmictic,0.85,Neutral control,49,Elimination,True,False,0.360768141843971,0.0,er_pan_result.xlsx::raw_row_50
+Panmictic,0.85,Neutral control,50,Elimination,True,False,0.385096456,0.0,er_pan_result.xlsx::raw_row_51
+Panmictic,0.85,Neutral control,51,Elimination,True,False,0.41952637704918,0.0,er_pan_result.xlsx::raw_row_52
+Panmictic,0.85,Neutral control,52,Elimination,True,False,0.382719157894736,0.0,er_pan_result.xlsx::raw_row_53
+Panmictic,0.85,Neutral control,53,Elimination,True,False,0.380084715384615,0.0,er_pan_result.xlsx::raw_row_54
+Panmictic,0.85,Neutral control,54,Elimination,True,False,0.413107753846153,0.0,er_pan_result.xlsx::raw_row_55
+Panmictic,0.85,Neutral control,55,Elimination,True,False,0.392416759124087,0.0,er_pan_result.xlsx::raw_row_56
+Panmictic,0.85,Neutral control,56,Elimination,True,False,0.401713534351145,0.0,er_pan_result.xlsx::raw_row_57
+Panmictic,0.85,Neutral control,57,Elimination,True,False,0.386283926229508,0.0,er_pan_result.xlsx::raw_row_58
+Panmictic,0.85,Neutral control,58,Elimination,True,False,0.393084225225225,0.0,er_pan_result.xlsx::raw_row_59
+Panmictic,0.85,Neutral control,59,Elimination,True,False,0.421107632478632,0.0,er_pan_result.xlsx::raw_row_60
+Panmictic,0.85,Neutral control,60,Elimination,True,False,0.390779327731092,0.0,er_pan_result.xlsx::raw_row_61
+Panmictic,0.85,Neutral control,61,Elimination,True,False,0.398277699115044,0.0,er_pan_result.xlsx::raw_row_62
+Panmictic,0.85,Neutral control,62,Elimination,True,False,0.3908072421875,0.0,er_pan_result.xlsx::raw_row_63
+Panmictic,0.85,Neutral control,63,Elimination,True,False,0.404660441666666,0.0,er_pan_result.xlsx::raw_row_64
+Panmictic,0.85,Neutral control,64,Elimination,True,False,0.407008866071428,0.0,er_pan_result.xlsx::raw_row_65
+Panmictic,0.85,Neutral control,65,Elimination,True,False,0.380512027522935,0.0,er_pan_result.xlsx::raw_row_66
+Panmictic,0.85,Neutral control,66,Elimination,True,False,0.414458267080745,0.0,er_pan_result.xlsx::raw_row_67
+Panmictic,0.85,Neutral control,67,Elimination,True,False,0.390525442424242,0.0,er_pan_result.xlsx::raw_row_68
+Panmictic,0.85,Neutral control,68,Elimination,True,False,0.399044408695652,0.0,er_pan_result.xlsx::raw_row_69
+Panmictic,0.85,Neutral control,69,Elimination,True,False,0.438247054263565,0.0,er_pan_result.xlsx::raw_row_70
+Panmictic,0.85,Neutral control,70,Elimination,True,False,0.385971256637168,0.0,er_pan_result.xlsx::raw_row_71
+Panmictic,0.85,Neutral control,71,Elimination,True,False,0.361739256910569,0.0,er_pan_result.xlsx::raw_row_72
+Panmictic,0.85,Neutral control,72,Elimination,True,False,0.380569307142857,0.0,er_pan_result.xlsx::raw_row_73
+Panmictic,0.85,Neutral control,73,Elimination,True,False,0.448156817567567,0.0,er_pan_result.xlsx::raw_row_74
+Panmictic,0.85,Neutral control,74,Elimination,True,False,0.398693564516129,0.0,er_pan_result.xlsx::raw_row_75
+Panmictic,0.85,Neutral control,75,Elimination,True,False,0.388364323076923,0.0,er_pan_result.xlsx::raw_row_76
+Panmictic,0.85,Neutral control,76,Elimination,True,False,0.404744807142857,0.0,er_pan_result.xlsx::raw_row_77
+Panmictic,0.85,Neutral control,77,Elimination,True,False,0.403593966666666,0.0,er_pan_result.xlsx::raw_row_78
+Panmictic,0.85,Neutral control,78,Elimination,True,False,0.397062649999999,0.0,er_pan_result.xlsx::raw_row_79
+Panmictic,0.85,Neutral control,79,Elimination,True,False,0.416843032786885,0.0,er_pan_result.xlsx::raw_row_80
+Panmictic,0.85,Neutral control,80,Elimination,True,False,0.437247789473684,0.0,er_pan_result.xlsx::raw_row_81
+Panmictic,0.85,Neutral control,81,Elimination,True,False,0.416294008547008,0.0,er_pan_result.xlsx::raw_row_82
+Panmictic,0.85,Neutral control,82,Elimination,True,False,0.357327510791366,0.0,er_pan_result.xlsx::raw_row_83
+Panmictic,0.85,Neutral control,83,Elimination,True,False,0.396233220588235,0.0,er_pan_result.xlsx::raw_row_84
+Panmictic,0.85,Neutral control,84,Elimination,True,False,0.397348369230769,0.0,er_pan_result.xlsx::raw_row_85
+Panmictic,0.85,Neutral control,85,Elimination,True,False,0.41032665625,0.0,er_pan_result.xlsx::raw_row_86
+Panmictic,0.85,Neutral control,86,Elimination,True,False,0.419611356589147,0.0,er_pan_result.xlsx::raw_row_87
+Panmictic,0.85,Neutral control,87,Elimination,True,False,0.400573760869565,0.0,er_pan_result.xlsx::raw_row_88
+Panmictic,0.85,Neutral control,88,Elimination,True,False,0.335160732984293,0.0,er_pan_result.xlsx::raw_row_89
+Panmictic,0.85,Neutral control,89,Elimination,True,False,0.289977367094017,0.0,er_pan_result.xlsx::raw_row_90
+Panmictic,0.85,Neutral control,90,Elimination,True,False,0.396080969924812,0.0,er_pan_result.xlsx::raw_row_91
+Panmictic,0.85,Neutral control,91,Elimination,True,False,0.415298062992126,0.0,er_pan_result.xlsx::raw_row_92
+Panmictic,0.85,Neutral control,92,Elimination,True,False,0.440653529411764,0.0,er_pan_result.xlsx::raw_row_93
+Panmictic,0.85,Neutral control,93,Elimination,True,False,0.398597258064516,0.0,er_pan_result.xlsx::raw_row_94
+Panmictic,0.85,Neutral control,94,Elimination,True,False,0.420108928571428,0.0,er_pan_result.xlsx::raw_row_95
+Panmictic,0.85,Neutral control,95,Elimination,True,False,0.357927391304347,0.0,er_pan_result.xlsx::raw_row_96
+Panmictic,0.85,Neutral control,96,Elimination,True,False,0.398833125984251,0.0,er_pan_result.xlsx::raw_row_97
+Panmictic,0.85,Neutral control,97,Elimination,True,False,0.422613318181818,0.0,er_pan_result.xlsx::raw_row_98
+Panmictic,0.85,Neutral control,98,Elimination,True,False,0.334041324675324,0.0,er_pan_result.xlsx::raw_row_99
+Panmictic,0.85,Neutral control,99,Elimination,True,False,0.332092848341232,0.0,er_pan_result.xlsx::raw_row_100
+Panmictic,0.7,Neutral control,1,Elimination,True,False,0.380114010075566,0.0,er_pan_result.xlsx::raw_row_101
+Panmictic,0.7,Neutral control,2,Elimination,True,False,0.405484337690631,0.0,er_pan_result.xlsx::raw_row_102
+Panmictic,0.7,Neutral control,3,Elimination,True,False,0.397302574358974,0.0,er_pan_result.xlsx::raw_row_103
+Panmictic,0.85,Functional modifier,1,Elimination,True,False,0.38597096124031,0.0,er_pan_result.xlsx::raw_row_104
+Panmictic,0.85,Functional modifier,2,Elimination,True,False,0.416487803418803,0.0,er_pan_result.xlsx::raw_row_105
+Panmictic,0.85,Functional modifier,3,Elimination,True,False,0.420275652173912,0.0,er_pan_result.xlsx::raw_row_106
+Panmictic,0.85,Functional modifier,4,Elimination,True,False,0.404000366071428,0.0,er_pan_result.xlsx::raw_row_107
+Panmictic,0.85,Functional modifier,5,Elimination,True,False,0.395955361344537,0.0,er_pan_result.xlsx::raw_row_108
+Panmictic,0.85,Functional modifier,6,Elimination,True,False,0.405327513043478,0.0,er_pan_result.xlsx::raw_row_109
+Panmictic,0.85,Functional modifier,7,Elimination,True,False,0.385556288135593,0.0,er_pan_result.xlsx::raw_row_110
+Panmictic,0.85,Functional modifier,8,Elimination,True,False,0.394713305084745,0.0,er_pan_result.xlsx::raw_row_111
+Panmictic,0.85,Functional modifier,9,Elimination,True,False,0.401244086956521,0.0,er_pan_result.xlsx::raw_row_112
+Panmictic,0.85,Functional modifier,10,Elimination,True,False,0.385284260504201,0.0,er_pan_result.xlsx::raw_row_113
+Panmictic,0.85,Functional modifier,11,Elimination,True,False,0.389606825396825,0.0,er_pan_result.xlsx::raw_row_114
+Panmictic,0.85,Functional modifier,12,Elimination,True,False,0.375416294354838,0.0,er_pan_result.xlsx::raw_row_115
+Panmictic,0.85,Functional modifier,13,Elimination,True,False,0.4120422,0.0,er_pan_result.xlsx::raw_row_116
+Panmictic,0.85,Functional modifier,14,Elimination,True,False,0.401529755555555,0.0,er_pan_result.xlsx::raw_row_117
+Panmictic,0.85,Functional modifier,15,Elimination,True,False,0.401695735294117,0.0,er_pan_result.xlsx::raw_row_118
+Panmictic,0.85,Functional modifier,16,Elimination,True,False,0.3884853515625,0.0,er_pan_result.xlsx::raw_row_119
+Panmictic,0.85,Functional modifier,17,Elimination,True,False,0.38248409090909,0.0,er_pan_result.xlsx::raw_row_120
+Panmictic,0.85,Functional modifier,18,Elimination,True,False,0.397318708333333,0.0,er_pan_result.xlsx::raw_row_121
+Panmictic,0.85,Functional modifier,19,Elimination,True,False,0.39678914876033,0.0,er_pan_result.xlsx::raw_row_122
+Panmictic,0.85,Functional modifier,20,Elimination,True,False,0.395769420168067,0.0,er_pan_result.xlsx::raw_row_123
+Panmictic,0.85,Functional modifier,21,Elimination,True,False,0.398510587786259,0.0,er_pan_result.xlsx::raw_row_124
+Panmictic,0.85,Functional modifier,22,Elimination,True,False,0.389421350746268,0.0,er_pan_result.xlsx::raw_row_125
+Panmictic,0.85,Functional modifier,23,Elimination,True,False,0.414209171641791,0.0,er_pan_result.xlsx::raw_row_126
+Panmictic,0.85,Functional modifier,24,Elimination,True,False,0.404625905982906,0.0,er_pan_result.xlsx::raw_row_127
+Panmictic,0.85,Functional modifier,25,Elimination,True,False,0.379031566666666,0.0,er_pan_result.xlsx::raw_row_128
+Panmictic,0.85,Functional modifier,26,Elimination,True,False,0.384451454545454,0.0,er_pan_result.xlsx::raw_row_129
+Panmictic,0.85,Functional modifier,27,Elimination,True,False,0.434397194444444,0.0,er_pan_result.xlsx::raw_row_130
+Panmictic,0.85,Functional modifier,28,Elimination,True,False,0.383656752066115,0.0,er_pan_result.xlsx::raw_row_131
+Panmictic,0.85,Functional modifier,29,Elimination,True,False,0.405618336206896,0.0,er_pan_result.xlsx::raw_row_132
+Panmictic,0.85,Functional modifier,30,Elimination,True,False,0.392238026315789,0.0,er_pan_result.xlsx::raw_row_133
+Panmictic,0.85,Functional modifier,31,Elimination,True,False,0.400854325,0.0,er_pan_result.xlsx::raw_row_134
+Panmictic,0.85,Functional modifier,32,Elimination,True,False,0.404753608333333,0.0,er_pan_result.xlsx::raw_row_135
+Panmictic,0.85,Functional modifier,33,Elimination,True,False,0.368516222222222,0.0,er_pan_result.xlsx::raw_row_136
+Panmictic,0.85,Functional modifier,34,Elimination,True,False,0.370044066666666,0.0,er_pan_result.xlsx::raw_row_137
+Panmictic,0.85,Functional modifier,35,Elimination,True,False,0.384432809523809,0.0,er_pan_result.xlsx::raw_row_138
+Panmictic,0.85,Functional modifier,36,Elimination,True,False,0.372709727272727,0.0,er_pan_result.xlsx::raw_row_139
+Panmictic,0.85,Functional modifier,37,Elimination,True,False,0.36796575,0.0,er_pan_result.xlsx::raw_row_140
+Panmictic,0.85,Functional modifier,38,Elimination,True,False,0.379928974683544,0.0,er_pan_result.xlsx::raw_row_141
+Panmictic,0.85,Functional modifier,39,Elimination,True,False,0.377943736842105,0.0,er_pan_result.xlsx::raw_row_142
+Panmictic,0.85,Functional modifier,40,Elimination,True,False,0.392772282258064,0.0,er_pan_result.xlsx::raw_row_143
+Panmictic,0.85,Functional modifier,41,Elimination,True,False,0.384731396226415,0.0,er_pan_result.xlsx::raw_row_144
+Panmictic,0.85,Functional modifier,42,Elimination,True,False,0.419171952380952,0.0,er_pan_result.xlsx::raw_row_145
+Panmictic,0.85,Functional modifier,43,Elimination,True,False,0.373172717741935,0.0,er_pan_result.xlsx::raw_row_146
+Panmictic,0.85,Functional modifier,44,Elimination,True,False,0.395416144736842,0.0,er_pan_result.xlsx::raw_row_147
+Panmictic,0.85,Functional modifier,45,Elimination,True,False,0.380669837837837,0.0,er_pan_result.xlsx::raw_row_148
+Panmictic,0.85,Functional modifier,46,Elimination,True,False,0.399244592592592,0.0,er_pan_result.xlsx::raw_row_149
+Panmictic,0.85,Functional modifier,47,Elimination,True,False,0.336371714285714,0.0,er_pan_result.xlsx::raw_row_150
+Panmictic,0.85,Functional modifier,48,Elimination,True,False,0.396500067164179,0.0,er_pan_result.xlsx::raw_row_151
+Panmictic,0.85,Functional modifier,49,Elimination,True,False,0.379659764705882,0.0,er_pan_result.xlsx::raw_row_152
+Panmictic,0.85,Functional modifier,50,Elimination,True,False,0.387914789115646,0.0,er_pan_result.xlsx::raw_row_153
+Panmictic,0.85,Functional modifier,51,Elimination,True,False,0.390767458646616,0.0,er_pan_result.xlsx::raw_row_154
+Panmictic,0.85,Functional modifier,52,Elimination,True,False,0.375288434426229,0.0,er_pan_result.xlsx::raw_row_155
+Panmictic,0.85,Functional modifier,53,Elimination,True,False,0.36969773553719,0.0,er_pan_result.xlsx::raw_row_156
+Panmictic,0.85,Functional modifier,54,Elimination,True,False,0.3777246640625,0.0,er_pan_result.xlsx::raw_row_157
+Panmictic,0.85,Functional modifier,55,Elimination,True,False,0.351365985915493,0.0,er_pan_result.xlsx::raw_row_158
+Panmictic,0.85,Functional modifier,56,Elimination,True,False,0.414394048780487,0.0,er_pan_result.xlsx::raw_row_159
+Panmictic,0.85,Functional modifier,57,Elimination,True,False,0.3792398046875,0.0,er_pan_result.xlsx::raw_row_160
+Panmictic,0.85,Functional modifier,58,Elimination,True,False,0.390237329842931,0.0,er_pan_result.xlsx::raw_row_161
+Panmictic,0.85,Functional modifier,59,Elimination,True,False,0.403634652892562,0.0,er_pan_result.xlsx::raw_row_162
+Panmictic,0.85,Functional modifier,60,Elimination,True,False,0.423682129310344,0.0,er_pan_result.xlsx::raw_row_163
+Panmictic,0.85,Functional modifier,61,Elimination,True,False,0.373671453781512,0.0,er_pan_result.xlsx::raw_row_164
+Panmictic,0.85,Functional modifier,62,Elimination,True,False,0.381106496296296,0.0,er_pan_result.xlsx::raw_row_165
+Panmictic,0.85,Functional modifier,63,Elimination,True,False,0.394023299145299,0.0,er_pan_result.xlsx::raw_row_166
+Panmictic,0.85,Functional modifier,64,Elimination,True,False,0.402278285714285,0.0,er_pan_result.xlsx::raw_row_167
+Panmictic,0.85,Functional modifier,65,Elimination,True,False,0.414837801526717,0.0,er_pan_result.xlsx::raw_row_168
+Panmictic,0.85,Functional modifier,66,Elimination,True,False,0.389948992063492,0.0,er_pan_result.xlsx::raw_row_169
+Panmictic,0.85,Functional modifier,67,Elimination,True,False,0.396219058823529,0.0,er_pan_result.xlsx::raw_row_170
+Panmictic,0.85,Functional modifier,68,Elimination,True,False,0.363863079959459,0.0,er_pan_result.xlsx::raw_row_171
+Panmictic,0.85,Functional modifier,69,Elimination,True,False,0.365249883333333,0.0,er_pan_result.xlsx::raw_row_172
+Panmictic,0.85,Functional modifier,70,Elimination,True,False,0.372679349650349,0.0,er_pan_result.xlsx::raw_row_173
+Panmictic,0.85,Functional modifier,71,Elimination,True,False,0.472936424083769,0.0,er_pan_result.xlsx::raw_row_174
+Panmictic,0.85,Functional modifier,72,Elimination,True,False,0.395928129310344,0.0,er_pan_result.xlsx::raw_row_175
+Panmictic,0.85,Functional modifier,73,Elimination,True,False,0.395145813559321,0.0,er_pan_result.xlsx::raw_row_176
+Panmictic,0.85,Functional modifier,74,Elimination,True,False,0.3635002032,0.0,er_pan_result.xlsx::raw_row_177
+Panmictic,0.85,Functional modifier,75,Elimination,True,False,0.390857566666666,0.0,er_pan_result.xlsx::raw_row_178
+Panmictic,0.85,Functional modifier,76,Elimination,True,False,0.383273335999999,0.0,er_pan_result.xlsx::raw_row_179
+Panmictic,0.85,Functional modifier,77,Elimination,True,False,0.391694422077922,0.0,er_pan_result.xlsx::raw_row_180
+Panmictic,0.85,Functional modifier,78,Elimination,True,False,0.394138824675324,0.0,er_pan_result.xlsx::raw_row_181
+Panmictic,0.85,Functional modifier,79,Elimination,True,False,0.383568804878048,0.0,er_pan_result.xlsx::raw_row_182
+Panmictic,0.85,Functional modifier,80,Elimination,True,False,0.367743021582733,0.0,er_pan_result.xlsx::raw_row_183
+Panmictic,0.85,Functional modifier,81,Elimination,True,False,0.351848515695067,0.0,er_pan_result.xlsx::raw_row_184
+Panmictic,0.85,Functional modifier,82,Elimination,True,False,0.374070756756756,0.0,er_pan_result.xlsx::raw_row_185
+Panmictic,0.85,Functional modifier,83,Elimination,True,False,0.405698772357723,0.0,er_pan_result.xlsx::raw_row_186
+Panmictic,0.85,Functional modifier,84,Elimination,True,False,0.45799,0.0,er_pan_result.xlsx::raw_row_187
+Panmictic,0.85,Functional modifier,85,Elimination,True,False,0.299504046130653,0.0,er_pan_result.xlsx::raw_row_188
+Panmictic,0.85,Functional modifier,86,Elimination,True,False,0.378472247863247,0.0,er_pan_result.xlsx::raw_row_189
+Panmictic,0.85,Functional modifier,87,Elimination,True,False,0.405632906779661,0.0,er_pan_result.xlsx::raw_row_190
+Panmictic,0.85,Functional modifier,88,Elimination,True,False,0.378451811926605,0.0,er_pan_result.xlsx::raw_row_191
+Panmictic,0.85,Functional modifier,89,Elimination,True,False,0.38012854347826,0.0,er_pan_result.xlsx::raw_row_192
+Panmictic,0.85,Functional modifier,90,Elimination,True,False,0.403955180451127,0.0,er_pan_result.xlsx::raw_row_193
+Panmictic,0.85,Functional modifier,91,Elimination,True,False,0.406991345588235,0.0,er_pan_result.xlsx::raw_row_194
+Panmictic,0.85,Functional modifier,92,Elimination,True,False,0.396239697674418,0.0,er_pan_result.xlsx::raw_row_195
+Panmictic,0.85,Functional modifier,93,Elimination,True,False,0.380935647058823,0.0,er_pan_result.xlsx::raw_row_196
+Panmictic,0.85,Functional modifier,94,Elimination,True,False,0.486647629629629,0.0,er_pan_result.xlsx::raw_row_197
+Panmictic,0.85,Functional modifier,95,Elimination,True,False,0.388616708333333,0.0,er_pan_result.xlsx::raw_row_198
+Panmictic,0.85,Functional modifier,96,Elimination,True,False,0.383841669565217,0.0,er_pan_result.xlsx::raw_row_199
+Panmictic,0.85,Functional modifier,97,Elimination,True,False,0.423886040983606,0.0,er_pan_result.xlsx::raw_row_200
+Panmictic,0.7,Neutral control,4,Long-term persistence,False,True,0.420064155161078,0.29764,er_pan_result.xlsx::raw_row_201
+Panmictic,0.7,Neutral control,5,Long-term persistence,False,True,0.608980041420118,0.2751661818181818,er_pan_result.xlsx::raw_row_202
+Panmictic,0.7,Neutral control,6,Long-term persistence,False,True,0.350835561472715,0.4081610909090909,er_pan_result.xlsx::raw_row_203
+Panmictic,0.7,Neutral control,7,Long-term persistence,False,True,0.460514333990795,0.2463541818181818,er_pan_result.xlsx::raw_row_204
+Panmictic,0.7,Neutral control,8,Long-term persistence,False,True,0.412962517422748,0.2880773636363636,er_pan_result.xlsx::raw_row_205
+Panmictic,0.7,Neutral control,9,Long-term persistence,False,True,0.50036855095332,0.287918909090909,er_pan_result.xlsx::raw_row_206
+Panmictic,0.7,Neutral control,10,Long-term persistence,False,True,0.45449109007232,0.2893068181818182,er_pan_result.xlsx::raw_row_207
+Panmictic,0.7,Neutral control,11,Long-term persistence,False,True,0.475261980933596,0.300139,er_pan_result.xlsx::raw_row_208
+Panmictic,0.7,Functional modifier,1,Elimination,True,False,0.387098254480286,0.0,er_pan_result.xlsx::raw_row_209
+Panmictic,0.7,Neutral control,12,Long-term persistence,False,True,0.405011024326101,0.2657104545454545,er_pan_result.xlsx::raw_row_210
+Panmictic,0.7,Neutral control,13,Long-term persistence,False,True,0.372327952662721,0.2603675454545454,er_pan_result.xlsx::raw_row_211
+Panmictic,0.7,Neutral control,14,Long-term persistence,False,True,0.482326779750164,0.2076034545454545,er_pan_result.xlsx::raw_row_212
+Panmictic,0.7,Neutral control,15,Long-term persistence,False,True,0.335081727153188,0.3205529090909091,er_pan_result.xlsx::raw_row_213
+Panmictic,0.7,Neutral control,16,Long-term persistence,False,True,0.374990639053254,0.3204682727272727,er_pan_result.xlsx::raw_row_214
+Panmictic,0.7,Neutral control,17,Long-term persistence,False,True,0.518722205128205,0.3201634545454546,er_pan_result.xlsx::raw_row_215
+Panmictic,0.7,Neutral control,18,Long-term persistence,False,True,0.460682428665351,0.2435936363636363,er_pan_result.xlsx::raw_row_216
+Panmictic,0.7,Neutral control,19,Long-term persistence,False,True,0.451584982905982,0.2901563636363636,er_pan_result.xlsx::raw_row_217
+Panmictic,0.7,Neutral control,20,Long-term persistence,False,True,0.40757241025641,0.2298265454545454,er_pan_result.xlsx::raw_row_218
+Panmictic,0.7,Neutral control,21,Long-term persistence,False,True,0.382094044049967,0.2751566363636364,er_pan_result.xlsx::raw_row_219
+Panmictic,0.7,Neutral control,22,Long-term persistence,False,True,0.395296547008547,0.2747054545454546,er_pan_result.xlsx::raw_row_220
+Panmictic,0.7,Neutral control,23,Long-term persistence,False,True,0.52065802695595,0.3168562727272727,er_pan_result.xlsx::raw_row_221
+Panmictic,0.7,Neutral control,24,Long-term persistence,False,True,0.406783696909927,0.2930823636363636,er_pan_result.xlsx::raw_row_222
+Panmictic,0.7,Neutral control,25,Long-term persistence,False,True,0.311512168310322,0.2965282727272727,er_pan_result.xlsx::raw_row_223
+Panmictic,0.7,Neutral control,26,Long-term persistence,False,True,0.503206561472715,0.2749593636363636,er_pan_result.xlsx::raw_row_224
+Panmictic,0.7,Neutral control,27,Long-term persistence,False,True,0.38555861078238,0.291473,er_pan_result.xlsx::raw_row_225
+Panmictic,0.7,Neutral control,28,Long-term persistence,False,True,0.523799379355687,0.2920094545454545,er_pan_result.xlsx::raw_row_226
+Panmictic,0.7,Neutral control,29,Long-term persistence,False,True,0.380851642340565,0.3374050909090909,er_pan_result.xlsx::raw_row_227
+Panmictic,0.7,Neutral control,30,Long-term persistence,False,True,0.329353698882314,0.2846359090909091,er_pan_result.xlsx::raw_row_228
+Panmictic,0.7,Neutral control,31,Long-term persistence,False,True,0.48463085930309,0.3395999090909091,er_pan_result.xlsx::raw_row_229
+Panmictic,0.7,Functional modifier,2,Elimination,True,False,0.312164566455696,0.0,er_pan_result.xlsx::raw_row_230
+Panmictic,0.7,Neutral control,32,Long-term persistence,False,True,0.50610579947403,0.3563413636363636,er_pan_result.xlsx::raw_row_231
+Panmictic,0.7,Neutral control,33,Long-term persistence,False,True,0.409966738330046,0.2550348181818181,er_pan_result.xlsx::raw_row_232
+Panmictic,0.7,Neutral control,34,Long-term persistence,False,True,0.396024846153846,0.2812708181818182,er_pan_result.xlsx::raw_row_233
+Panmictic,0.7,Neutral control,35,Long-term persistence,False,True,0.408766540433925,0.2988331818181818,er_pan_result.xlsx::raw_row_234
+Panmictic,0.7,Neutral control,36,Long-term persistence,False,True,0.365619251150558,0.336154,er_pan_result.xlsx::raw_row_235
+Panmictic,0.7,Neutral control,37,Long-term persistence,False,True,0.610201441814595,0.3759324545454546,er_pan_result.xlsx::raw_row_236
+Panmictic,0.7,Neutral control,38,Long-term persistence,False,True,0.454845429322813,0.3043790909090909,er_pan_result.xlsx::raw_row_237
+Panmictic,0.7,Neutral control,39,Long-term persistence,False,True,0.208140809664694,0.2836718181818182,er_pan_result.xlsx::raw_row_238
+Panmictic,0.7,Neutral control,40,Long-term persistence,False,True,0.567736797501643,0.2476370909090909,er_pan_result.xlsx::raw_row_239
+Panmictic,0.7,Neutral control,41,Long-term persistence,False,True,0.300267952662721,0.2654775454545454,er_pan_result.xlsx::raw_row_240
+Panmictic,0.7,Neutral control,42,Long-term persistence,False,True,0.288075756081525,0.2736287272727273,er_pan_result.xlsx::raw_row_241
+Panmictic,0.7,Neutral control,43,Long-term persistence,False,True,0.264992040105194,0.2891089090909091,er_pan_result.xlsx::raw_row_242
+Panmictic,0.7,Neutral control,44,Long-term persistence,False,True,0.576627336620644,0.2812708181818182,er_pan_result.xlsx::raw_row_243
+Panmictic,0.7,Neutral control,45,Long-term persistence,False,True,0.319813954635108,0.3369710909090909,er_pan_result.xlsx::raw_row_244
+Panmictic,0.7,Neutral control,46,Long-term persistence,False,True,0.448264093359631,0.297619,er_pan_result.xlsx::raw_row_245
+Panmictic,0.7,Neutral control,47,Long-term persistence,False,True,0.411339024983563,0.3211205454545455,er_pan_result.xlsx::raw_row_246
+Panmictic,0.7,Neutral control,48,Long-term persistence,False,True,0.38568074556213,0.3335627272727273,er_pan_result.xlsx::raw_row_247
+Panmictic,0.7,Neutral control,49,Long-term persistence,False,True,0.313702934911242,0.2801234545454545,er_pan_result.xlsx::raw_row_248
+Panmictic,0.7,Neutral control,50,Long-term persistence,False,True,0.60610392833662,0.3331980909090909,er_pan_result.xlsx::raw_row_249
+Panmictic,0.7,Neutral control,51,Long-term persistence,False,True,0.438978911242603,0.2565353636363636,er_pan_result.xlsx::raw_row_250
+Panmictic,0.7,Neutral control,52,Long-term persistence,False,True,0.456133619329388,0.2738883636363636,er_pan_result.xlsx::raw_row_251
+Panmictic,0.7,Neutral control,53,Long-term persistence,False,True,0.493761226824457,0.2137068181818182,er_pan_result.xlsx::raw_row_252
+Panmictic,0.7,Neutral control,54,Long-term persistence,False,True,0.183504895506883,0.2013887272727272,er_pan_result.xlsx::raw_row_253
+Panmictic,0.7,Neutral control,55,Long-term persistence,False,True,0.411326385930309,0.3321207272727273,er_pan_result.xlsx::raw_row_254
+Panmictic,0.7,Neutral control,56,Long-term persistence,False,True,0.312768854043392,0.2257404545454545,er_pan_result.xlsx::raw_row_255
+Panmictic,0.7,Neutral control,57,Long-term persistence,False,True,0.620705191321499,0.3591636363636363,er_pan_result.xlsx::raw_row_256
+Panmictic,0.7,Neutral control,58,Long-term persistence,False,True,0.435169088757396,0.2396055454545454,er_pan_result.xlsx::raw_row_257
+Panmictic,0.7,Neutral control,59,Long-term persistence,False,True,0.392890821170282,0.2842668181818182,er_pan_result.xlsx::raw_row_258
+Panmictic,0.7,Neutral control,60,Long-term persistence,False,True,0.461635072978303,0.2940197272727273,er_pan_result.xlsx::raw_row_259
+Panmictic,0.7,Neutral control,61,Long-term persistence,False,True,0.437581451019066,0.3118506363636364,er_pan_result.xlsx::raw_row_260
+Panmictic,0.7,Neutral control,62,Long-term persistence,False,True,0.408282986850756,0.2872710909090909,er_pan_result.xlsx::raw_row_261
+Panmictic,0.7,Neutral control,63,Long-term persistence,False,True,0.388405740302432,0.3123005454545454,er_pan_result.xlsx::raw_row_262
+Panmictic,0.7,Neutral control,64,Long-term persistence,False,True,0.546381430637738,0.3970075454545454,er_pan_result.xlsx::raw_row_263
+Panmictic,0.7,Neutral control,65,Long-term persistence,False,True,0.345854761998685,0.2088908181818182,er_pan_result.xlsx::raw_row_264
+Panmictic,0.7,Functional modifier,3,Elimination,True,False,0.0956914784320175,0.0875992727272727,er_pan_result.xlsx::raw_row_265
+Panmictic,0.7,Neutral control,66,Long-term persistence,False,True,0.458196450361604,0.3882893636363636,er_pan_result.xlsx::raw_row_266
+Panmictic,0.7,Neutral control,67,Long-term persistence,False,True,0.571105912557527,0.3170013636363636,er_pan_result.xlsx::raw_row_267
+Panmictic,0.7,Neutral control,68,Long-term persistence,False,True,0.326654850756081,0.2896071818181818,er_pan_result.xlsx::raw_row_268
+Panmictic,0.7,Neutral control,69,Long-term persistence,False,True,0.375697950690335,0.2923320909090909,er_pan_result.xlsx::raw_row_269
+Panmictic,0.7,Neutral control,70,Long-term persistence,False,True,0.312094752136752,0.23058,er_pan_result.xlsx::raw_row_270
+Panmictic,0.7,Neutral control,71,Long-term persistence,False,True,0.262176273175542,0.3089602727272727,er_pan_result.xlsx::raw_row_271
+Panmictic,0.7,Neutral control,72,Long-term persistence,False,True,0.441093660092044,0.2318966363636364,er_pan_result.xlsx::raw_row_272
+Panmictic,0.7,Neutral control,73,Long-term persistence,False,True,0.507792605522682,0.3520560909090909,er_pan_result.xlsx::raw_row_273
+Panmictic,0.7,Neutral control,74,Long-term persistence,False,True,0.566473695595003,0.3318470909090909,er_pan_result.xlsx::raw_row_274
+Panmictic,0.7,Neutral control,75,Long-term persistence,False,True,0.585410477975016,0.3264462727272727,er_pan_result.xlsx::raw_row_275
+Panmictic,0.7,Neutral control,76,Long-term persistence,False,True,0.500403413543721,0.1870762727272727,er_pan_result.xlsx::raw_row_276
+Panmictic,0.7,Functional modifier,4,Elimination,True,False,0.30268710747198,0.0694419090909091,er_pan_result.xlsx::raw_row_277
+Panmictic,0.7,Neutral control,77,Long-term persistence,False,True,0.356187943458251,0.2929264545454546,er_pan_result.xlsx::raw_row_278
+Panmictic,0.7,Neutral control,78,Long-term persistence,False,True,0.375298225509533,0.2178616363636363,er_pan_result.xlsx::raw_row_279
+Panmictic,0.7,Neutral control,79,Long-term persistence,False,True,0.357029914529914,0.3297375454545455,er_pan_result.xlsx::raw_row_280
+Panmictic,0.7,Functional modifier,5,Elimination,True,False,0.172331433747927,0.0,er_pan_result.xlsx::raw_row_281
+Panmictic,0.7,Neutral control,80,Long-term persistence,False,True,0.546498965154503,0.3053845454545454,er_pan_result.xlsx::raw_row_282
+Panmictic,0.7,Neutral control,81,Long-term persistence,False,True,0.261000331820907,0.3582485454545455,er_pan_result.xlsx::raw_row_283
+Panmictic,0.7,Neutral control,82,Long-term persistence,False,True,0.431940261012491,0.2938937272727273,er_pan_result.xlsx::raw_row_284
+Panmictic,0.7,Neutral control,83,Long-term persistence,False,True,0.384972857330703,0.3909270909090909,er_pan_result.xlsx::raw_row_285
+Panmictic,0.7,Neutral control,84,Long-term persistence,False,True,0.340886936226166,0.353311,er_pan_result.xlsx::raw_row_286
+Panmictic,0.7,Neutral control,85,Long-term persistence,False,True,0.568298694280078,0.2870477272727272,er_pan_result.xlsx::raw_row_287
+Panmictic,0.7,Neutral control,86,Long-term persistence,False,True,0.58028424852071,0.2930365454545454,er_pan_result.xlsx::raw_row_288
+Panmictic,0.7,Neutral control,87,Long-term persistence,False,True,0.423184468113083,0.2587696363636363,er_pan_result.xlsx::raw_row_289
+Panmictic,0.7,Neutral control,88,Long-term persistence,False,True,0.373456700197238,0.191611,er_pan_result.xlsx::raw_row_290
+Panmictic,0.7,Neutral control,89,Long-term persistence,False,True,0.409865426035502,0.2943264545454546,er_pan_result.xlsx::raw_row_291
+Panmictic,0.7,Neutral control,90,Long-term persistence,False,True,0.349039146614069,0.3357766363636363,er_pan_result.xlsx::raw_row_292
+Panmictic,0.7,Neutral control,91,Long-term persistence,False,True,0.256201777777777,0.3374458181818182,er_pan_result.xlsx::raw_row_293
+Panmictic,0.7,Neutral control,92,Long-term persistence,False,True,0.331250767915844,0.2272912727272727,er_pan_result.xlsx::raw_row_294
+Panmictic,0.7,Functional modifier,6,Elimination,True,False,0.244833276933045,0.0,er_pan_result.xlsx::raw_row_295
+Panmictic,0.7,Neutral control,93,Long-term persistence,False,True,0.287307069822485,0.2916747272727273,er_pan_result.xlsx::raw_row_296
+Panmictic,0.7,Functional modifier,7,Elimination,True,False,0.18424080281882,0.0861547272727272,er_pan_result.xlsx::raw_row_297
+Panmictic,0.7,Neutral control,94,Long-term persistence,False,True,0.470413220907297,0.339311,er_pan_result.xlsx::raw_row_298
+Panmictic,0.7,Neutral control,95,Long-term persistence,False,True,0.712575741617356,0.3031820909090909,er_pan_result.xlsx::raw_row_299
+Panmictic,0.7,Functional modifier,8,Long-term persistence,False,True,0.0420454231518737,0.1466086363636363,er_pan_result.xlsx::raw_row_300
+Panmictic,0.7,Neutral control,96,Long-term persistence,False,True,0.331958156476002,0.3692678181818182,er_pan_result.xlsx::raw_row_301
+Panmictic,0.7,Neutral control,97,Long-term persistence,False,True,0.464220909927679,0.2927934545454546,er_pan_result.xlsx::raw_row_302
+Panmictic,0.7,Functional modifier,9,Elimination,True,False,0.206956644373177,0.0689124545454545,er_pan_result.xlsx::raw_row_303
+Panmictic,0.7,Neutral control,98,Long-term persistence,False,True,0.386472136752136,0.29491,er_pan_result.xlsx::raw_row_304
+Panmictic,0.7,Functional modifier,10,Long-term persistence,False,True,0.116502168799342,0.2515825454545454,er_pan_result.xlsx::raw_row_305
+Panmictic,0.7,Neutral control,99,Long-term persistence,False,True,0.406596408941485,0.3008746363636363,er_pan_result.xlsx::raw_row_306
+Panmictic,0.7,Neutral control,100,Long-term persistence,False,True,0.462034057199211,0.337764,er_pan_result.xlsx::raw_row_307
+Panmictic,0.7,Functional modifier,11,Elimination,True,False,0.23942573121327,0.0443042727272727,er_pan_result.xlsx::raw_row_308
+Panmictic,0.7,Functional modifier,12,Long-term persistence,False,True,0.265661704799474,0.1299174545454545,er_pan_result.xlsx::raw_row_309
+Panmictic,0.7,Functional modifier,13,Elimination,True,False,0.133743584780609,0.0441598181818181,er_pan_result.xlsx::raw_row_310
+Panmictic,0.7,Functional modifier,14,Elimination,True,False,0.0590565949822537,0.0237102727272727,er_pan_result.xlsx::raw_row_311
+Panmictic,0.7,Functional modifier,15,Long-term persistence,False,True,0.0,0.2514158181818182,er_pan_result.xlsx::raw_row_312
+Panmictic,0.7,Functional modifier,16,Long-term persistence,False,True,0.0438398155404339,0.2160320909090909,er_pan_result.xlsx::raw_row_313
+Panmictic,0.7,Functional modifier,17,Elimination,True,False,0.205410051656441,0.1004862727272727,er_pan_result.xlsx::raw_row_314
+Panmictic,0.7,Functional modifier,18,Long-term persistence,False,True,0.0,0.2097581818181818,er_pan_result.xlsx::raw_row_315
+Panmictic,0.7,Functional modifier,19,Long-term persistence,False,True,0.224536725838264,0.1612399090909091,er_pan_result.xlsx::raw_row_316
+Panmictic,0.7,Functional modifier,20,Elimination,True,False,0.307953776782307,0.0410460909090909,er_pan_result.xlsx::raw_row_317
+Panmictic,0.7,Functional modifier,21,Long-term persistence,False,True,0.273241414201183,0.2233133636363636,er_pan_result.xlsx::raw_row_318
+Panmictic,0.7,Functional modifier,22,Long-term persistence,False,True,0.191175547323405,0.192745,er_pan_result.xlsx::raw_row_319
+Panmictic,0.7,Functional modifier,23,Elimination,True,False,0.0610076000619658,0.1060137272727272,er_pan_result.xlsx::raw_row_320
+Panmictic,0.7,Functional modifier,24,Long-term persistence,False,True,0.0520957137790926,0.2703425454545454,er_pan_result.xlsx::raw_row_321
+Panmictic,0.7,Functional modifier,25,Long-term persistence,False,True,0.0036972207100591,0.21014,er_pan_result.xlsx::raw_row_322
+Panmictic,0.7,Functional modifier,26,Long-term persistence,False,True,0.139475307290598,0.2616733636363637,er_pan_result.xlsx::raw_row_323
+Panmictic,0.7,Functional modifier,27,Long-term persistence,False,True,0.0139839578773306,0.1624324545454545,er_pan_result.xlsx::raw_row_324
+Panmictic,0.7,Functional modifier,28,Long-term persistence,False,True,0.106309318736752,0.2625222727272727,er_pan_result.xlsx::raw_row_325
+Panmictic,0.7,Functional modifier,29,Long-term persistence,False,True,0.139695817727087,0.1895937272727272,er_pan_result.xlsx::raw_row_326
+Panmictic,0.7,Functional modifier,30,Long-term persistence,False,True,0.0478726678928336,0.1984519090909091,er_pan_result.xlsx::raw_row_327
+Panmictic,0.7,Functional modifier,31,Elimination,True,False,0.161754440947812,0.0551071818181818,er_pan_result.xlsx::raw_row_328
+Panmictic,0.7,Functional modifier,32,Long-term persistence,False,True,0.064338727068376,0.2663130909090909,er_pan_result.xlsx::raw_row_329
+Panmictic,0.7,Functional modifier,33,Long-term persistence,False,True,0.0331516152466798,0.1575897272727272,er_pan_result.xlsx::raw_row_330
+Panmictic,0.7,Functional modifier,34,Long-term persistence,False,True,0.0,0.2182154545454545,er_pan_result.xlsx::raw_row_331
+Panmictic,0.7,Functional modifier,35,Long-term persistence,False,True,0.256771645627876,0.1554668181818182,er_pan_result.xlsx::raw_row_332
+Panmictic,0.7,Functional modifier,36,Long-term persistence,False,True,0.136236379253122,0.2297654545454545,er_pan_result.xlsx::raw_row_333
+Panmictic,0.7,Functional modifier,37,Long-term persistence,False,True,0.0643321174056541,0.2024985454545454,er_pan_result.xlsx::raw_row_334
+Panmictic,0.7,Functional modifier,38,Long-term persistence,False,True,0.110561370535174,0.0695901818181818,er_pan_result.xlsx::raw_row_335
+Panmictic,0.7,Functional modifier,39,Long-term persistence,False,True,0.205670998513872,0.1803486363636363,er_pan_result.xlsx::raw_row_336
+Panmictic,0.7,Functional modifier,40,Long-term persistence,False,True,0.153793255174227,0.2242163636363636,er_pan_result.xlsx::raw_row_337
+Panmictic,0.7,Functional modifier,41,Long-term persistence,False,True,0.0816905514517422,0.1934838181818182,er_pan_result.xlsx::raw_row_338
+Panmictic,0.7,Functional modifier,42,Long-term persistence,False,True,0.215974119132149,0.1432015454545454,er_pan_result.xlsx::raw_row_339
+Panmictic,0.7,Functional modifier,43,Long-term persistence,False,True,0.070184681559303,0.1963099090909091,er_pan_result.xlsx::raw_row_340
+Panmictic,0.7,Functional modifier,44,Long-term persistence,False,True,0.0246063385450361,0.160329909090909,er_pan_result.xlsx::raw_row_341
+Panmictic,0.7,Functional modifier,45,Long-term persistence,False,True,0.1521467089296,0.1453861818181818,er_pan_result.xlsx::raw_row_342
+Panmictic,0.7,Functional modifier,46,Long-term persistence,False,True,0.247707784483892,0.1792553636363636,er_pan_result.xlsx::raw_row_343
+Panmictic,0.7,Functional modifier,47,Long-term persistence,False,True,0.103466918274161,0.1485571818181818,er_pan_result.xlsx::raw_row_344
+Panmictic,0.7,Functional modifier,48,Long-term persistence,False,True,0.235141474030243,0.1342071818181818,er_pan_result.xlsx::raw_row_345
+Panmictic,0.7,Functional modifier,49,Long-term persistence,False,True,0.0,0.1953146363636363,er_pan_result.xlsx::raw_row_346
+Panmictic,0.7,Functional modifier,50,Long-term persistence,False,True,0.12892664821282,0.0767906363636363,er_pan_result.xlsx::raw_row_347
+Panmictic,0.7,Functional modifier,51,Long-term persistence,False,True,0.177265622674556,0.2059832727272727,er_pan_result.xlsx::raw_row_348
+Panmictic,0.7,Functional modifier,52,Long-term persistence,False,True,0.0940780642038133,0.2219108181818181,er_pan_result.xlsx::raw_row_349
+Panmictic,0.7,Functional modifier,53,Long-term persistence,False,True,0.193508648053911,0.220367,er_pan_result.xlsx::raw_row_350
+Panmictic,0.7,Functional modifier,54,Long-term persistence,False,True,0.174785144393754,0.2130806363636363,er_pan_result.xlsx::raw_row_351
+Panmictic,0.7,Functional modifier,55,Long-term persistence,False,True,0.2187825312952,0.2134662727272727,er_pan_result.xlsx::raw_row_352
+Panmictic,0.7,Functional modifier,56,Long-term persistence,False,True,0.0,0.2253471818181818,er_pan_result.xlsx::raw_row_353
+Panmictic,0.7,Functional modifier,57,Long-term persistence,False,True,0.223680252662721,0.260827,er_pan_result.xlsx::raw_row_354
+Panmictic,0.7,Functional modifier,58,Long-term persistence,False,True,0.0402592133011176,0.1940304545454545,er_pan_result.xlsx::raw_row_355
+Panmictic,0.7,Functional modifier,59,Long-term persistence,False,True,0.188503048015187,0.2250022727272727,er_pan_result.xlsx::raw_row_356
+Panmictic,0.7,Functional modifier,60,Long-term persistence,False,True,0.0471662087047994,0.2357854545454545,er_pan_result.xlsx::raw_row_357
+Panmictic,0.7,Functional modifier,61,Long-term persistence,False,True,0.108317732775608,0.2162879090909091,er_pan_result.xlsx::raw_row_358
+Panmictic,0.7,Functional modifier,62,Long-term persistence,False,True,0.355298399079552,0.2953261818181818,er_pan_result.xlsx::raw_row_359
+Panmictic,0.7,Functional modifier,63,Long-term persistence,False,True,0.04448496828547,0.2391518181818182,er_pan_result.xlsx::raw_row_360
+Panmictic,0.7,Functional modifier,64,Long-term persistence,False,True,0.183968862261669,0.2398276363636363,er_pan_result.xlsx::raw_row_361
+Panmictic,0.7,Functional modifier,65,Long-term persistence,False,True,0.209126069099276,0.2523321818181818,er_pan_result.xlsx::raw_row_362
+Panmictic,0.7,Functional modifier,66,Long-term persistence,False,True,0.0,0.2123354545454545,er_pan_result.xlsx::raw_row_363
+Panmictic,0.7,Functional modifier,67,Long-term persistence,False,True,0.171608028402366,0.2459672727272727,er_pan_result.xlsx::raw_row_364
+Panmictic,0.7,Functional modifier,68,Long-term persistence,False,True,0.15716791289875,0.2554917272727273,er_pan_result.xlsx::raw_row_365
+Panmictic,0.7,Functional modifier,69,Long-term persistence,False,True,0.0610581116528599,0.1569279090909091,er_pan_result.xlsx::raw_row_366
+Panmictic,0.7,Functional modifier,70,Long-term persistence,False,True,0.0,0.2575013636363636,er_pan_result.xlsx::raw_row_367
+Panmictic,0.7,Functional modifier,71,Long-term persistence,False,True,0.191203036357659,0.136255,er_pan_result.xlsx::raw_row_368
+Panmictic,0.7,Functional modifier,72,Long-term persistence,False,True,0.131321561869165,0.2592704545454545,er_pan_result.xlsx::raw_row_369
+Panmictic,0.7,Functional modifier,73,Long-term persistence,False,True,0.224429035502958,0.2406886363636363,er_pan_result.xlsx::raw_row_370
+Panmictic,0.7,Functional modifier,74,Long-term persistence,False,True,0.199421339677054,0.219646,er_pan_result.xlsx::raw_row_371
+Panmictic,0.7,Functional modifier,75,Long-term persistence,False,True,0.063523704156476,0.2467748181818181,er_pan_result.xlsx::raw_row_372
+Panmictic,0.7,Functional modifier,76,Long-term persistence,False,True,0.066322773547666,0.2580925454545454,er_pan_result.xlsx::raw_row_373
+Panmictic,0.7,Functional modifier,77,Long-term persistence,False,True,0.0694190703293885,0.2668285454545455,er_pan_result.xlsx::raw_row_374
+Panmictic,0.7,Functional modifier,78,Long-term persistence,False,True,0.0642713945897435,0.1554827272727273,er_pan_result.xlsx::raw_row_375
+Panmictic,0.7,Functional modifier,79,Long-term persistence,False,True,0.292767501643655,0.4225639090909091,er_pan_result.xlsx::raw_row_376
+Panmictic,0.7,Functional modifier,80,Long-term persistence,False,True,0.0591274797572649,0.2087158181818182,er_pan_result.xlsx::raw_row_377
+Panmictic,0.7,Functional modifier,81,Long-term persistence,False,True,0.297305525969756,0.2457763636363636,er_pan_result.xlsx::raw_row_378
+Panmictic,0.7,Functional modifier,82,Long-term persistence,False,True,0.308322784352399,0.2871762727272727,er_pan_result.xlsx::raw_row_379
+Panmictic,0.7,Functional modifier,83,Long-term persistence,False,True,0.334956913872452,0.2366178181818182,er_pan_result.xlsx::raw_row_380
+Panmictic,0.7,Functional modifier,84,Long-term persistence,False,True,0.151925688522682,0.1980395454545454,er_pan_result.xlsx::raw_row_381
+Panmictic,0.7,Functional modifier,85,Long-term persistence,False,True,0.299231396449704,0.296275,er_pan_result.xlsx::raw_row_382
+Panmictic,0.7,Functional modifier,86,Long-term persistence,False,True,0.217826374753451,0.2307772727272727,er_pan_result.xlsx::raw_row_383
+Panmictic,0.7,Functional modifier,87,Long-term persistence,False,True,0.133879217587179,0.1241087272727272,er_pan_result.xlsx::raw_row_384
+Panmictic,0.7,Functional modifier,88,Long-term persistence,False,True,0.214376842412886,0.1332691818181818,er_pan_result.xlsx::raw_row_385
+Panmictic,0.7,Functional modifier,89,Long-term persistence,False,True,0.126509980138724,0.208607,er_pan_result.xlsx::raw_row_386
+Panmictic,0.7,Functional modifier,90,Long-term persistence,False,True,0.116754466819783,0.2861625454545454,er_pan_result.xlsx::raw_row_387
+Panmictic,0.7,Functional modifier,91,Long-term persistence,False,True,0.133435555261012,0.2446067272727272,er_pan_result.xlsx::raw_row_388
+Panmictic,0.7,Functional modifier,92,Long-term persistence,False,True,0.367041973044049,0.284746,er_pan_result.xlsx::raw_row_389
+Panmictic,0.7,Functional modifier,93,Long-term persistence,False,True,0.0385555988494411,0.2100286363636363,er_pan_result.xlsx::raw_row_390
+Panmictic,0.7,Functional modifier,94,Long-term persistence,False,True,0.0136676022090729,0.2031024545454545,er_pan_result.xlsx::raw_row_391
+Panmictic,0.7,Functional modifier,95,Long-term persistence,False,True,0.0,0.2227775454545454,er_pan_result.xlsx::raw_row_392
+Panmictic,0.7,Functional modifier,96,Long-term persistence,False,True,0.112946261802195,0.2937047272727273,er_pan_result.xlsx::raw_row_393
+Panmictic,0.7,Functional modifier,97,Long-term persistence,False,True,0.000229180017094,0.2079260909090909,er_pan_result.xlsx::raw_row_394
+Panmictic,0.7,Functional modifier,98,Long-term persistence,False,True,0.0532778136791124,0.238973,er_pan_result.xlsx::raw_row_395
+Panmictic,0.7,Functional modifier,99,Long-term persistence,False,True,0.322628861275476,0.2624949090909091,er_pan_result.xlsx::raw_row_396
+Panmictic,0.7,Functional modifier,100,Long-term persistence,False,True,0.0662776214733728,0.2219680909090909,er_pan_result.xlsx::raw_row_397
+Panmictic,0.85,Neutral control,100,Long-term persistence,False,True,0.480606673241288,0.9995338181818182,er_pan_result.xlsx::raw_row_398
+Spatial,0.85,Neutral control,1,Long-term persistence,False,True,0.360939489151873,0.3802928181818182,er_results.xlsx::raw_row_2
+Spatial,0.85,Neutral control,2,Long-term persistence,False,True,0.202104450230111,0.3677513636363636,er_results.xlsx::raw_row_3
+Spatial,0.85,Neutral control,3,Long-term persistence,False,True,0.384878884944115,0.3987581818181818,er_results.xlsx::raw_row_4
+Spatial,0.85,Neutral control,4,Long-term persistence,False,True,0.462090445759368,0.3749607272727273,er_results.xlsx::raw_row_5
+Spatial,0.85,Neutral control,5,Long-term persistence,False,True,0.575340138067061,0.3462492727272727,er_results.xlsx::raw_row_6
+Spatial,0.85,Neutral control,6,Long-term persistence,False,True,0.333463433925049,0.4157401818181818,er_results.xlsx::raw_row_7
+Spatial,0.85,Neutral control,7,Long-term persistence,False,True,0.320845109796186,0.3724642727272727,er_results.xlsx::raw_row_8
+Spatial,0.85,Neutral control,8,Long-term persistence,False,True,0.411318182117028,0.3791021818181818,er_results.xlsx::raw_row_9
+Spatial,0.85,Neutral control,9,Long-term persistence,False,True,0.435678174227481,0.3856764545454546,er_results.xlsx::raw_row_10
+Spatial,0.85,Neutral control,10,Long-term persistence,False,True,0.545553518737672,0.3988593636363636,er_results.xlsx::raw_row_11
+Spatial,0.85,Neutral control,11,Long-term persistence,False,True,0.341989280078895,0.3577254545454545,er_results.xlsx::raw_row_12
+Spatial,0.85,Neutral control,12,Long-term persistence,False,True,0.542109813280736,0.3489366363636363,er_results.xlsx::raw_row_13
+Spatial,0.85,Neutral control,13,Long-term persistence,False,True,0.59418609598948,0.3875390909090909,er_results.xlsx::raw_row_14
+Spatial,0.85,Neutral control,14,Long-term persistence,False,True,0.411305975673898,0.3968096363636363,er_results.xlsx::raw_row_15
+Spatial,0.85,Neutral control,15,Long-term persistence,False,True,0.343774005259697,0.362383,er_results.xlsx::raw_row_16
+Spatial,0.85,Neutral control,16,Long-term persistence,False,True,0.236598124326101,0.3992106363636364,er_results.xlsx::raw_row_17
+Spatial,0.85,Neutral control,17,Long-term persistence,False,True,0.622024834319526,0.408429,er_results.xlsx::raw_row_18
+Spatial,0.85,Neutral control,18,Long-term persistence,False,True,0.538409616699539,0.3309326363636363,er_results.xlsx::raw_row_19
+Spatial,0.85,Neutral control,19,Long-term persistence,False,True,0.31410995529257,0.3998317272727272,er_results.xlsx::raw_row_20
+Spatial,0.85,Neutral control,20,Long-term persistence,False,True,0.313514166337935,0.3548828181818181,er_results.xlsx::raw_row_21
+Spatial,0.85,Neutral control,21,Long-term persistence,False,True,0.368992322813938,0.3951398181818182,er_results.xlsx::raw_row_22
+Spatial,0.85,Neutral control,22,Long-term persistence,False,True,0.375027063773833,0.3527274545454545,er_results.xlsx::raw_row_23
+Spatial,0.85,Neutral control,23,Long-term persistence,False,True,0.460402496383957,0.3452902727272727,er_results.xlsx::raw_row_24
+Spatial,0.85,Neutral control,24,Long-term persistence,False,True,0.36972054503616,0.3778351818181818,er_results.xlsx::raw_row_25
+Spatial,0.85,Neutral control,25,Long-term persistence,False,True,0.333007223537146,0.3616785454545455,er_results.xlsx::raw_row_26
+Spatial,0.85,Neutral control,26,Long-term persistence,False,True,0.346993725838264,0.3395591818181818,er_results.xlsx::raw_row_27
+Spatial,0.85,Neutral control,27,Long-term persistence,False,True,0.516169967784352,0.3777709090909091,er_results.xlsx::raw_row_28
+Spatial,0.85,Neutral control,28,Long-term persistence,False,True,0.413901353057199,0.4093122727272728,er_results.xlsx::raw_row_29
+Spatial,0.85,Neutral control,29,Long-term persistence,False,True,0.345015638395792,0.4146780909090909,er_results.xlsx::raw_row_30
+Spatial,0.85,Neutral control,30,Long-term persistence,False,True,0.338507704142011,0.3444464545454545,er_results.xlsx::raw_row_31
+Spatial,0.85,Neutral control,31,Long-term persistence,False,True,0.310064704142011,0.377825,er_results.xlsx::raw_row_32
+Spatial,0.85,Neutral control,32,Long-term persistence,False,True,0.613479675871137,0.3896804545454546,er_results.xlsx::raw_row_33
+Spatial,0.85,Neutral control,33,Long-term persistence,False,True,0.302000376725838,0.3618828181818181,er_results.xlsx::raw_row_34
+Spatial,0.85,Neutral control,34,Long-term persistence,False,True,0.443414449046679,0.383082,er_results.xlsx::raw_row_35
+Spatial,0.85,Neutral control,35,Long-term persistence,False,True,0.301843866535174,0.4058975454545455,er_results.xlsx::raw_row_36
+Spatial,0.85,Neutral control,36,Long-term persistence,False,True,0.48227278172255,0.3894354545454545,er_results.xlsx::raw_row_37
+Spatial,0.85,Neutral control,37,Long-term persistence,False,True,0.334369471400394,0.4039941818181818,er_results.xlsx::raw_row_38
+Spatial,0.85,Neutral control,38,Long-term persistence,False,True,0.301841840894148,0.4100727272727273,er_results.xlsx::raw_row_39
+Spatial,0.85,Neutral control,39,Long-term persistence,False,True,0.351899681130835,0.3832563636363637,er_results.xlsx::raw_row_40
+Spatial,0.85,Neutral control,40,Long-term persistence,False,True,0.329843550295858,0.3843311818181818,er_results.xlsx::raw_row_41
+Spatial,0.85,Neutral control,41,Long-term persistence,False,True,0.306203861932938,0.4038872727272727,er_results.xlsx::raw_row_42
+Spatial,0.85,Neutral control,42,Long-term persistence,False,True,0.352755433925049,0.4095846363636363,er_results.xlsx::raw_row_43
+Spatial,0.85,Neutral control,43,Long-term persistence,False,True,0.379942034188034,0.3839519090909091,er_results.xlsx::raw_row_44
+Spatial,0.85,Neutral control,44,Long-term persistence,False,True,0.329058616042077,0.411292,er_results.xlsx::raw_row_45
+Spatial,0.85,Neutral control,45,Long-term persistence,False,True,0.203410102235371,0.3422191818181818,er_results.xlsx::raw_row_46
+Spatial,0.85,Neutral control,46,Long-term persistence,False,True,0.454389029585798,0.3878566363636364,er_results.xlsx::raw_row_47
+Spatial,0.85,Neutral control,47,Long-term persistence,False,True,0.381908986850756,0.3769786363636364,er_results.xlsx::raw_row_48
+Spatial,0.85,Neutral control,48,Long-term persistence,False,True,0.433059001314924,0.3504149090909091,er_results.xlsx::raw_row_49
+Spatial,0.85,Neutral control,49,Long-term persistence,False,True,0.512132197896121,0.3826607272727272,er_results.xlsx::raw_row_50
+Spatial,0.85,Neutral control,50,Long-term persistence,False,True,0.445089626561472,0.424627,er_results.xlsx::raw_row_51
+Spatial,0.85,Neutral control,51,Long-term persistence,False,True,0.454508854043392,0.39046,er_results.xlsx::raw_row_52
+Spatial,0.85,Neutral control,52,Long-term persistence,False,True,0.501892596318211,0.3945817272727273,er_results.xlsx::raw_row_53
+Spatial,0.85,Neutral control,53,Long-term persistence,False,True,0.483538639053254,0.3812976363636363,er_results.xlsx::raw_row_54
+Spatial,0.85,Neutral control,54,Long-term persistence,False,True,0.37889402695595,0.2927972727272727,er_results.xlsx::raw_row_55
+Spatial,0.85,Neutral control,55,Long-term persistence,False,True,0.236668777317554,0.4096272727272727,er_results.xlsx::raw_row_56
+Spatial,0.85,Neutral control,56,Long-term persistence,False,True,0.326525846153846,0.3977272727272727,er_results.xlsx::raw_row_57
+Spatial,0.85,Neutral control,57,Long-term persistence,False,True,0.59998256607495,0.3711355454545454,er_results.xlsx::raw_row_58
+Spatial,0.85,Neutral control,58,Long-term persistence,False,True,0.487997208415516,0.4037485454545454,er_results.xlsx::raw_row_59
+Spatial,0.85,Neutral control,59,Long-term persistence,False,True,0.380267397107166,0.3707670909090909,er_results.xlsx::raw_row_60
+Spatial,0.85,Neutral control,60,Long-term persistence,False,True,0.389017259697567,0.3439055454545454,er_results.xlsx::raw_row_61
+Spatial,0.85,Neutral control,61,Long-term persistence,False,True,0.433245251808021,0.4446635454545454,er_results.xlsx::raw_row_62
+Spatial,0.85,Neutral control,62,Long-term persistence,False,True,0.154786067845364,0.3820269090909091,er_results.xlsx::raw_row_63
+Spatial,0.85,Neutral control,63,Long-term persistence,False,True,0.431403066403681,0.3301906363636364,er_results.xlsx::raw_row_64
+Spatial,0.85,Neutral control,64,Long-term persistence,False,True,0.245330882182774,0.364952,er_results.xlsx::raw_row_65
+Spatial,0.85,Neutral control,65,Long-term persistence,False,True,0.436481217619986,0.394219,er_results.xlsx::raw_row_66
+Spatial,0.85,Neutral control,66,Long-term persistence,False,True,0.321715087442472,0.4302728181818182,er_results.xlsx::raw_row_67
+Spatial,0.85,Neutral control,67,Long-term persistence,False,True,0.629269397107166,0.3745941818181818,er_results.xlsx::raw_row_68
+Spatial,0.85,Neutral control,68,Long-term persistence,False,True,0.316656122287968,0.4090462727272727,er_results.xlsx::raw_row_69
+Spatial,0.85,Neutral control,69,Long-term persistence,False,True,0.548442675871137,0.3533434545454545,er_results.xlsx::raw_row_70
+Spatial,0.85,Neutral control,70,Long-term persistence,False,True,0.313608431952662,0.4022117272727273,er_results.xlsx::raw_row_71
+Spatial,0.85,Neutral control,71,Long-term persistence,False,True,0.368133354372123,0.3822114545454546,er_results.xlsx::raw_row_72
+Spatial,0.85,Neutral control,72,Long-term persistence,False,True,0.3877928086785,0.3872864545454546,er_results.xlsx::raw_row_73
+Spatial,0.85,Neutral control,73,Long-term persistence,False,True,0.38363949112426,0.3455645454545454,er_results.xlsx::raw_row_74
+Spatial,0.85,Neutral control,74,Long-term persistence,False,True,0.34771535042735,0.3885540909090909,er_results.xlsx::raw_row_75
+Spatial,0.85,Neutral control,75,Long-term persistence,False,True,0.382925791584483,0.3764396363636363,er_results.xlsx::raw_row_76
+Spatial,0.85,Neutral control,76,Long-term persistence,False,True,0.461604434582511,0.4182111818181818,er_results.xlsx::raw_row_77
+Spatial,0.85,Neutral control,77,Long-term persistence,False,True,0.396533857988165,0.3840607272727273,er_results.xlsx::raw_row_78
+Spatial,0.85,Neutral control,78,Long-term persistence,False,True,0.329043487179487,0.3883574545454545,er_results.xlsx::raw_row_79
+Spatial,0.85,Neutral control,79,Long-term persistence,False,True,0.393939545693622,0.3482239090909091,er_results.xlsx::raw_row_80
+Spatial,0.85,Neutral control,80,Long-term persistence,False,True,0.376484616042077,0.335188,er_results.xlsx::raw_row_81
+Spatial,0.85,Neutral control,81,Long-term persistence,False,True,0.402960552925706,0.3714193636363636,er_results.xlsx::raw_row_82
+Spatial,0.85,Neutral control,82,Long-term persistence,False,True,0.460987773833004,0.3774724545454546,er_results.xlsx::raw_row_83
+Spatial,0.85,Neutral control,83,Long-term persistence,False,True,0.448245390532544,0.3578921818181818,er_results.xlsx::raw_row_84
+Spatial,0.85,Neutral control,84,Long-term persistence,False,True,0.419645904010519,0.4372212727272727,er_results.xlsx::raw_row_85
+Spatial,0.85,Neutral control,85,Long-term persistence,False,True,0.330603,0.388661,er_results.xlsx::raw_row_86
+Spatial,0.85,Neutral control,86,Long-term persistence,False,True,0.332189527284681,0.3950424545454545,er_results.xlsx::raw_row_87
+Spatial,0.85,Neutral control,87,Long-term persistence,False,True,0.452872568704799,0.3924492727272727,er_results.xlsx::raw_row_88
+Spatial,0.85,Neutral control,88,Long-term persistence,False,True,0.406215403681788,0.3408541818181818,er_results.xlsx::raw_row_89
+Spatial,0.85,Neutral control,89,Long-term persistence,False,True,0.418605596318211,0.3839837272727273,er_results.xlsx::raw_row_90
+Spatial,0.85,Neutral control,90,Long-term persistence,False,True,0.364352391190006,0.3597459090909091,er_results.xlsx::raw_row_91
+Spatial,0.85,Neutral control,91,Long-term persistence,False,True,0.461875307034845,0.3418672727272727,er_results.xlsx::raw_row_92
+Spatial,0.85,Neutral control,92,Long-term persistence,False,True,0.398138051282051,0.3900851818181818,er_results.xlsx::raw_row_93
+Spatial,0.85,Neutral control,93,Long-term persistence,False,True,0.338656546351084,0.3792886363636363,er_results.xlsx::raw_row_94
+Spatial,0.85,Neutral control,94,Long-term persistence,False,True,0.230745498356344,0.3872317272727272,er_results.xlsx::raw_row_95
+Spatial,0.85,Neutral control,95,Long-term persistence,False,True,0.446321081525312,0.3992392727272728,er_results.xlsx::raw_row_96
+Spatial,0.7,Neutral control,1,Long-term persistence,False,True,0.471868873767258,0.4932454545454545,er_results.xlsx::raw_row_97
+Spatial,0.85,Neutral control,96,Long-term persistence,False,True,0.266829873767258,0.3950112727272727,er_results.xlsx::raw_row_98
+Spatial,0.7,Neutral control,2,Long-term persistence,False,True,0.366384370808678,0.5249077272727273,er_results.xlsx::raw_row_99
+Spatial,0.7,Neutral control,3,Long-term persistence,False,True,0.394377129520052,0.5231303636363637,er_results.xlsx::raw_row_100
+Spatial,0.7,Neutral control,4,Long-term persistence,False,True,0.289631819855358,0.506518090909091,er_results.xlsx::raw_row_101
+Spatial,0.85,Neutral control,97,Long-term persistence,False,True,0.314483602892833,0.3898637272727273,er_results.xlsx::raw_row_102
+Spatial,0.7,Neutral control,5,Long-term persistence,False,True,0.460336670611439,0.5093219090909091,er_results.xlsx::raw_row_103
+Spatial,0.7,Neutral control,6,Long-term persistence,False,True,0.359080312294543,0.4756958181818182,er_results.xlsx::raw_row_104
+Spatial,0.7,Neutral control,7,Long-term persistence,False,True,0.400078366206443,0.4954052727272727,er_results.xlsx::raw_row_105
+Spatial,0.7,Neutral control,8,Long-term persistence,False,True,0.389191003287311,0.5074891818181818,er_results.xlsx::raw_row_106
+Spatial,0.7,Neutral control,9,Long-term persistence,False,True,0.445719057856673,0.4966926363636363,er_results.xlsx::raw_row_107
+Spatial,0.7,Neutral control,10,Long-term persistence,False,True,0.305092195266272,0.4906809090909091,er_results.xlsx::raw_row_108
+Spatial,0.7,Neutral control,11,Long-term persistence,False,True,0.47571314398422,0.4972876363636364,er_results.xlsx::raw_row_109
+Spatial,0.7,Neutral control,12,Long-term persistence,False,True,0.478448561472715,0.4981753636363636,er_results.xlsx::raw_row_110
+Spatial,0.7,Neutral control,13,Long-term persistence,False,True,0.316717362919132,0.5004217272727273,er_results.xlsx::raw_row_111
+Spatial,0.7,Neutral control,14,Long-term persistence,False,True,0.451102065088757,0.5083546363636364,er_results.xlsx::raw_row_112
+Spatial,0.7,Neutral control,15,Long-term persistence,False,True,0.427203811308349,0.5109662727272728,er_results.xlsx::raw_row_113
+Spatial,0.85,Neutral control,98,Long-term persistence,False,True,0.369346184746877,0.331297909090909,er_results.xlsx::raw_row_114
+Spatial,0.7,Neutral control,16,Long-term persistence,False,True,0.422885394477317,0.4920484545454545,er_results.xlsx::raw_row_115
+Spatial,0.7,Neutral control,17,Long-term persistence,False,True,0.446324437869822,0.4913274545454545,er_results.xlsx::raw_row_116
+Spatial,0.7,Neutral control,18,Long-term persistence,False,True,0.459254834319526,0.500717,er_results.xlsx::raw_row_117
+Spatial,0.7,Neutral control,19,Long-term persistence,False,True,0.455321191978961,0.5225932727272727,er_results.xlsx::raw_row_118
+Spatial,0.7,Neutral control,20,Long-term persistence,False,True,0.34802767981591,0.480291,er_results.xlsx::raw_row_119
+Spatial,0.7,Neutral control,21,Long-term persistence,False,True,0.375934252465483,0.4984795454545455,er_results.xlsx::raw_row_120
+Spatial,0.7,Neutral control,22,Long-term persistence,False,True,0.342910339907955,0.4628349090909091,er_results.xlsx::raw_row_121
+Spatial,0.85,Neutral control,99,Long-term persistence,False,True,0.473791725180802,0.3186966363636364,er_results.xlsx::raw_row_122
+Spatial,0.7,Neutral control,23,Long-term persistence,False,True,0.398000417488494,0.4793485454545454,er_results.xlsx::raw_row_123
+Spatial,0.7,Neutral control,24,Long-term persistence,False,True,0.516764036817883,0.5200802727272728,er_results.xlsx::raw_row_124
+Spatial,0.7,Neutral control,25,Long-term persistence,False,True,0.430519430637738,0.4983630909090909,er_results.xlsx::raw_row_125
+Spatial,0.7,Neutral control,26,Long-term persistence,False,True,0.451953157133464,0.4861226363636363,er_results.xlsx::raw_row_126
+Spatial,0.85,Neutral control,100,Long-term persistence,False,True,0.422067460223537,0.4217309090909091,er_results.xlsx::raw_row_127
+Spatial,0.7,Neutral control,27,Long-term persistence,False,True,0.372942698224852,0.5173362727272727,er_results.xlsx::raw_row_128
+Spatial,0.7,Neutral control,28,Long-term persistence,False,True,0.489583037475345,0.4920000909090909,er_results.xlsx::raw_row_129
+Spatial,0.7,Neutral control,29,Long-term persistence,False,True,0.373986614727153,0.5050684545454546,er_results.xlsx::raw_row_130
+Spatial,0.7,Neutral control,30,Long-term persistence,False,True,0.382088203155818,0.4996377272727272,er_results.xlsx::raw_row_131
+Spatial,0.7,Neutral control,31,Long-term persistence,False,True,0.351634130834976,0.5191378181818183,er_results.xlsx::raw_row_132
+Spatial,0.7,Neutral control,32,Long-term persistence,False,True,0.390702181459566,0.4835714545454545,er_results.xlsx::raw_row_133
+Spatial,0.7,Neutral control,33,Long-term persistence,False,True,0.396695010519395,0.5132126363636365,er_results.xlsx::raw_row_134
+Spatial,0.7,Neutral control,34,Long-term persistence,False,True,0.512875698224852,0.4957228181818182,er_results.xlsx::raw_row_135
+Spatial,0.7,Neutral control,35,Long-term persistence,False,True,0.416453681130835,0.478149,er_results.xlsx::raw_row_136
+Spatial,0.7,Neutral control,36,Long-term persistence,False,True,0.341076617357002,0.4889449090909091,er_results.xlsx::raw_row_137
+Spatial,0.7,Neutral control,37,Long-term persistence,False,True,0.315319925049309,0.4981110909090909,er_results.xlsx::raw_row_138
+Spatial,0.7,Neutral control,38,Long-term persistence,False,True,0.315963582511505,0.4968689090909091,er_results.xlsx::raw_row_139
+Spatial,0.7,Neutral control,39,Long-term persistence,False,True,0.470471641683103,0.5080727272727273,er_results.xlsx::raw_row_140
+Spatial,0.7,Neutral control,40,Long-term persistence,False,True,0.502829039447731,0.4882951818181818,er_results.xlsx::raw_row_141
+Spatial,0.7,Neutral control,41,Long-term persistence,False,True,0.31219504799474,0.5181018181818182,er_results.xlsx::raw_row_142
+Spatial,0.7,Neutral control,42,Long-term persistence,False,True,0.328368339907955,0.5263039090909091,er_results.xlsx::raw_row_143
+Spatial,0.7,Neutral control,43,Long-term persistence,False,True,0.456137701512163,0.4992266363636363,er_results.xlsx::raw_row_144
+Spatial,0.7,Neutral control,44,Long-term persistence,False,True,0.406168224194608,0.5055940909090909,er_results.xlsx::raw_row_145
+Spatial,0.7,Neutral control,45,Long-term persistence,False,True,0.359218715318869,0.5031192727272727,er_results.xlsx::raw_row_146
+Spatial,0.7,Neutral control,46,Long-term persistence,False,True,0.459447071663379,0.5194464545454546,er_results.xlsx::raw_row_147
+Spatial,0.7,Neutral control,47,Long-term persistence,False,True,0.419761213675213,0.5101765454545455,er_results.xlsx::raw_row_148
+Spatial,0.7,Neutral control,48,Long-term persistence,False,True,0.331410166995397,0.5098831818181818,er_results.xlsx::raw_row_149
+Spatial,0.7,Neutral control,49,Long-term persistence,False,True,0.515922416831032,0.5019089090909091,er_results.xlsx::raw_row_150
+Spatial,0.7,Neutral control,50,Long-term persistence,False,True,0.407518332018408,0.5008461818181819,er_results.xlsx::raw_row_151
+Spatial,0.7,Neutral control,51,Long-term persistence,False,True,0.417094397764628,0.4989256363636364,er_results.xlsx::raw_row_152
+Spatial,0.7,Neutral control,52,Long-term persistence,False,True,0.324294012491781,0.4927395454545454,er_results.xlsx::raw_row_153
+Spatial,0.7,Neutral control,53,Long-term persistence,False,True,0.410145088757396,0.4923475454545455,er_results.xlsx::raw_row_154
+Spatial,0.7,Neutral control,54,Long-term persistence,False,True,0.502121748849441,0.5070723636363637,er_results.xlsx::raw_row_155
+Spatial,0.7,Neutral control,55,Long-term persistence,False,True,0.455486279421433,0.5230011818181819,er_results.xlsx::raw_row_156
+Spatial,0.7,Neutral control,56,Long-term persistence,False,True,0.278412667324128,0.5157504545454545,er_results.xlsx::raw_row_157
+Spatial,0.7,Neutral control,57,Long-term persistence,False,True,0.37994584746877,0.4861792727272727,er_results.xlsx::raw_row_158
+Spatial,0.7,Neutral control,58,Long-term persistence,False,True,0.288475105851413,0.5107874545454546,er_results.xlsx::raw_row_159
+Spatial,0.7,Neutral control,59,Long-term persistence,False,True,0.371684352399736,0.4923844545454546,er_results.xlsx::raw_row_160
+Spatial,0.7,Neutral control,60,Long-term persistence,False,True,0.375526894806048,0.4947676363636364,er_results.xlsx::raw_row_161
+Spatial,0.7,Neutral control,61,Long-term persistence,False,True,0.493352472057856,0.4913624545454546,er_results.xlsx::raw_row_162
+Spatial,0.7,Neutral control,62,Long-term persistence,False,True,0.464499143326758,0.5130478181818182,er_results.xlsx::raw_row_163
+Spatial,0.7,Neutral control,63,Long-term persistence,False,True,0.41423914398422,0.5112819090909091,er_results.xlsx::raw_row_164
+Spatial,0.7,Neutral control,64,Long-term persistence,False,True,0.464602214990138,0.4978762727272727,er_results.xlsx::raw_row_165
+Spatial,0.7,Neutral control,65,Long-term persistence,False,True,0.322073305719921,0.4913350909090909,er_results.xlsx::raw_row_166
+Spatial,0.7,Neutral control,66,Long-term persistence,False,True,0.411223668639053,0.4742862727272727,er_results.xlsx::raw_row_167
+Spatial,0.7,Neutral control,67,Long-term persistence,False,True,0.339783543063773,0.5066523636363637,er_results.xlsx::raw_row_168
+Spatial,0.7,Neutral control,68,Long-term persistence,False,True,0.329791017094017,0.5168036363636364,er_results.xlsx::raw_row_169
+Spatial,0.7,Neutral control,69,Long-term persistence,False,True,0.407671639710716,0.5346269090909092,er_results.xlsx::raw_row_170
+Spatial,0.7,Neutral control,70,Long-term persistence,False,True,0.371926276134122,0.5067866363636364,er_results.xlsx::raw_row_171
+Spatial,0.7,Neutral control,71,Long-term persistence,False,True,0.415972518737672,0.4607508181818182,er_results.xlsx::raw_row_172
+Spatial,0.7,Neutral control,72,Long-term persistence,False,True,0.473477345167652,0.5007316363636364,er_results.xlsx::raw_row_173
+Spatial,0.7,Neutral control,73,Long-term persistence,False,True,0.408524593688362,0.4999240909090909,er_results.xlsx::raw_row_174
+Spatial,0.7,Neutral control,74,Long-term persistence,False,True,0.471225337935568,0.4902666363636364,er_results.xlsx::raw_row_175
+Spatial,0.7,Neutral control,75,Long-term persistence,False,True,0.438116243261012,0.4639154545454546,er_results.xlsx::raw_row_176
+Spatial,0.7,Neutral control,76,Long-term persistence,False,True,0.439623260355029,0.524958,er_results.xlsx::raw_row_177
+Spatial,0.7,Neutral control,77,Long-term persistence,False,True,0.373194445101906,0.5055272727272727,er_results.xlsx::raw_row_178
+Spatial,0.7,Neutral control,78,Long-term persistence,False,True,0.434176375410913,0.5023002727272727,er_results.xlsx::raw_row_179
+Spatial,0.7,Neutral control,79,Long-term persistence,False,True,0.428668834319526,0.5029442727272727,er_results.xlsx::raw_row_180
+Spatial,0.7,Neutral control,80,Long-term persistence,False,True,0.371479865877712,0.4989084545454545,er_results.xlsx::raw_row_181
+Spatial,0.7,Neutral control,81,Long-term persistence,False,True,0.369495024326101,0.5162716363636364,er_results.xlsx::raw_row_182
+Spatial,0.7,Neutral control,82,Long-term persistence,False,True,0.373161756081525,0.5188279090909091,er_results.xlsx::raw_row_183
+Spatial,0.7,Neutral control,83,Long-term persistence,False,True,0.41791923076923,0.5053185454545455,er_results.xlsx::raw_row_184
+Spatial,0.7,Neutral control,84,Long-term persistence,False,True,0.414651518737672,0.5054750909090909,er_results.xlsx::raw_row_185
+Spatial,0.7,Neutral control,85,Long-term persistence,False,True,0.381517299145299,0.4812786363636364,er_results.xlsx::raw_row_186
+Spatial,0.7,Neutral control,86,Long-term persistence,False,True,0.461018103221564,0.4950177272727273,er_results.xlsx::raw_row_187
+Spatial,0.7,Neutral control,87,Long-term persistence,False,True,0.452275720578566,0.5128931818181819,er_results.xlsx::raw_row_188
+Spatial,0.7,Neutral control,88,Long-term persistence,False,True,0.433093103221564,0.5158828181818181,er_results.xlsx::raw_row_189
+Spatial,0.7,Neutral control,89,Long-term persistence,False,True,0.326952001314924,0.4976242727272728,er_results.xlsx::raw_row_190
+Spatial,0.7,Neutral control,90,Long-term persistence,False,True,0.480571397107166,0.4972068181818182,er_results.xlsx::raw_row_191
+Spatial,0.7,Neutral control,91,Long-term persistence,False,True,0.432981600920447,0.5181718181818182,er_results.xlsx::raw_row_192
+Spatial,0.7,Neutral control,92,Long-term persistence,False,True,0.32579620973044,0.4911963636363636,er_results.xlsx::raw_row_193
+Spatial,0.7,Neutral control,93,Long-term persistence,False,True,0.428437456936226,0.4832494545454546,er_results.xlsx::raw_row_194
+Spatial,0.7,Neutral control,94,Long-term persistence,False,True,0.501618507560815,0.5025866363636364,er_results.xlsx::raw_row_195
+Spatial,0.7,Neutral control,95,Long-term persistence,False,True,0.377436309007232,0.4968008181818182,er_results.xlsx::raw_row_196
+Spatial,0.7,Neutral control,96,Long-term persistence,False,True,0.415626488494411,0.5102840909090909,er_results.xlsx::raw_row_197
+Spatial,0.7,Neutral control,97,Long-term persistence,False,True,0.451389724523339,0.4927026363636363,er_results.xlsx::raw_row_198
+Spatial,0.7,Neutral control,98,Long-term persistence,False,True,0.403188070348454,0.5258234545454546,er_results.xlsx::raw_row_199
+Spatial,0.85,Functional modifier,1,Long-term persistence,False,True,0.350007903353057,0.3706207272727272,er_results.xlsx::raw_row_200
+Spatial,0.85,Functional modifier,2,Long-term persistence,False,True,0.363022195923734,0.3772312727272727,er_results.xlsx::raw_row_201
+Spatial,0.85,Functional modifier,3,Long-term persistence,False,True,0.412444536489151,0.3676527272727272,er_results.xlsx::raw_row_202
+Spatial,0.85,Functional modifier,4,Long-term persistence,False,True,0.331059114398422,0.3857617272727273,er_results.xlsx::raw_row_203
+Spatial,0.85,Functional modifier,5,Long-term persistence,False,True,0.361756006574622,0.3434454545454545,er_results.xlsx::raw_row_204
+Spatial,0.85,Functional modifier,6,Long-term persistence,False,True,0.388060729125575,0.3536756363636364,er_results.xlsx::raw_row_205
+Spatial,0.85,Functional modifier,7,Long-term persistence,False,True,0.319378032873109,0.3957889090909091,er_results.xlsx::raw_row_206
+Spatial,0.85,Functional modifier,8,Long-term persistence,False,True,0.426456107166337,0.3853671818181818,er_results.xlsx::raw_row_207
+Spatial,0.85,Functional modifier,9,Long-term persistence,False,True,0.437314662064431,0.4077913636363636,er_results.xlsx::raw_row_208
+Spatial,0.85,Functional modifier,10,Long-term persistence,False,True,0.385158856673241,0.4053025454545454,er_results.xlsx::raw_row_209
+Spatial,0.85,Functional modifier,11,Long-term persistence,False,True,0.389839082182774,0.3522641818181818,er_results.xlsx::raw_row_210
+Spatial,0.85,Functional modifier,12,Long-term persistence,False,True,0.330459535831689,0.3625630909090909,er_results.xlsx::raw_row_211
+Spatial,0.85,Functional modifier,13,Long-term persistence,False,True,0.500618627876397,0.4010949090909091,er_results.xlsx::raw_row_212
+Spatial,0.85,Functional modifier,14,Long-term persistence,False,True,0.434244226824457,0.4163606363636364,er_results.xlsx::raw_row_213
+Spatial,0.85,Functional modifier,15,Long-term persistence,False,True,0.445629851413543,0.3953491818181818,er_results.xlsx::raw_row_214
+Spatial,0.85,Functional modifier,16,Long-term persistence,False,True,0.478505768573307,0.4030784545454545,er_results.xlsx::raw_row_215
+Spatial,0.85,Functional modifier,17,Long-term persistence,False,True,0.45085077251808,0.4112086363636364,er_results.xlsx::raw_row_216
+Spatial,0.85,Functional modifier,18,Long-term persistence,False,True,0.294552044707429,0.3365593636363636,er_results.xlsx::raw_row_217
+Spatial,0.85,Functional modifier,19,Long-term persistence,False,True,0.41759457790927,0.3854721818181818,er_results.xlsx::raw_row_218
+Spatial,0.85,Functional modifier,20,Long-term persistence,False,True,0.488027027613412,0.3701905454545454,er_results.xlsx::raw_row_219
+Spatial,0.85,Functional modifier,21,Long-term persistence,False,True,0.499711066403681,0.4070996363636364,er_results.xlsx::raw_row_220
+Spatial,0.85,Functional modifier,22,Long-term persistence,False,True,0.563358244575936,0.4378449090909091,er_results.xlsx::raw_row_221
+Spatial,0.85,Functional modifier,23,Long-term persistence,False,True,0.42228132938856,0.418656,er_results.xlsx::raw_row_222
+Spatial,0.85,Functional modifier,24,Long-term persistence,False,True,0.574210011176857,0.4241993636363636,er_results.xlsx::raw_row_223
+Spatial,0.85,Functional modifier,25,Long-term persistence,False,True,0.56744787442472,0.442428,er_results.xlsx::raw_row_224
+Spatial,0.85,Functional modifier,26,Long-term persistence,False,True,0.443240128205128,0.3678862727272727,er_results.xlsx::raw_row_225
+Spatial,0.85,Functional modifier,27,Long-term persistence,False,True,0.576933439184746,0.3818525454545454,er_results.xlsx::raw_row_226
+Spatial,0.85,Functional modifier,28,Long-term persistence,False,True,0.477898705456936,0.3766719090909091,er_results.xlsx::raw_row_227
+Spatial,0.85,Functional modifier,29,Long-term persistence,False,True,0.541746952005259,0.4600991818181818,er_results.xlsx::raw_row_228
+Spatial,0.85,Functional modifier,30,Long-term persistence,False,True,0.490324829059829,0.4461850909090909,er_results.xlsx::raw_row_229
+Spatial,0.85,Functional modifier,31,Long-term persistence,False,True,0.447380462195923,0.416556,er_results.xlsx::raw_row_230
+Spatial,0.85,Functional modifier,32,Long-term persistence,False,True,0.504800153188691,0.4199535454545455,er_results.xlsx::raw_row_231
+Spatial,0.85,Functional modifier,33,Long-term persistence,False,True,0.507793380013149,0.3858896363636363,er_results.xlsx::raw_row_232
+Spatial,0.85,Functional modifier,34,Long-term persistence,False,True,0.535724195923734,0.3751484545454545,er_results.xlsx::raw_row_233
+Spatial,0.85,Functional modifier,35,Long-term persistence,False,True,0.490372353057199,0.4150694545454546,er_results.xlsx::raw_row_234
+Spatial,0.85,Functional modifier,36,Long-term persistence,False,True,0.428141765943458,0.375592,er_results.xlsx::raw_row_235
+Spatial,0.85,Functional modifier,37,Long-term persistence,False,True,0.485264076265614,0.4288989090909091,er_results.xlsx::raw_row_236
+Spatial,0.85,Functional modifier,38,Long-term persistence,False,True,0.38448128468113,0.3938397272727272,er_results.xlsx::raw_row_237
+Spatial,0.85,Functional modifier,39,Long-term persistence,False,True,0.422905279421433,0.4062513636363636,er_results.xlsx::raw_row_238
+Spatial,0.85,Functional modifier,40,Long-term persistence,False,True,0.516744049046679,0.4417789090909091,er_results.xlsx::raw_row_239
+Spatial,0.85,Functional modifier,41,Long-term persistence,False,True,0.569841578566732,0.3954739090909091,er_results.xlsx::raw_row_240
+Spatial,0.85,Functional modifier,42,Long-term persistence,False,True,0.447333069690992,0.4140754545454545,er_results.xlsx::raw_row_241
+Spatial,0.85,Functional modifier,43,Long-term persistence,False,True,0.530191197238658,0.4442581818181818,er_results.xlsx::raw_row_242
+Spatial,0.85,Functional modifier,44,Long-term persistence,False,True,0.435144992110453,0.3654585454545455,er_results.xlsx::raw_row_243
+Spatial,0.85,Functional modifier,45,Long-term persistence,False,True,0.471104557527942,0.3991947272727273,er_results.xlsx::raw_row_244
+Spatial,0.85,Functional modifier,46,Long-term persistence,False,True,0.431530030243261,0.390118909090909,er_results.xlsx::raw_row_245
+Spatial,0.85,Functional modifier,47,Long-term persistence,False,True,0.493752036817883,0.4311751818181818,er_results.xlsx::raw_row_246
+Spatial,0.85,Functional modifier,48,Long-term persistence,False,True,0.609745205785667,0.4166584545454545,er_results.xlsx::raw_row_247
+Spatial,0.85,Functional modifier,49,Long-term persistence,False,True,0.566273333990795,0.4133519090909091,er_results.xlsx::raw_row_248
+Spatial,0.85,Functional modifier,50,Long-term persistence,False,True,0.614740284681131,0.4438833636363636,er_results.xlsx::raw_row_249
+Spatial,0.85,Functional modifier,51,Long-term persistence,False,True,0.58394604799474,0.4124590909090909,er_results.xlsx::raw_row_250
+Spatial,0.85,Functional modifier,52,Long-term persistence,False,True,0.458338394477317,0.4207776363636364,er_results.xlsx::raw_row_251
+Spatial,0.85,Functional modifier,53,Long-term persistence,False,True,0.584154100591715,0.4721436363636364,er_results.xlsx::raw_row_252
+Spatial,0.85,Functional modifier,54,Long-term persistence,False,True,0.658112238658777,0.4145323636363636,er_results.xlsx::raw_row_253
+Spatial,0.85,Functional modifier,55,Long-term persistence,False,True,0.408133163050624,0.3766585454545454,er_results.xlsx::raw_row_254
+Spatial,0.85,Functional modifier,56,Long-term persistence,False,True,0.549139639053254,0.396634,er_results.xlsx::raw_row_255
+Spatial,0.85,Functional modifier,57,Long-term persistence,False,True,0.499964277449046,0.4282612727272727,er_results.xlsx::raw_row_256
+Spatial,0.85,Functional modifier,58,Long-term persistence,False,True,0.569077446416831,0.4073847272727273,er_results.xlsx::raw_row_257
+Spatial,0.85,Functional modifier,59,Long-term persistence,False,True,0.566077860618014,0.4432508181818181,er_results.xlsx::raw_row_258
+Spatial,0.85,Functional modifier,60,Long-term persistence,False,True,0.692150391190006,0.47964,er_results.xlsx::raw_row_259
+Spatial,0.85,Functional modifier,61,Long-term persistence,False,True,0.526873614069691,0.4152266363636364,er_results.xlsx::raw_row_260
+Spatial,0.85,Functional modifier,62,Long-term persistence,False,True,0.614940142669296,0.4170466363636363,er_results.xlsx::raw_row_261
+Spatial,0.85,Functional modifier,63,Long-term persistence,False,True,0.53222897633136,0.4588843636363636,er_results.xlsx::raw_row_262
+Spatial,0.85,Functional modifier,64,Long-term persistence,False,True,0.526592346482577,0.4027838181818182,er_results.xlsx::raw_row_263
+Spatial,0.7,Functional modifier,1,Long-term persistence,False,True,0.215005342209072,0.44534,er_results.xlsx::raw_row_264
+Spatial,0.7,Functional modifier,2,Long-term persistence,False,True,0.197101063182116,0.431165,er_results.xlsx::raw_row_265
+Spatial,0.85,Functional modifier,65,Long-term persistence,False,True,0.492454451019066,0.4035060909090909,er_results.xlsx::raw_row_266
+Spatial,0.85,Functional modifier,66,Long-term persistence,False,True,0.524848106508875,0.4282829090909091,er_results.xlsx::raw_row_267
+Spatial,0.85,Functional modifier,67,Long-term persistence,False,True,0.650117355687048,0.4829898181818182,er_results.xlsx::raw_row_268
+Spatial,0.7,Functional modifier,3,Long-term persistence,False,True,0.243591950690335,0.391517,er_results.xlsx::raw_row_269
+Spatial,0.85,Functional modifier,68,Long-term persistence,False,True,0.704287825115055,0.4943635454545454,er_results.xlsx::raw_row_270
+Spatial,0.85,Functional modifier,69,Long-term persistence,False,True,0.365901777777777,0.3678595454545454,er_results.xlsx::raw_row_271
+Spatial,0.85,Functional modifier,70,Long-term persistence,False,True,0.520833243261012,0.4454596363636364,er_results.xlsx::raw_row_272
+Spatial,0.7,Functional modifier,4,Long-term persistence,False,True,0.253331558185404,0.4635247272727273,er_results.xlsx::raw_row_273
+Spatial,0.85,Functional modifier,71,Long-term persistence,False,True,0.602530202498356,0.4605249090909091,er_results.xlsx::raw_row_274
+Spatial,0.7,Functional modifier,5,Long-term persistence,False,True,0.186469382128205,0.4232702727272727,er_results.xlsx::raw_row_275
+Spatial,0.7,Functional modifier,6,Long-term persistence,False,True,0.295395840894148,0.4448837272727273,er_results.xlsx::raw_row_276
+Spatial,0.85,Functional modifier,72,Long-term persistence,False,True,0.654124690992767,0.4863294545454545,er_results.xlsx::raw_row_277
+Spatial,0.7,Functional modifier,7,Long-term persistence,False,True,0.28399514990138,0.4544158181818182,er_results.xlsx::raw_row_278
+Spatial,0.7,Functional modifier,8,Long-term persistence,False,True,0.250703197304405,0.4454647272727273,er_results.xlsx::raw_row_279
+Spatial,0.7,Functional modifier,9,Long-term persistence,False,True,0.138098330325246,0.4209475454545455,er_results.xlsx::raw_row_280
+Spatial,0.85,Functional modifier,73,Long-term persistence,False,True,0.568817738987508,0.4811360909090909,er_results.xlsx::raw_row_281
+Spatial,0.85,Functional modifier,74,Long-term persistence,False,True,0.709910391190006,0.468559,er_results.xlsx::raw_row_282
+Spatial,0.85,Functional modifier,75,Long-term persistence,False,True,0.511301298487837,0.3921291818181818,er_results.xlsx::raw_row_283
+Spatial,0.7,Functional modifier,10,Long-term persistence,False,True,0.268053125246548,0.4362170909090909,er_results.xlsx::raw_row_284
+Spatial,0.85,Functional modifier,76,Long-term persistence,False,True,0.521629180144641,0.4092779090909091,er_results.xlsx::raw_row_285
+Spatial,0.7,Functional modifier,11,Long-term persistence,False,True,0.282588847337278,0.4353172727272727,er_results.xlsx::raw_row_286
+Spatial,0.7,Functional modifier,12,Long-term persistence,False,True,0.241585911045364,0.4330034545454546,er_results.xlsx::raw_row_287
+Spatial,0.85,Functional modifier,77,Long-term persistence,False,True,0.452127347797501,0.4036537272727273,er_results.xlsx::raw_row_288
+Spatial,0.7,Functional modifier,13,Long-term persistence,False,True,0.265940589743589,0.4112958181818182,er_results.xlsx::raw_row_289
+Spatial,0.85,Functional modifier,78,Long-term persistence,False,True,0.431784621301775,0.3905815454545455,er_results.xlsx::raw_row_290
+Spatial,0.85,Functional modifier,79,Long-term persistence,False,True,0.573421163708086,0.4099352727272727,er_results.xlsx::raw_row_291
+Spatial,0.7,Functional modifier,14,Long-term persistence,False,True,0.255474594345825,0.4077646363636363,er_results.xlsx::raw_row_292
+Spatial,0.85,Functional modifier,80,Long-term persistence,False,True,0.668271174227481,0.4860061818181818,er_results.xlsx::raw_row_293
+Spatial,0.85,Functional modifier,81,Long-term persistence,False,True,0.636268967784352,0.4782100909090909,er_results.xlsx::raw_row_294
+Spatial,0.7,Functional modifier,15,Long-term persistence,False,True,0.189004965811965,0.4067159090909091,er_results.xlsx::raw_row_295
+Spatial,0.7,Functional modifier,16,Long-term persistence,False,True,0.29015732938856,0.4579145454545454,er_results.xlsx::raw_row_296
+Spatial,0.7,Functional modifier,17,Long-term persistence,False,True,0.301219650230111,0.4440163636363636,er_results.xlsx::raw_row_297
+Spatial,0.7,Functional modifier,18,Long-term persistence,False,True,0.329863165680473,0.4725324545454545,er_results.xlsx::raw_row_298
+Spatial,0.7,Functional modifier,19,Long-term persistence,False,True,0.309395825115055,0.4647936363636363,er_results.xlsx::raw_row_299
+Spatial,0.7,Functional modifier,20,Long-term persistence,False,True,0.288249698882314,0.4685558181818182,er_results.xlsx::raw_row_300
+Spatial,0.85,Functional modifier,82,Long-term persistence,False,True,0.711043378698224,0.4831361818181818,er_results.xlsx::raw_row_301
+Spatial,0.7,Functional modifier,21,Long-term persistence,False,True,0.319520511505588,0.4508744545454545,er_results.xlsx::raw_row_302
+Spatial,0.7,Functional modifier,22,Long-term persistence,False,True,0.292995402366863,0.440454,er_results.xlsx::raw_row_303
+Spatial,0.7,Functional modifier,23,Long-term persistence,False,True,0.300442037475345,0.4413735454545454,er_results.xlsx::raw_row_304
+Spatial,0.7,Functional modifier,24,Long-term persistence,False,True,0.317430080210387,0.4835491818181818,er_results.xlsx::raw_row_305
+Spatial,0.7,Functional modifier,25,Long-term persistence,False,True,0.263837113083497,0.4573042727272727,er_results.xlsx::raw_row_306
+Spatial,0.7,Functional modifier,26,Long-term persistence,False,True,0.301090957264957,0.4273455454545455,er_results.xlsx::raw_row_307
+Spatial,0.7,Functional modifier,27,Long-term persistence,False,True,0.346808328731098,0.4692405454545454,er_results.xlsx::raw_row_308
+Spatial,0.7,Functional modifier,28,Long-term persistence,False,True,0.349378883629191,0.4675611818181818,er_results.xlsx::raw_row_309
+Spatial,0.7,Functional modifier,29,Long-term persistence,False,True,0.300739581854043,0.4445165454545455,er_results.xlsx::raw_row_310
+Spatial,0.7,Functional modifier,30,Long-term persistence,False,True,0.298988055884286,0.4386168181818182,er_results.xlsx::raw_row_311
+Spatial,0.7,Functional modifier,31,Long-term persistence,False,True,0.385512301117685,0.4644582727272727,er_results.xlsx::raw_row_312
+Spatial,0.7,Functional modifier,32,Long-term persistence,False,True,0.287111321301775,0.4437745454545455,er_results.xlsx::raw_row_313
+Spatial,0.7,Functional modifier,33,Long-term persistence,False,True,0.319542809335963,0.4799110909090909,er_results.xlsx::raw_row_314
+Spatial,0.7,Functional modifier,34,Long-term persistence,False,True,0.344025543721236,0.4849631818181819,er_results.xlsx::raw_row_315
+Spatial,0.7,Functional modifier,35,Long-term persistence,False,True,0.321630526627218,0.4967276363636363,er_results.xlsx::raw_row_316
+Spatial,0.7,Functional modifier,36,Long-term persistence,False,True,0.362254166337935,0.4583790909090909,er_results.xlsx::raw_row_317
+Spatial,0.7,Functional modifier,37,Long-term persistence,False,True,0.322059078238001,0.4513211818181818,er_results.xlsx::raw_row_318
+Spatial,0.7,Functional modifier,38,Long-term persistence,False,True,0.238934142669296,0.4680683636363636,er_results.xlsx::raw_row_319
+Spatial,0.7,Functional modifier,39,Long-term persistence,False,True,0.362925531886916,0.5007558181818182,er_results.xlsx::raw_row_320
+Spatial,0.7,Functional modifier,40,Long-term persistence,False,True,0.32939715581854,0.4590816363636364,er_results.xlsx::raw_row_321
+Spatial,0.7,Functional modifier,41,Long-term persistence,False,True,0.34822968573307,0.4687715454545454,er_results.xlsx::raw_row_322
+Spatial,0.7,Functional modifier,42,Long-term persistence,False,True,0.35142556607495,0.4810495454545455,er_results.xlsx::raw_row_323
+Spatial,0.7,Functional modifier,43,Long-term persistence,False,True,0.325802558842866,0.502642,er_results.xlsx::raw_row_324
+Spatial,0.7,Functional modifier,44,Long-term persistence,False,True,0.388883618014464,0.4479643636363636,er_results.xlsx::raw_row_325
+Spatial,0.7,Functional modifier,45,Long-term persistence,False,True,0.296835138724523,0.4501082727272728,er_results.xlsx::raw_row_326
+Spatial,0.7,Functional modifier,46,Long-term persistence,False,True,0.349669108481262,0.4473617272727273,er_results.xlsx::raw_row_327
+Spatial,0.7,Functional modifier,47,Long-term persistence,False,True,0.371126964497041,0.4824164545454545,er_results.xlsx::raw_row_328
+Spatial,0.7,Functional modifier,48,Long-term persistence,False,True,0.316658539119,0.4494661818181818,er_results.xlsx::raw_row_329
+Spatial,0.7,Functional modifier,49,Long-term persistence,False,True,0.304928312294543,0.3983738181818181,er_results.xlsx::raw_row_330
+Spatial,0.7,Functional modifier,50,Long-term persistence,False,True,0.268560470742932,0.4124266363636363,er_results.xlsx::raw_row_331
+Spatial,0.7,Functional modifier,51,Long-term persistence,False,True,0.305826438527284,0.478142,er_results.xlsx::raw_row_332
+Spatial,0.7,Functional modifier,52,Long-term persistence,False,True,0.389024278106508,0.504889,er_results.xlsx::raw_row_333
+Spatial,0.7,Functional modifier,53,Long-term persistence,False,True,0.334118978961209,0.4846055454545454,er_results.xlsx::raw_row_334
+Spatial,0.7,Functional modifier,54,Long-term persistence,False,True,0.293790142669296,0.4555364545454546,er_results.xlsx::raw_row_335
+Spatial,0.7,Functional modifier,55,Long-term persistence,False,True,0.410178510848126,0.4995556363636363,er_results.xlsx::raw_row_336
+Spatial,0.85,Functional modifier,83,Long-term persistence,False,True,0.634090190006574,0.4359186363636363,er_results.xlsx::raw_row_337
+Spatial,0.7,Functional modifier,56,Long-term persistence,False,True,0.298783082182774,0.4620668181818182,er_results.xlsx::raw_row_338
+Spatial,0.7,Functional modifier,57,Long-term persistence,False,True,0.33346288625904,0.455197909090909,er_results.xlsx::raw_row_339
+Spatial,0.7,Functional modifier,58,Long-term persistence,False,True,0.38389539842209,0.4951952727272727,er_results.xlsx::raw_row_340
+Spatial,0.7,Functional modifier,59,Long-term persistence,False,True,0.332236528599605,0.5076883636363636,er_results.xlsx::raw_row_341
+Spatial,0.7,Functional modifier,60,Long-term persistence,False,True,0.39849825772518,0.4493949090909091,er_results.xlsx::raw_row_342
+Spatial,0.7,Functional modifier,61,Long-term persistence,False,True,0.374302274819197,0.4922947272727273,er_results.xlsx::raw_row_343
+Spatial,0.7,Functional modifier,62,Long-term persistence,False,True,0.35665543721236,0.4497029090909091,er_results.xlsx::raw_row_344
+Spatial,0.7,Functional modifier,63,Long-term persistence,False,True,0.289216457593688,0.4467928181818182,er_results.xlsx::raw_row_345
+Spatial,0.7,Functional modifier,64,Long-term persistence,False,True,0.387941244575936,0.4919415454545455,er_results.xlsx::raw_row_346
+Spatial,0.7,Functional modifier,65,Long-term persistence,False,True,0.400164414201183,0.5029671818181819,er_results.xlsx::raw_row_347
+Spatial,0.7,Functional modifier,66,Long-term persistence,False,True,0.321081973701512,0.4441805454545454,er_results.xlsx::raw_row_348
+Spatial,0.7,Functional modifier,67,Long-term persistence,False,True,0.210140204076265,0.4509177272727273,er_results.xlsx::raw_row_349
+Spatial,0.7,Functional modifier,68,Long-term persistence,False,True,0.269742167652859,0.475622,er_results.xlsx::raw_row_350
+Spatial,0.7,Functional modifier,69,Long-term persistence,False,True,0.428140694937541,0.5102147272727273,er_results.xlsx::raw_row_351
+Spatial,0.7,Functional modifier,70,Long-term persistence,False,True,0.276401902038132,0.4575021818181818,er_results.xlsx::raw_row_352
+Spatial,0.7,Functional modifier,71,Long-term persistence,False,True,0.290001560815253,0.4842173636363636,er_results.xlsx::raw_row_353
+Spatial,0.85,Functional modifier,84,Long-term persistence,False,True,0.610574442472057,0.4666072727272727,er_results.xlsx::raw_row_354
+Spatial,0.7,Functional modifier,72,Long-term persistence,False,True,0.379211166995397,0.5024790909090909,er_results.xlsx::raw_row_355
+Spatial,0.7,Functional modifier,73,Long-term persistence,False,True,0.31635434451019,0.448945,er_results.xlsx::raw_row_356
+Spatial,0.7,Functional modifier,74,Long-term persistence,False,True,0.33759106311637,0.5179758181818181,er_results.xlsx::raw_row_357
+Spatial,0.7,Functional modifier,75,Long-term persistence,False,True,0.380295483892176,0.4562625454545455,er_results.xlsx::raw_row_358
+Spatial,0.7,Functional modifier,76,Long-term persistence,False,True,0.364942286653517,0.4755494545454545,er_results.xlsx::raw_row_359
+Spatial,0.7,Functional modifier,77,Long-term persistence,False,True,0.338757410913872,0.5135142727272728,er_results.xlsx::raw_row_360
+Spatial,0.7,Functional modifier,78,Long-term persistence,False,True,0.385079815253122,0.4858178181818182,er_results.xlsx::raw_row_361
+Spatial,0.7,Functional modifier,79,Long-term persistence,False,True,0.341551680473372,0.4324498181818182,er_results.xlsx::raw_row_362
+Spatial,0.7,Functional modifier,80,Long-term persistence,False,True,0.372768132807363,0.4705088181818182,er_results.xlsx::raw_row_363
+Spatial,0.7,Functional modifier,81,Long-term persistence,False,True,0.341276280078895,0.4766834545454545,er_results.xlsx::raw_row_364
+Spatial,0.7,Functional modifier,82,Long-term persistence,False,True,0.198609242998027,0.4159037272727273,er_results.xlsx::raw_row_365
+Spatial,0.7,Functional modifier,83,Long-term persistence,False,True,0.345524063773833,0.474166,er_results.xlsx::raw_row_366
+Spatial,0.7,Functional modifier,84,Long-term persistence,False,True,0.413365811965811,0.493339,er_results.xlsx::raw_row_367
+Spatial,0.7,Functional modifier,85,Long-term persistence,False,True,0.350260715976331,0.4864497272727273,er_results.xlsx::raw_row_368
+Spatial,0.7,Functional modifier,86,Long-term persistence,False,True,0.447520428665351,0.4846265454545455,er_results.xlsx::raw_row_369
+Spatial,0.7,Functional modifier,87,Long-term persistence,False,True,0.395817568704799,0.483245,er_results.xlsx::raw_row_370
+Spatial,0.7,Functional modifier,88,Long-term persistence,False,True,0.420100370151216,0.4874329090909091,er_results.xlsx::raw_row_371
+Spatial,0.7,Functional modifier,89,Long-term persistence,False,True,0.332380613412228,0.4702262727272728,er_results.xlsx::raw_row_372
+Spatial,0.7,Functional modifier,90,Long-term persistence,False,True,0.339438859960552,0.4880635454545454,er_results.xlsx::raw_row_373
+Spatial,0.7,Functional modifier,91,Long-term persistence,False,True,0.450447543063773,0.5331651818181818,er_results.xlsx::raw_row_374
+Spatial,0.7,Functional modifier,92,Long-term persistence,False,True,0.431058890203813,0.5110795454545455,er_results.xlsx::raw_row_375
+Spatial,0.7,Functional modifier,93,Long-term persistence,False,True,0.344786007889546,0.4791595454545454,er_results.xlsx::raw_row_376
+Spatial,0.7,Functional modifier,94,Long-term persistence,False,True,0.418352698224852,0.5707825454545455,er_results.xlsx::raw_row_377
+Spatial,0.7,Functional modifier,95,Long-term persistence,False,True,0.413145399737015,0.5050175454545455,er_results.xlsx::raw_row_378
+Spatial,0.7,Functional modifier,96,Long-term persistence,False,True,0.400604523339908,0.4800523636363636,er_results.xlsx::raw_row_379
+Spatial,0.7,Functional modifier,97,Long-term persistence,False,True,0.52843004207758,0.6240576363636364,er_results.xlsx::raw_row_380
+Spatial,0.7,Functional modifier,98,Long-term persistence,False,True,0.407690274161735,0.5236305454545455,er_results.xlsx::raw_row_381
+Spatial,0.7,Functional modifier,99,Long-term persistence,False,True,0.398375364234056,0.4974753636363637,er_results.xlsx::raw_row_382
+Spatial,0.7,Functional modifier,100,Long-term persistence,False,True,0.330845310322156,0.4742684545454546,er_results.xlsx::raw_row_383
+Spatial,0.7,Neutral control,99,Long-term persistence,False,True,0.402122915187376,0.4909679090909091,er_results.xlsx::raw_row_384
+Spatial,0.7,Neutral control,100,Long-term persistence,False,True,0.374628700197238,0.4925887272727273,er_results.xlsx::raw_row_385
+Spatial,0.85,Functional modifier,85,Long-term persistence,False,True,0.365896656804733,0.3552041818181818,er_results.xlsx::raw_row_386
+Spatial,0.85,Functional modifier,86,Long-term persistence,False,True,0.463070788954635,0.4463250909090909,er_results.xlsx::raw_row_387
+Spatial,0.85,Functional modifier,87,Long-term persistence,False,True,0.495350151216305,0.4097278181818182,er_results.xlsx::raw_row_388
+Spatial,0.85,Functional modifier,88,Long-term persistence,False,True,0.488648366863905,0.4047654545454546,er_results.xlsx::raw_row_389
+Spatial,0.85,Functional modifier,89,Long-term persistence,False,True,0.494215243261012,0.4169403636363636,er_results.xlsx::raw_row_390
+Spatial,0.85,Functional modifier,90,Long-term persistence,False,True,0.556961602235371,0.3874595454545454,er_results.xlsx::raw_row_391
+Spatial,0.85,Functional modifier,91,Long-term persistence,False,True,0.538854300460223,0.4453641818181818,er_results.xlsx::raw_row_392
+Spatial,0.85,Functional modifier,92,Long-term persistence,False,True,0.536923250493096,0.4165687272727272,er_results.xlsx::raw_row_393
+Spatial,0.85,Functional modifier,93,Long-term persistence,False,True,0.619947440499671,0.4180298181818181,er_results.xlsx::raw_row_394
+Spatial,0.85,Functional modifier,94,Long-term persistence,False,True,0.505283539119,0.4398150909090909,er_results.xlsx::raw_row_395
+Spatial,0.85,Functional modifier,95,Long-term persistence,False,True,0.548624448389217,0.4233765454545455,er_results.xlsx::raw_row_396
+Spatial,0.85,Functional modifier,96,Long-term persistence,False,True,0.482253992110453,0.399385,er_results.xlsx::raw_row_397
+Spatial,0.85,Functional modifier,97,Long-term persistence,False,True,0.609204041420118,0.4578706363636363,er_results.xlsx::raw_row_398
+Spatial,0.85,Functional modifier,98,Long-term persistence,False,True,0.548699948717948,0.4307710909090909,er_results.xlsx::raw_row_399
+Spatial,0.85,Functional modifier,99,Long-term persistence,False,True,0.604684262327416,0.4765218181818182,er_results.xlsx::raw_row_400
+Spatial,0.85,Functional modifier,100,Long-term persistence,False,True,0.53196996120973,0.4570490909090909,er_results.xlsx::raw_row_401
+Panmictic,0.85,Functional modifier,98,Elimination,True,False,0.2167602,0.0,raw_fig3_pan085_er_functional_topup_b0.04_m100_1.out
+Panmictic,0.85,Functional modifier,99,Elimination,True,False,0.3072527,0.0,raw_fig3_pan085_er_functional_topup_b0.04_m100_2.out
+Panmictic,0.85,Functional modifier,100,Elimination,True,False,0.2846916,0.0,raw_fig3_pan085_er_functional_topup_b0.04_m100_3.out
