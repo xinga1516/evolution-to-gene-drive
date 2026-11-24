@@ -139,3 +139,22 @@ Candidate commit: `e375e0cbf42088d67ffbac1ab0b11f7deb584f85`
   condition although observed counts are P70_L=14, S70_L=20 and S85_L=20.
   Figure 6D must likewise state P70_L=14 and five other cells at n=20 rather
   than use a vague availability qualifier.
+
+## Process 2 observed-count repair failed review record
+
+Candidate commit: `ce2894f68485e58543bd50913d485f11e99310c1`
+
+- Reviewer: independent data/code-provenance reviewer (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: repaired Figure 6C/D numeric counts and the preceding
+  failed-candidate record.
+- Blocking findings: none within the requested narrow re-review.
+
+- Reviewer: independent statistics/reproducibility reviewer (`local_archive_reviewer`)
+- Decision: `FAIL`
+- Evidence checked: every seed-delimited block in the Figure 2E/S1B raw files;
+  Figure 6 terminal outcomes; S5/S6 weekly final-window record counts.
+- Blocking findings: the 20 h=0.70-neutral files each contain two independent
+  simulations but the parser merges them; Figure 6C/D exclusions were wrongly
+  called missingness instead of outcome-conditioned inclusion; S5/S6 used an
+  inclusive final-window boundary and therefore retained 21 weekly records.

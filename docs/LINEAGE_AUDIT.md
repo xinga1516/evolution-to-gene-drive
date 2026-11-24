@@ -63,7 +63,15 @@ Use the raw batch in:
 
 `D:/champer实验室工作/文章figure终版/figure3 (待补充erMut）/rerun_logs/panelE_logs14/logs14`
 
-Selection is restricted to files beginning with `raw_fig3F_er_spt_control_` or `raw_fig3F_er_spt_functional_`. This gives exactly 20 raw outputs for each cohort at each of seven settings (280 files total). The cached `Figure3_panelE_logs14_trajectory_tidy.csv.gz` is not used as the rebuild authority because its neutral 0.70 filenames collide across two parsed batches and therefore contain two distinct trajectories per filename/week. Parsing the raw files removes that ambiguity.
+Selection is restricted to files beginning with `raw_fig3F_er_spt_control_` or `raw_fig3F_er_spt_functional_`. This gives exactly 20 raw outputs for each cohort at each of seven settings (280 files total). The cached `Figure3_panelE_logs14_trajectory_tidy.csv.gz` is not used as the rebuild authority because its neutral 0.70 filenames collide across two parsed batches and therefore contain two distinct trajectories per filename/week. Seed-block parsing with the explicit selection rule below removes that ambiguity.
+
+The 20 neutral-0.70 raw files themselves contain two complete seed-delimited
+blocks: a superseded run followed by an appended rerun. The nominal design and
+file naming define 20 replicates per cell, not 40. The authoritative rule is
+therefore to split every seed block and retain the **last complete block** in
+each named replicate file. All other Figure-2E/S1B files contain one block.
+The Source Data records the selected block index, total block count and seed so
+that this choice is auditable; the two blocks are never averaged together.
 
 For every retained simulation:
 
@@ -91,6 +99,12 @@ Later single-panel SVGs are used where the user explicitly requested a panel-onl
 ## Descriptive panels
 
 Trajectory-only and reference-diagnostic panels without a prespecified inferential test are marked `not applicable` in the statistics column. This applies to Figure 1D, Figure 2D, Figure 3D, Figure 6C, Supplementary Figure S1A, Supplementary Figure S3 and Supplementary Figures S5-S6. Figure 6D is excluded from this list because its final-20 endpoint requires a rebuilt permutation test. Summary values and uncertainty bands will still be deposited as Source Data.
+
+Figure 6C/D use outcome-conditioned rows, not missing-run imputation. P70_L
+contains 14 long-term-persistence and six elimination outcomes, so only 14
+persistent trajectories/endpoints enter the relevant rows. P85_L and P85_N
+are structurally absent from Figure 6D because all runs eliminated. These are
+panel-definition exclusions rather than failed simulations.
 
 ## Required downstream work
 
