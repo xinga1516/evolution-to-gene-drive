@@ -53,7 +53,7 @@ No file is considered authoritative merely because its filename contains `final`
 - Final trait values are adult-population-size-weighted means over the final 20 weeks/records where specified.
 - Final population size is the arithmetic mean over the final 20 weeks/records, with elimination handled according to the panel's analysis script.
 - Figure 3 two-sided permutation analyses use 10,000 permutations.
-- Figure 6 Panel D reports relative population size over the last 20 ticks.
+- Figure 6 Panel D reports relative population size over the final 20 weekly records.
 - Supplementary Figure S1 uses final-20-week NNI and includes both neutral and variable groups in Panel A.
 - Supplementary Figure S4 stability diagnostics evaluate 2.5%, 5% and 10% thresholds and include `W_load`.
 - Supplementary Figure S5 excludes Panmictic 0.85.
