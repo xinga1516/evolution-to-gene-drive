@@ -15,7 +15,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | Process | Deliverable | Implementer | Reviewer 1 | Reviewer 2 | Accepted |
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
-| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PENDING | PENDING | PENDING | NO |
+| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
@@ -158,3 +158,36 @@ Candidate commit: `ce2894f68485e58543bd50913d485f11e99310c1`
   simulations but the parser merges them; Figure 6C/D exclusions were wrongly
   called missingness instead of outcome-conditioned inclusion; S5/S6 used an
   inclusive final-window boundary and therefore retained 21 weekly records.
+
+## Process 2 final re-accepted review record
+
+Candidate commit: `cd7665e329b97bb2fe990098d8ca7686a6bf9053`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: 22 unique existing lineage inputs; 280 Figure-2E/S1B
+  endpoints in 14 cells of n=20; last-block selection for all 20 two-block
+  neutral-0.70 files; 277 Figure-3E/S1C endpoints with n=17 in the declared
+  cell; Figure-6 outcome counts and structural exclusions; no final-100 input
+  substituted into a final-20 rebuild; `git diff --check`.
+- Blocking findings: none.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: exact-candidate parser output; unique cell-by-replicate
+  rows and retained seeds; block indices/counts; all manifest paths; F6
+  terminal outcomes; F3E/S1C observed missingness; panel-map completeness.
+- Blocking findings: none.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: all h=0.70-neutral seed blocks and final-window records;
+  independent-unit preservation; F6 outcome-conditioned inclusion; F3E/S1C
+  n=17 and no imputation; final-20 versus final-100 isolation.
+- Blocking findings: none.
