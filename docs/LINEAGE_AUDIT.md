@@ -26,6 +26,14 @@ Acceptance requires all of the following:
 
 There are no remaining `PENDING_TRACE` values in the panel map.
 
+The corrected lineage manifest enumerates every distinct build input rather
+than treating a parent directory as authority for unrelated panels.  In
+particular, Figure 3D, S2, S3, S4/Table S3, S5/S6 and Table S1 now have their
+actual files declared, and Figure 6A-D are four separate lineage records.  The
+paths in `config/raw_lineage_manifest.csv` are the inputs consumed by
+`scripts/build_source_data.py`; later provenance generation hashes these exact
+files or the explicitly selected raw-output members.
+
 ## Material finding: association-window mismatch
 
 The current axis labels for Figure 2E and Figure 3E say final 20 weeks. However, the CSV files consumed by the current redraw scripts identify their control metric as `arithmetic mean NNI over final 100 weeks per simulation`. Supplementary Figure S1B already requests final 20 weeks, but its current loader reads a cache in which the neutral 0.70 filenames collide across two batches. Its time-window filter therefore mixes two distinct trajectories within the same nominal replicate rather than using one trajectory over the final 20 weeks.

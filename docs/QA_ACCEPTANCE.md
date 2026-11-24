@@ -15,7 +15,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | Process | Deliverable | Implementer | Reviewer 1 | Reviewer 2 | Accepted |
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
-| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
+| 2 | Resolve one authoritative data and plotting lineage for every mapped row | PENDING | PENDING | PENDING | NO |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PENDING | PENDING | PENDING | NO |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
@@ -115,3 +115,13 @@ Candidate commit: `9c514de91a94aa19483fcc08a419f737e814ae2a`
 - Decision: `PASS`
 - Evidence checked: same-candidate diff, raw batch and final-20 endpoint counts, n=17 observed missingness, no-imputation rule and `git diff --check`.
 - Blocking findings: none.
+
+### Second post-acceptance invalidation
+
+The corrected-n Process-2 acceptance was reopened during Process-3 input
+reconciliation.  `config/raw_lineage_manifest.csv` did not enumerate the
+actual build inputs for Figure 3D, S2, S3, S4/Table S3, S5/S6 or Table S1 and
+used one broad Figure-6 parent directory for Figure 6 and S4-S6.  Because this
+fails the requirement for one authoritative lineage per frozen publication
+item, the Process-2 gate is `NO` again.  The expanded manifest must receive a
+new same-candidate PASS from the implementer and both reviewers.
