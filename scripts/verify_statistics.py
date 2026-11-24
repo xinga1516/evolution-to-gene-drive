@@ -36,10 +36,14 @@ def main() -> None:
     check("raw P in range", data.p_raw.dropna().between(0, 1).all())
     check("adjusted P in range", data.p_adjusted.dropna().between(0, 1).all())
     check("tested rows have raw P", data.loc[data.status.eq("tested"), "p_raw"].notna().all())
+    check("tested rows have actual n", data.loc[data.status.eq("tested"), "n_total"].notna().all())
     check("all source hashes recorded", data.source_sha256.notna().all())
     for source, group in data.groupby("source_file"):
         check(f"source exists: {source}", (REPO / source).is_file())
         check(f"source hash matches: {source}", group.source_sha256.eq(sha256(REPO / source)).all())
+    for source, group in data.dropna(subset=["source_file_2"]).groupby("source_file_2"):
+        check(f"secondary source exists: {source}", (REPO / source).is_file())
+        check(f"secondary source hash matches: {source}", group.source_sha256_2.eq(sha256(REPO / source)).all())
 
     f2e = data[data.test_id.eq("Figure2E_exact_spearman")].iloc[0]
     f3e = data[data.test_id.eq("Figure3E_exact_spearman")].iloc[0]
@@ -62,6 +66,21 @@ def main() -> None:
     check("Table S3 n=20 per model", stability.n_independent_simulations.eq(20).all())
     check("Table S3 Panmictic 2.5% failures", stability.query("condition_id == 'P70_L'").pass_epsilon_0p025.tolist() == [False, False, True, True])
     check("Table S3 all pass 5%", stability.pass_epsilon_0p05.all())
+    check("Table S3 source provenance", stability.source_file.notna().all() and stability.source_sha256.notna().all())
+    check("Table S3 script provenance", stability.analysis_script.notna().all() and stability.analysis_script_sha256.notna().all())
+
+    figure4_coefficients = pd.read_csv(OUT / "Figure4_model_coefficients_HC3.csv")
+    check("Figure4 coefficient P values nonzero", not figure4_coefficients.p_value.eq(0).any())
+    figure4 = data[data.publication_item.eq("Figure 4")]
+    check("Figure4 all tested rows actual n", figure4.loc[figure4.status.eq("tested"), ["n_group1", "n_group2", "n_total"]].notna().all().all())
+    check("Figure4 dual input chain", figure4.source_file_2.notna().all() and figure4.source_sha256_2.notna().all())
+
+    s2 = data[data.publication_item.eq("Supplementary Figure S2")]
+    check("S2 panel mapping", set(s2.panel) == {"A", "B", "C"})
+    check("S2 family mapping", set(s2.family_id) == {"S2_dc_lower_SD", "S2_er_lower_SD", "S2_sf_lower_SD"})
+    catalog = pd.read_csv(OUT / "statistics_catalog.csv")
+    check("S2 catalog linked", catalog[catalog.record_id.isin(["S2A", "S2B", "S2C"])].statistics_file.eq("results/statistics/all_inferential_tests.csv").all())
+    check("S4 catalog linked to Table S3", catalog[catalog.publication_item.eq("Supplementary Figure S4")].statistics_file.eq("results/statistics/Table_S3.csv").all())
 
     table_s2 = pd.read_csv(OUT / "Table_S2.csv")
     check("Table S2 is exact generated view", table_s2.equals(data[data.status.isin(["tested", "not estimable"])].reset_index(drop=True)))

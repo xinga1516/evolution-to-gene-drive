@@ -46,24 +46,24 @@ Figure 4,B,F4B_er_interaction,simulation,396.0,399.0,795.0,tested,"df=nan; empir
 Figure 4,C,F4C_sf_realized_sd,simulation,392.0,400.0,792.0,tested,"df=2; empirical common support [0.0263802, 0.20092]"
 Figure 4,C,F4C_sf_architecture,simulation,392.0,400.0,792.0,tested,"df=2; empirical common support [0.0263802, 0.20092]"
 Figure 4,C,F4C_sf_interaction,simulation,392.0,400.0,792.0,tested,"df=nan; empirical common support [0.0263802, 0.20092]"
-Figure 4,A,F4A_dc_contrast_low,simulation,,,,tested,"realized SD=0.022908439999999926; CI [-0.0004751088296580134, 0.005061101964088345]"
-Figure 4,A,F4A_dc_contrast_mid,simulation,,,,tested,"realized SD=0.03297087; CI [-0.0008309776753249714, 0.004452305493626453]"
-Figure 4,A,F4A_dc_contrast_high,simulation,,,,tested,"realized SD=0.048977; CI [-0.004258046045365506, 0.0063448977523847885]"
-Figure 4,B,F4B_er_contrast_low,simulation,,,,tested,"realized SD=0.06531632; CI [-0.005294835420680916, 0.006210071961342251]"
-Figure 4,B,F4B_er_contrast_mid,simulation,,,,tested,"realized SD=0.09369822; CI [-0.000994755523040884, 0.010161381063876325]"
-Figure 4,B,F4B_er_contrast_high,simulation,,,,tested,"realized SD=0.14194365; CI [3.489615348177717e-05, 0.023157985924466044]"
-Figure 4,C,F4C_sf_contrast_low,simulation,,,,tested,"realized SD=0.0527256849999999; CI [-0.0036341003110957728, 0.0068436464044236344]"
-Figure 4,C,F4C_sf_contrast_mid,simulation,,,,tested,"realized SD=0.076897855; CI [-0.002446222793733366, 0.008271368484973458]"
-Figure 4,C,F4C_sf_contrast_high,simulation,,,,tested,"realized SD=0.1166475; CI [-0.007500636143051042, 0.01762697429980637]"
-Figure 4,A,F4A_dc_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,A,F4A_dc_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support; numerical P underflow reported as <1e-300; numerical P underflow reported as <1e-300
-Figure 4,A,F4A_dc_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,B,F4B_er_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,B,F4B_er_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,B,F4B_er_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,C,F4C_sf_fixed_m_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,C,F4C_sf_fixed_b_slope_per_0.01,simulation,,,,tested,Full interaction model within empirical common support
-Figure 4,C,F4C_sf_path_offset_reference_SD,simulation,,,,tested,Full interaction model within empirical common support
+Figure 4,A,F4A_dc_contrast_low,simulation,384.0,400.0,784.0,tested,"realized SD=0.022908439999999926; CI [-0.0004751088296580134, 0.005061101964088345]"
+Figure 4,A,F4A_dc_contrast_mid,simulation,384.0,400.0,784.0,tested,"realized SD=0.03297087; CI [-0.0008309776753249714, 0.004452305493626453]"
+Figure 4,A,F4A_dc_contrast_high,simulation,384.0,400.0,784.0,tested,"realized SD=0.048977; CI [-0.004258046045365506, 0.0063448977523847885]"
+Figure 4,B,F4B_er_contrast_low,simulation,396.0,399.0,795.0,tested,"realized SD=0.06531632; CI [-0.005294835420680916, 0.006210071961342251]"
+Figure 4,B,F4B_er_contrast_mid,simulation,396.0,399.0,795.0,tested,"realized SD=0.09369822; CI [-0.000994755523040884, 0.010161381063876325]"
+Figure 4,B,F4B_er_contrast_high,simulation,396.0,399.0,795.0,tested,"realized SD=0.14194365; CI [3.489615348177717e-05, 0.023157985924466044]"
+Figure 4,C,F4C_sf_contrast_low,simulation,392.0,400.0,792.0,tested,"realized SD=0.0527256849999999; CI [-0.0036341003110957728, 0.0068436464044236344]"
+Figure 4,C,F4C_sf_contrast_mid,simulation,392.0,400.0,792.0,tested,"realized SD=0.076897855; CI [-0.002446222793733366, 0.008271368484973458]"
+Figure 4,C,F4C_sf_contrast_high,simulation,392.0,400.0,792.0,tested,"realized SD=0.1166475; CI [-0.007500636143051042, 0.01762697429980637]"
+Figure 4,A,F4A_dc_fixed_m_slope_per_0.01,simulation,384.0,400.0,784.0,tested,Full interaction model within empirical common support
+Figure 4,A,F4A_dc_fixed_b_slope_per_0.01,simulation,384.0,400.0,784.0,tested,Full interaction model within empirical common support; numerical P underflow reported as <1e-300; numerical P underflow reported as <1e-300
+Figure 4,A,F4A_dc_path_offset_reference_SD,simulation,384.0,400.0,784.0,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_fixed_m_slope_per_0.01,simulation,396.0,399.0,795.0,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_fixed_b_slope_per_0.01,simulation,396.0,399.0,795.0,tested,Full interaction model within empirical common support
+Figure 4,B,F4B_er_path_offset_reference_SD,simulation,396.0,399.0,795.0,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_fixed_m_slope_per_0.01,simulation,392.0,400.0,792.0,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_fixed_b_slope_per_0.01,simulation,392.0,400.0,792.0,tested,Full interaction model within empirical common support
+Figure 4,C,F4C_sf_path_offset_reference_SD,simulation,392.0,400.0,792.0,tested,Full interaction model within empirical common support
 Figure 5,A,F5A_0.95_elimination,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=7; fixed-only=0
 Figure 5,A,F5A_0.95_drive_loss,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=0; fixed-only=0
 Figure 5,A,F5A_0.99_elimination,matched origin seed,100.0,100.0,100.0,tested,discordant evolving-only=18; fixed-only=1
@@ -98,15 +98,15 @@ Supplementary Figure S1,C,S1C_0.85,simulation,20.0,20.0,40.0,tested,Monte-Carlo 
 Supplementary Figure S1,C,S1C_0.9,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
 Supplementary Figure S1,C,S1C_0.95,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
 Supplementary Figure S1,C,S1C_0.99,simulation,17.0,20.0,37.0,tested,Monte-Carlo plus-one P value
-Supplementary Figure S2,DC,S2_dc_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,DC,S2_dc_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,DC,S2_dc_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,DC,S2_dc_5,setting mean,,,1.0,not estimable,Only one setting in stratum
-Supplementary Figure S2,ER,S2_er_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,ER,S2_er_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,ER,S2_er_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,ER,S2_er_5,setting mean,,,1.0,not estimable,Only one setting in stratum
-Supplementary Figure S2,SF,S2_sf_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,SF,S2_sf_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,SF,S2_sf_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,SF,S2_sf_5,setting mean,,,1.0,not estimable,Only one setting in stratum
+Supplementary Figure S2,A,S2_dc_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,A,S2_dc_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,A,S2_dc_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,A,S2_dc_5,setting mean,,,1.0,not estimable,Only one setting in stratum
+Supplementary Figure S2,B,S2_er_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,B,S2_er_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,B,S2_er_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,B,S2_er_5,setting mean,,,1.0,not estimable,Only one setting in stratum
+Supplementary Figure S2,C,S2_sf_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
+Supplementary Figure S2,C,S2_sf_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
+Supplementary Figure S2,C,S2_sf_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
+Supplementary Figure S2,C,S2_sf_5,setting mean,,,1.0,not estimable,Only one setting in stratum

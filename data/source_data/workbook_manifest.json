@@ -233,7 +233,7 @@
       "sheet": "Stability_diagnostics",
       "path": "data/source_data/workbook_tables/Table_S3/Stability_diagnostics.csv",
       "rows": 8,
-      "columns": 23,
+      "columns": 28,
       "scope": "Supplementary Table S3"
     }
   ],
@@ -242,7 +242,7 @@
       "sheet": "All_P_values",
       "path": "data/source_data/workbook_tables/Table_S2/All_P_values.csv",
       "rows": 111,
-      "columns": 32,
+      "columns": 34,
       "scope": "Supplementary Table S2"
     }
   ]

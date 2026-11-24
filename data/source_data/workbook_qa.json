@@ -546,8 +546,8 @@
         "sheet": "Stability_diagnostics",
         "expected_rows": 8,
         "actual_rows": 8,
-        "expected_columns": 23,
-        "actual_columns": 23,
+        "expected_columns": 28,
+        "actual_columns": 28,
         "header_match": true,
         "formula_error_tokens": 0,
         "pass": true
@@ -572,8 +572,8 @@
         "sheet": "All_P_values",
         "expected_rows": 111,
         "actual_rows": 111,
-        "expected_columns": 32,
-        "actual_columns": 32,
+        "expected_columns": 34,
+        "actual_columns": 34,
         "header_match": true,
         "formula_error_tokens": 0,
         "pass": true

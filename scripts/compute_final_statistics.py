@@ -35,7 +35,7 @@ STANDARD_COLUMNS = [
     "n_total", "estimate", "statistic", "p_raw", "p_adjusted",
     "adjustment", "permutations_or_enumerations", "extreme_permutations", "seed",
     "df", "ci_level", "ci_low", "ci_high", "status", "notes", "source_file",
-    "source_sha256", "analysis_script", "software",
+    "source_sha256", "source_file_2", "source_sha256_2", "analysis_script", "software",
 ]
 
 
@@ -453,13 +453,20 @@ def figure4_tests():
     summary["architecture_p_Holm"] = holm(summary.architecture_p_raw.tolist())
     summary["interaction_p_Holm"] = holm(summary.interaction_p_raw.tolist())
     summary.to_csv(OUT / "Figure4_common_support_statistical_summary.csv", index=False, encoding="utf-8-sig")
-    pd.DataFrame(coefficients).to_csv(OUT / "Figure4_model_coefficients_HC3.csv", index=False, encoding="utf-8-sig")
+    coefficient_output = pd.DataFrame(coefficients)
+    coefficient_output.loc[coefficient_output.p_value.eq(0), "p_value"] = 1e-300
+    coefficient_output.to_csv(OUT / "Figure4_model_coefficients_HC3.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(contrasts).to_csv(OUT / "Figure4_conditional_path_contrasts.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(sensitivities).to_csv(OUT / "Figure4_full_range_sensitivity.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(diagnostics).to_csv(OUT / "Figure4_model_diagnostics_summary.csv", index=False, encoding="utf-8-sig")
+    source = "data/source_data/files/Figure4/simulation_level_source.csv"
+    source_2 = "data/source_data/files/Figure_S2/simulation_level_source.csv"
+    pd.DataFrame([
+        {"role": "endpoint simulations", "source_file": source, "source_sha256": file_sha256(REPO / source)},
+        {"role": "group_id to trait/b/m metadata", "source_file": source_2, "source_sha256": file_sha256(REPO / source_2)},
+    ]).to_csv(OUT / "Figure4_input_provenance.csv", index=False, encoding="utf-8-sig")
     for _, record in summary.iterrows():
         trait = record.trait
-        source = "data/source_data/files/Figure4/simulation_level_source.csv"
         for suffix, comparison, statistic, df, raw_p, adjusted_p, family in [
             ("realized_sd", "joint realized pre-release SD effect", record.realized_SD_Wald_stat, record.realized_SD_Wald_df, record.realized_SD_p_raw, record.realized_SD_p_Holm, "F4_realized_SD_across_traits"),
             ("architecture", "joint genetic-architecture effect", record.architecture_Wald_stat, record.architecture_Wald_df, record.architecture_p_raw, record.architecture_p_Holm, "F4_architecture_across_traits"),
@@ -476,22 +483,26 @@ def figure4_tests():
                 adjustment="Holm across three traits", status="tested",
                 df=df,
                 notes=f"df={df}; empirical common support [{record.common_support_min}, {record.common_support_max}]",
-                source_file=source,
+                source_file=source, source_file_2=source_2,
             ))
     contrast_frame = pd.DataFrame(contrasts)
+    summary_by_trait = summary.set_index("trait")
     for _, result in contrast_frame.iterrows():
+        counts = summary_by_trait.loc[result.trait]
         rows.append(row(
             publication_item="Figure 4", panel=panel[result.trait],
             test_id=f"F4{panel[result.trait]}_{result.trait}_contrast_{result['quantile']}",
             family_id=f"F4_{result.trait}_conditional_contrasts",
             comparison=f"fixed-b minus fixed-m at {result['quantile']} realized SD",
             estimand="conditional path contrast", test="two-sided HC3 robust linear contrast",
-            independent_unit="simulation", estimate=result.fixed_b_minus_fixed_m,
+            independent_unit="simulation", n_group1=counts.n_fixed_m_common,
+            n_group2=counts.n_fixed_b_common, n_total=counts.n_fixed_m_common + counts.n_fixed_b_common,
+            estimate=result.fixed_b_minus_fixed_m,
             statistic=result.fixed_b_minus_fixed_m, p_raw=result.p_raw, p_adjusted=result.p_Holm,
             adjustment="Holm across low/mid/high contrasts within trait", status="tested",
             ci_level=0.95, ci_low=result.CI_low, ci_high=result.CI_high,
             notes=f"realized SD={result.realized_sd}; CI [{result.CI_low}, {result.CI_high}]",
-            source_file="data/source_data/files/Figure4/simulation_level_source.csv",
+            source_file=source, source_file_2=source_2,
         ))
     coefficient_frame = pd.DataFrame(coefficients)
     reported_terms = {
@@ -501,16 +512,19 @@ def figure4_tests():
     }
     for _, result in coefficient_frame[coefficient_frame.term.isin(reported_terms)].iterrows():
         comparison, family = reported_terms[result.term]
+        counts = summary_by_trait.loc[result.trait]
         rows.append(row(
             publication_item="Figure 4", panel=panel[result.trait],
             test_id=f"F4{panel[result.trait]}_{result.trait}_{result.term}",
             family_id=family, comparison=comparison, estimand="HC3 model coefficient or linear combination",
             test="two-sided HC3 robust coefficient test", independent_unit="simulation",
+            n_group1=counts.n_fixed_m_common, n_group2=counts.n_fixed_b_common,
+            n_total=counts.n_fixed_m_common + counts.n_fixed_b_common,
             estimate=result.estimate, statistic=result.estimate, p_raw=result.p_value,
             p_adjusted=result.p_value, adjustment="none; prespecified reported coefficient",
             ci_level=0.95, ci_low=result.CI_low, ci_high=result.CI_high, status="tested",
             notes="Full interaction model within empirical common support",
-            source_file="data/source_data/files/Figure4/simulation_level_source.csv",
+            source_file=source, source_file_2=source_2,
         ))
     return rows
 
@@ -713,12 +727,13 @@ def s2_tests():
         ["trait", "sd_stratum", "m", "b"], sort=True
     ).agg(n_simulations=("replicate", "size"), normalized_response_mean=("normalized_response", "mean")).reset_index()
     rows = []
+    panel_for_trait = {"dc": "A", "er": "B", "sf": "C"}
     for (trait, stratum), group in summary.groupby(["trait", "sd_stratum"], sort=True):
         group = group.sort_values("m")
         if len(group) < 2:
             rows.append(row(
-                publication_item="Supplementary Figure S2", panel=trait.upper(),
-                test_id=f"S2_{trait}_{stratum}", family_id="S2_exact_trends",
+                publication_item="Supplementary Figure S2", panel=panel_for_trait[trait],
+                test_id=f"S2_{trait}_{stratum}", family_id=f"S2_{trait}_lower_SD",
                 comparison=f"{trait}, SD stratum {stratum:g}", estimand="Spearman rank correlation",
                 test="two-sided exact Spearman permutation", independent_unit="setting mean",
                 n_total=len(group), status="not estimable", notes="Only one setting in stratum",
@@ -728,8 +743,8 @@ def s2_tests():
         x = rankdata(group.m.to_numpy(), method="average")
         rho, p, extreme, total = exact_spearman(x, group.normalized_response_mean.to_numpy())
         rows.append(row(
-            publication_item="Supplementary Figure S2", panel=trait.upper(),
-            test_id=f"S2_{trait}_{stratum}", family_id="S2_exact_trends",
+            publication_item="Supplementary Figure S2", panel=panel_for_trait[trait],
+            test_id=f"S2_{trait}_{stratum}", family_id=f"S2_{trait}_lower_SD",
             comparison=f"{trait}, SD stratum {stratum:g}", estimand="Spearman rank correlation",
             test="two-sided exact Spearman permutation", independent_unit="setting mean",
             n_total=len(group), estimate=rho, statistic=rho, p_raw=p, p_adjusted=p,
@@ -739,7 +754,7 @@ def s2_tests():
             source_file=source.relative_to(REPO).as_posix(),
         ))
     for trait in ["dc", "er", "sf"]:
-        selected = [x for x in rows if x["panel"] == trait.upper() and x["status"] == "tested"]
+        selected = [x for x in rows if x["panel"] == panel_for_trait[trait] and x["family_id"] == f"S2_{trait}_lower_SD" and x["status"] == "tested"]
         adjusted = holm([x["p_raw"] for x in selected])
         for result, p_adj in zip(selected, adjusted):
             result["p_adjusted"] = p_adj
@@ -750,6 +765,10 @@ def s2_tests():
 def table_s3():
     source = FILES / "Figure_S4/pre_release_block_replicates.csv"
     data = pd.read_csv(source)
+    source_relative = source.relative_to(REPO).as_posix()
+    source_hash = file_sha256(source)
+    script_relative = Path(__file__).resolve().relative_to(REPO).as_posix()
+    script_hash = file_sha256(Path(__file__).resolve())
     labels = {
         "virtual_haploid_load": "Virtual haploid load",
         "copies_per_individual": "Mutation copies per individual",
@@ -779,6 +798,9 @@ def table_s3():
                 "pass_epsilon_0p025": r_trend < .025 and r_last < .025,
                 "pass_epsilon_0p05": r_trend < .05 and r_last < .05,
                 "pass_epsilon_0p1": r_trend < .10 and r_last < .10,
+                "source_file": source_relative, "source_sha256": source_hash,
+                "analysis_script": script_relative, "analysis_script_sha256": script_hash,
+                "archive_commit": "recorded by the enclosing Git commit",
             })
     return pd.DataFrame(records)
 
@@ -820,6 +842,11 @@ def write_outputs():
         path = REPO / source
         source_hashes[source] = file_sha256(path) if path.is_file() else np.nan
     results["source_sha256"] = results.source_file.map(source_hashes)
+    source_hashes_2 = {}
+    for source in results.source_file_2.dropna().unique():
+        path = REPO / source
+        source_hashes_2[source] = file_sha256(path) if path.is_file() else np.nan
+    results["source_sha256_2"] = results.source_file_2.map(source_hashes_2)
     results["significance_raw"] = results.p_raw.map(significance)
     results["significance_adjusted"] = results.p_adjusted.map(significance)
     results.to_csv(OUT / "all_inferential_tests.csv", index=False, encoding="utf-8-sig")
@@ -847,7 +874,9 @@ def write_outputs():
     for _, mapped in mapping.iterrows():
         panel = str(mapped.panel)
         key = (mapped.publication_item, panel)
-        if mapped.statistics_candidate == "not applicable":
+        if mapped.publication_item == "Supplementary Figure S4":
+            status = "operational_diagnostic_in_Table_S3"
+        elif mapped.statistics_candidate == "not applicable":
             status = "descriptive_not_applicable"
         elif key in tested or mapped.publication_item in {"Supplementary Table S2", "Supplementary Table S3"}:
             status = "recomputed"
@@ -857,7 +886,7 @@ def write_outputs():
             "record_id": mapped.record_id, "publication_item": mapped.publication_item,
             "panel": panel, "current_content": mapped.current_content,
             "statistics_status": status, "statistics_file": (
-                "results/statistics/Table_S3.csv" if mapped.record_id == "TS3" else
+                "results/statistics/Table_S3.csv" if mapped.record_id == "TS3" or mapped.publication_item == "Supplementary Figure S4" else
                 "results/statistics/Table_S2.csv" if mapped.record_id == "TS2" else
                 "results/statistics/all_inferential_tests.csv" if status == "recomputed" else "not applicable"
             ),

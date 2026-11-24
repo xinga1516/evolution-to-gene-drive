@@ -1,0 +1,3 @@
+﻿role,source_file,source_sha256
+endpoint simulations,data/source_data/files/Figure4/simulation_level_source.csv,1c2813b91710e9129124fa0d51c2c243aeda04e6113666dd0a058b2b6d91ae7e
+group_id to trait/b/m metadata,data/source_data/files/Figure_S2/simulation_level_source.csv,e540d60c4a9312f690cc766cd30d3ca59596747b482380cb7bcab0c04b51decb

@@ -25,17 +25,17 @@ F6D,Figure 6,D,final relative population size,recomputed,results/statistics/all_
 S1A,Supplementary Figure S1,A,Figure 1 spatial final NNI,descriptive_not_applicable,not applicable
 S1B,Supplementary Figure S1,B,Figure 2E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
 S1C,Supplementary Figure S1,C,Figure 3E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
-S2A,Supplementary Figure S2,A,outcome composition setting group A,covered_by_companion_panel_or_table,not applicable
-S2B,Supplementary Figure S2,B,outcome composition setting group B,covered_by_companion_panel_or_table,not applicable
-S2C,Supplementary Figure S2,C,outcome composition setting group C,covered_by_companion_panel_or_table,not applicable
+S2A,Supplementary Figure S2,A,outcome composition setting group A,recomputed,results/statistics/all_inferential_tests.csv
+S2B,Supplementary Figure S2,B,outcome composition setting group B,recomputed,results/statistics/all_inferential_tests.csv
+S2C,Supplementary Figure S2,C,outcome composition setting group C,recomputed,results/statistics/all_inferential_tests.csv
 S3A,Supplementary Figure S3,A,adult mean dispersal change,descriptive_not_applicable,not applicable
 S3B,Supplementary Figure S3,B,within-population dispersal SD ratio,descriptive_not_applicable,not applicable
 S3C,Supplementary Figure S3,C,expected heterozygosity retained,descriptive_not_applicable,not applicable
 S3D,Supplementary Figure S3,D,segregating modifier loci retained,descriptive_not_applicable,not applicable
-S4A,Supplementary Figure S4,A,pre-release virtual haploid load,covered_by_companion_panel_or_table,not applicable
-S4B,Supplementary Figure S4,B,pre-release mutation copies per individual,covered_by_companion_panel_or_table,not applicable
-S4C,Supplementary Figure S4,C,pre-release population size,covered_by_companion_panel_or_table,not applicable
-S4D,Supplementary Figure S4,D,pre-release mean genetic viability W_load,covered_by_companion_panel_or_table,not applicable
+S4A,Supplementary Figure S4,A,pre-release virtual haploid load,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
+S4B,Supplementary Figure S4,B,pre-release mutation copies per individual,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
+S4C,Supplementary Figure S4,C,pre-release population size,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
+S4D,Supplementary Figure S4,D,pre-release mean genetic viability W_load,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
 S5A,Supplementary Figure S5,A,virtual haploid load,descriptive_not_applicable,not applicable
 S5B,Supplementary Figure S5,B,mutation copies per individual,descriptive_not_applicable,not applicable
 S5C,Supplementary Figure S5,C,recorded mean genetic viability,descriptive_not_applicable,not applicable
