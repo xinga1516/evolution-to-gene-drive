@@ -24,6 +24,11 @@ It contains 200 non-empty checkpoints (100 per mode), all seeds 61001--61100,
 and the corresponding trait histories and run metadata. The metadata records
 the expected pinned-model hash. The pinned model and historical runner are not
 inside that archive and still need recovery from the cluster or another backup.
+The historical extension worker is retained locally as
+`10-zpg-off-c075-to100.sh` (SHA256
+`ce7d91e6990ca43cf0210bc50691d92d7109aadb8e9b2ee9d0d03d45b093cdbd`);
+it confirms the checkpoint, branch-seed and fixed-dispersal rules recorded in
+the manifest.
 
 On the cluster, run:
 

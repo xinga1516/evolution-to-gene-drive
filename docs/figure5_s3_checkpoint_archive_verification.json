@@ -19,6 +19,20 @@
   "observed_model_hashes": [
     "94e465ec99eaef5646cdfc1828c8121cb0b7df4b4290a0f7622e04624def8812"
   ],
+  "status_contract": {
+    "exit_code": 0,
+    "stage": "checkpoint",
+    "trait_mode_matches_path": true,
+    "origin_seed_matches_path": true,
+    "k": 1.0,
+    "m": 100,
+    "laplace_b": 0.05,
+    "effective_female_number": 10000,
+    "checkpoint_tick": 100,
+    "checkpoint_complete": true,
+    "outputs_complete": true,
+    "pinned_model_path_recorded": true
+  },
   "checks_passed": true,
   "failures": []
 }

@@ -59,6 +59,39 @@ def main() -> int:
                         model_hashes.add(value)
                     else:
                         failures.append(f"missing_source_sha256:{metadata_name}")
+                status_name = prefix + "status.json"
+                if status_name in entries and entries[status_name].file_size:
+                    try:
+                        status = json.loads(archive.read(status_name))
+                    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                        failures.append(f"invalid_status_json:{status_name}:{exc}")
+                        continue
+                    expected_status = {
+                        "exit_code": 0,
+                        "stage": "checkpoint",
+                        "trait_mode": mode,
+                        "origin_seed": seed,
+                        "k": 1.0,
+                        "m": 100,
+                        "laplace_b": 0.05,
+                        "effective_female_number": 10000,
+                        "checkpoint_tick": 100,
+                        "checkpoint_complete": True,
+                        "outputs_complete": True,
+                    }
+                    for key, expected in expected_status.items():
+                        if status.get(key) != expected:
+                            failures.append(
+                                f"status_mismatch:{status_name}:{key}:"
+                                f"{status.get(key)!r}!={expected!r}"
+                            )
+                    command = status.get("command") or []
+                    if not any(
+                        isinstance(item, str)
+                        and item.endswith("/reprising.formal_experiment.pinned.slim")
+                        for item in command
+                    ):
+                        failures.append(f"status_model_path_missing:{status_name}")
 
     if model_hashes != {EXPECTED_MODEL_SHA256}:
         failures.append(f"unexpected_model_hashes:{sorted(model_hashes)}")
@@ -70,6 +103,20 @@ def main() -> int:
         "expected_checkpoint_directories": 200,
         "required_files_per_directory": list(REQUIRED),
         "observed_model_hashes": sorted(model_hashes),
+        "status_contract": {
+            "exit_code": 0,
+            "stage": "checkpoint",
+            "trait_mode_matches_path": True,
+            "origin_seed_matches_path": True,
+            "k": 1.0,
+            "m": 100,
+            "laplace_b": 0.05,
+            "effective_female_number": 10000,
+            "checkpoint_tick": 100,
+            "checkpoint_complete": True,
+            "outputs_complete": True,
+            "pinned_model_path_recorded": True,
+        },
         "checks_passed": not failures,
         "failures": failures,
     }
