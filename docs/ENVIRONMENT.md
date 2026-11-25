@@ -28,3 +28,11 @@ and CSV.GZ files using only the Python environment above.
 Supplementary Tables S1–S3 are built deterministically with openpyxl 3.1.5;
 ZIP member timestamps and workbook core timestamps are normalized before hash
 comparison.
+
+SLiM is an external simulation dependency and is not installed by the Conda
+environment.  The parameterized launch layer is documented in
+`docs/RUNNING_SLIM.md`.  Its executable rows hash-check the frozen panmictic
+and spatial model files before planning or running commands.  Figure 5/S3 used
+a separate SLiM 5.0 checkpoint model; the manifest preserves its expected hash
+and commands and marks the rows non-executable until the exact model and
+checkpoints are recovered.
