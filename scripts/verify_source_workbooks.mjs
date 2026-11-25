@@ -68,6 +68,13 @@ for (const [bookName, entries] of Object.entries(manifest)) {
 }
 
 const output = path.join(sourceDir, "workbook_qa.json");
-await fs.writeFile(output, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+const reportText = `${JSON.stringify(report, null, 2)}\n`;
+let existingReport = null;
+try {
+  existingReport = await fs.readFile(output, "utf8");
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+if (existingReport !== reportText) await fs.writeFile(output, reportText, "utf8");
 console.log(`Verified ${report.length} workbooks; failures=${report.filter((item) => !item.pass).length}`);
 if (failed) process.exitCode = 1;
