@@ -314,3 +314,20 @@ Post-review repairs in `ec71369` separate Figure 2A (100 replicates per cell),
 Figure 2B--C (20 per cell) and Figure 2D (100 per spatial cell), add explicit
 Table S1 and S2 no-simulation mappings, and enforce SLiM 4.0.1 for executable
 rows. The Figure 5/S3 asset blocker remains; Process 6 stays unaccepted.
+
+### Process 6 checkpoint recovery update
+
+Local archive recovery after the failed review found the complete Figure 5/S3
+checkpoint tree. `checkpoints.zip` has SHA256
+`7684e5c164a8c0fcfe99a4b9d53fc93630e9aa8f12e5cc2e037fefc5390b6811`.
+The repository verifier confirms 200/200 complete checkpoint directories,
+evolving and uniform seeds 61001--61100, their trait histories, successful
+checkpoint status records and the expected pinned-model hash. The previously
+reported checkpoint blocker is therefore resolved.
+
+Process 6 remains `NO`: the exact
+`reprising.formal_experiment.pinned.slim` (expected SHA256
+`94e465ec99eaef5646cdfc1828c8121cb0b7df4b4290a0f7622e04624def8812`)
+and `formal_drive_task1.py` have not yet been recovered. The nine external
+Figure 5/S3 rows cannot be promoted to executable rows until those assets are
+available and pass a new same-candidate three-party review.
