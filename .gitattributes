@@ -1,10 +1,2 @@
 *.svg -whitespace
-*.svg -text
-*.csv -text
-*.csv.gz -text
-*.png -text
-*.pptx -text
-*.xlsx -text
-*.py text eol=lf
-*.md text eol=lf
-*.json text eol=lf
+data/source_data/files/Figure_S2/outcome_composition.csv text eol=lf
