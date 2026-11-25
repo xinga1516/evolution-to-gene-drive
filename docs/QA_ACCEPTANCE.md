@@ -21,7 +21,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PASS | PASS | PASS | YES |
 | 6 | Build parameterized SLiM runner, run manifest and short run guide | PASS | PASS | PASS | YES |
 | 7 | End-to-end clean-room reproduction and repository completeness audit | PASS | PASS | PASS | YES |
-| 8 | Commit, push and final remote verification | PENDING | PENDING | PENDING | NO |
+| 8 | Commit, push and final remote verification | PASS | PASS | PASS | YES |
 
 ## Review record format
 
@@ -374,4 +374,37 @@ candidate.
   59/59 including 99 inferential records and 8 stability diagnostics; 15
   workbooks; all 46 `FINAL_VERIFIED` mappings; 12 figures and Tables S1--S3;
   17-page PowerPoint comparison; environment and launch-layer completeness.
+- Blocking findings: none.
+
+## Process 8 accepted review record
+
+Candidate commit: `9de86cc27d05a1fd60149bda74581d8cd372d519`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: successful push response updating
+  `reproducibility-archive` from `f237c16` to `9de86cc`; local clean HEAD;
+  post-push `git ls-remote --heads origin reproducibility-archive` returning
+  the exact full candidate SHA.
+- Blocking findings: none.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer
+  (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: push acknowledgement, exact remote ref readback, matching
+  local clean HEAD, and prior Process-7 clean-room scientific verification.
+- Blocking findings: none. A full shallow clone was treated as optional
+  strengthening rather than a requirement after exact ref readback succeeded.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer
+  (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: exact `ls-remote` SHA, successful push acknowledgement,
+  matching local clean HEAD and the accepted scientific candidate.
 - Blocking findings: none.
