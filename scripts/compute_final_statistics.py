@@ -362,7 +362,7 @@ def _f4_design(data: pd.DataFrame) -> pd.DataFrame:
 
 def figure4_tests():
     raw = pd.read_csv(FILES / "Figure4/simulation_level_source.csv")
-    metadata = pd.read_csv(FILES / "Figure_S2/simulation_level_source.csv")[[
+    metadata = pd.read_csv(FILES / "Figure4/architecture_parameter_metadata.csv")[[
         "group_id", "trait", "b", "m"
     ]].drop_duplicates("group_id")
     raw = raw.merge(metadata, on="group_id", validate="many_to_one")
@@ -466,7 +466,7 @@ def figure4_tests():
     pd.DataFrame(sensitivities).to_csv(OUT / "Figure4_full_range_sensitivity.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(diagnostics).to_csv(OUT / "Figure4_model_diagnostics_summary.csv", index=False, encoding="utf-8-sig")
     source = "data/source_data/files/Figure4/simulation_level_source.csv"
-    source_2 = "data/source_data/files/Figure_S2/simulation_level_source.csv"
+    source_2 = "data/source_data/files/Figure4/architecture_parameter_metadata.csv"
     pd.DataFrame([
         {"role": "endpoint simulations", "source_file": source, "source_sha256": file_sha256(REPO / source)},
         {"role": "group_id to trait/b/m metadata", "source_file": source_2, "source_sha256": file_sha256(REPO / source_2)},
@@ -831,7 +831,6 @@ def write_outputs():
     rows += figure5_tests()
     rows += figure6_tests()
     rows += s1_tests()
-    rows += s2_tests()
 
     results = pd.DataFrame(rows, columns=STANDARD_COLUMNS)
     # Numerical survival functions may underflow for extremely large Wald z.

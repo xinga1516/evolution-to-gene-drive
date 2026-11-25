@@ -3,18 +3,22 @@
 This branch is the reproducibility archive for the locked final figures and
 supplementary material. Canonical panel values are under
 `data/source_data/files/`, accepted tests are under `results/statistics/`, and
-the 45-row panel/table lineage is recorded in `config/figure_data_map.csv`.
+the 46-row panel/table lineage is recorded in `config/figure_data_map.csv`.
 
 Build the data-driven redraws and the pixel-exact locked submission pages:
 
 ```powershell
 python -m pip install -r requirements-lock.txt
 python scripts/plotting/build_final_figures.py
+python scripts/build_supplementary_tables.py
+python scripts/build_submission_visual_map.py
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify_submission_deck.ps1
 python scripts/build_figure_plot_manifest.py
 python scripts/verify_figures.py
 ```
 
-The exact submission appearance comes from the frozen final-deck exports in
+The exact submission appearance comes from the archived canonical deck at
+`docs/visual_references/Figures_final_submission.pptx` and its frozen exports in
 `docs/visual_references/submission_slides/`. The repository-native redraws are
 kept separately under `results/figures/rebuilt/`; this preserves numerical
 reproducibility without pretending that PowerPoint's manual page composition

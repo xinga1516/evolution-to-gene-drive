@@ -148,20 +148,20 @@
   ],
   "Figure_S2": [
     {
-      "sheet": "Panels_A_C",
-      "path": "data/source_data/workbook_tables/Figure_S2/Panels_A_C.csv",
-      "rows": 4500,
-      "columns": 10,
-      "scope": "Supplementary Figure S2A-C"
+      "sheet": "Panels_A_B",
+      "path": "data/source_data/workbook_tables/Figure_S2/Panels_A_B.csv",
+      "rows": 28,
+      "columns": 5,
+      "scope": "Supplementary Figure S2A-B"
     }
   ],
   "Figure_S3": [
     {
-      "sheet": "Panels_A_D",
-      "path": "data/source_data/workbook_tables/Figure_S3/Panels_A_D.csv",
-      "rows": 640,
+      "sheet": "Panels_A_F",
+      "path": "data/source_data/workbook_tables/Figure_S3/Panels_A_F.csv",
+      "rows": 960,
       "columns": 9,
-      "scope": "Supplementary Figure S3A-D (decimated workbook view; exact table in files/)"
+      "scope": "Supplementary Figure S3A-F (decimated workbook view; exact table in files/)"
     }
   ],
   "Figure_S4": [
@@ -241,7 +241,7 @@
     {
       "sheet": "All_P_values",
       "path": "data/source_data/workbook_tables/Table_S2/All_P_values.csv",
-      "rows": 111,
+      "rows": 99,
       "columns": 34,
       "scope": "Supplementary Table S2"
     }

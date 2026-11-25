@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the 45-row figure/table build manifest from canonical repository files."""
+"""Build the 46-row figure/table build manifest from canonical repository files."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ OUT = REPO / "config" / "figure_plot_manifest.csv"
 VISUAL_MAP = REPO / "config" / "submission_visual_map.csv"
 PLOT_SCRIPT = Path("scripts/plotting/build_final_figures.py")
 RENDER_SCRIPT = Path("scripts/plotting/render_final_figures.py")
-TABLE_SCRIPT = Path("scripts/build_source_workbooks.mjs")
+TABLE_SCRIPT = Path("scripts/build_supplementary_tables.py")
 
 
 def sha256(path: Path, normalize_text: bool = False) -> str:
@@ -41,9 +41,9 @@ def source_paths(publication_item: str, key: str | None) -> list[Path]:
     if key:
         folder = REPO / "data" / "source_data" / "files" / key
         return [p.relative_to(REPO) for p in sorted(folder.glob("*")) if p.is_file()]
-    suffix = publication_item.rsplit(" ", 1)[-1].replace("S", "S")
-    workbook = Path("data/source_data") / f"Table_{suffix}.xlsx"
-    return [workbook]
+    suffix = publication_item.rsplit(" ", 1)[-1]
+    folder = REPO / "data" / "source_data" / "workbook_tables" / f"Table_{suffix}"
+    return [p.relative_to(REPO) for p in sorted(folder.glob("*.csv"))]
 
 
 def main() -> None:
@@ -61,7 +61,7 @@ def main() -> None:
             is_figure = key is not None
             script = PLOT_SCRIPT if is_figure else TABLE_SCRIPT
             cli = (f"python {PLOT_SCRIPT.as_posix()}"
-                   if is_figure else "node scripts/build_source_workbooks.mjs")
+                   if is_figure else "python scripts/build_supplementary_tables.py")
             sources = source_paths(item, key)
             stats_target = record["repository_statistics_target"]
             stats = [] if stats_target == "not applicable" else [Path(stats_target)]
@@ -75,7 +75,8 @@ def main() -> None:
                 formats = "PNG"
                 dpi = "PowerPoint export 1920x1080"
             else:
-                output_paths = sources
+                suffix = item.rsplit(" ", 1)[-1]
+                output_paths = [Path("data/source_data") / f"Table_{suffix}.xlsx"]
                 reconstructed_paths = []
                 dimensions, formats, dpi = "not applicable", "XLSX", "not applicable"
             rows.append({

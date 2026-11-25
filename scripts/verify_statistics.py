@@ -82,11 +82,8 @@ def main() -> None:
     check("Figure4 all tested rows actual n", figure4.loc[figure4.status.eq("tested"), ["n_group1", "n_group2", "n_total"]].notna().all().all())
     check("Figure4 dual input chain", figure4.source_file_2.notna().all() and figure4.source_sha256_2.notna().all())
 
-    s2 = data[data.publication_item.eq("Supplementary Figure S2")]
-    check("S2 panel mapping", set(s2.panel) == {"A", "B", "C"})
-    check("S2 family mapping", set(s2.family_id) == {"S2_dc_lower_SD", "S2_er_lower_SD", "S2_sf_lower_SD"})
     catalog = pd.read_csv(OUT / "statistics_catalog.csv")
-    check("S2 catalog linked", catalog[catalog.record_id.isin(["S2A", "S2B", "S2C"])].statistics_file.eq("results/statistics/all_inferential_tests.csv").all())
+    check("S2 descriptive catalog", catalog[catalog.record_id.isin(["S2A", "S2B"])].statistics_file.eq("not applicable").all())
     check("S4 catalog linked to Table S3", catalog[catalog.publication_item.eq("Supplementary Figure S4")].statistics_file.eq("results/statistics/Table_S3.csv").all())
 
     table_s2 = pd.read_csv(OUT / "Table_S2.csv")

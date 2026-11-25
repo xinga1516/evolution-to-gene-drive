@@ -14,7 +14,17 @@ Figures are emitted as deterministic SVG and 300-dpi PNG. Figure dimensions,
 font family, output hashes, script hash, environment hash, source-data hashes,
 and statistics hashes are frozen in `config/figure_plot_manifest.csv`.
 
+Pixel-exact verification of the manually composed submission pages additionally
+requires Microsoft PowerPoint on Windows. `scripts/verify_submission_deck.ps1`
+opens the archived deck read-only, exports the mapped slides at 1920×1080 and
+compares SHA-256 values with the frozen references. This dependency is only for
+submission-layout QA; it is not used to calculate scientific values.
+
 The Source Data workbook builder uses Node.js 24.22.3 and OpenAI's
 `@oai/artifact-tool`. That dependency is separate from final plotting; all
 publication panels can be rendered directly from the checked-in canonical CSV
 and CSV.GZ files using only the Python environment above.
+
+Supplementary Tables S1–S3 are built deterministically with openpyxl 3.1.5;
+ZIP member timestamps and workbook core timestamps are normalized before hash
+comparison.

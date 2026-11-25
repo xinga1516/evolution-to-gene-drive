@@ -33,7 +33,7 @@ def main() -> None:
             row["local_authority_candidate"] = "not applicable"
             row["source_data_candidate"] = f"data/source_data/Table_{table}.xlsx"
             row["statistics_candidate"] = row["repository_statistics_target"]
-            row["plot_script_candidate"] = "scripts/build_source_workbooks.mjs"
+            row["plot_script_candidate"] = "scripts/build_supplementary_tables.py"
         row["trace_status"] = "FINAL_VERIFIED"
     buffer=io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=list(rows[0]), lineterminator="\n")

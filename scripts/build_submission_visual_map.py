@@ -6,10 +6,12 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
+import argparse
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "config" / "submission_visual_map.csv"
+DECK_PATH = REPO / "docs" / "visual_references" / "Figures_final_submission.pptx"
 DECK_NAME = "Figures _修改提交(1).pptx"
 DECK_SHA256 = "87beaa2c79f58bda6889e18b60847a4e217a5d53f2761dbc1f12ecc459a970e1"
 MAPPING = [
@@ -35,10 +37,20 @@ def digest(path: Path) -> str:
 
 
 def main() -> None:
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--deck",type=Path,default=DECK_PATH)
+    args=parser.parse_args()
+    deck=args.deck.resolve()
+    if not deck.is_file():
+        raise FileNotFoundError(deck)
+    actual=digest(deck)
+    if actual != DECK_SHA256:
+        raise RuntimeError(f"final deck SHA-256 mismatch: {actual} != {DECK_SHA256}")
     rows=[]
     for item, slide, filename in MAPPING:
         rel=Path("docs/visual_references/submission_slides") / filename
         rows.append({"publication_item":item,"source_deck_filename":DECK_NAME,
+                     "repository_deck_path":DECK_PATH.relative_to(REPO).as_posix(),
                      "source_deck_sha256":DECK_SHA256,"slide_number":slide,
                      "visual_reference":rel.as_posix(),"visual_reference_sha256":digest(REPO/rel),
                      "status":"LOCKED_FINAL"})

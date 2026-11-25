@@ -234,33 +234,71 @@ def figure3():
 
 def figure4():
     raw = pd.read_csv(DATA / "Figure4/simulation_level_source.csv")
-    meta = pd.read_csv(DATA / "Figure_S2/simulation_level_source.csv")[["group_id","trait","b","m"]].drop_duplicates("group_id")
+    meta = pd.read_csv(DATA / "Figure4/architecture_parameter_metadata.csv")[["group_id","trait","b","m"]].drop_duplicates("group_id")
     data = raw.merge(meta, on="group_id"); data = data[data.is_ltp.astype(bool)]
+    stat = pd.read_csv(STATS / "Figure4_common_support_statistical_summary.csv").set_index("trait")
     labels = {"dc":"Final drive conversion", "er":"Final embryo resistance", "sf":"Final female heterozygote fitness"}
     bmin = {"dc":.0048, "er":.0140, "sf":.0113}
     fig, axes = plt.subplots(1, 3, figsize=(10.5, 3.3))
     for ax, trait in zip(axes, ["dc","er","sf"]):
         g = data[data.trait.eq(trait)].copy()
-        paths = [("fixed m", g[g.m.eq(50) & ~np.isclose(g.b,bmin[trait])], BLUE), ("fixed b", g[np.isclose(g.b,bmin[trait]) & ~g.m.eq(50)], PINK)]
+        paths = [("Fixed number of loci (m)", g[g.m.eq(50) & ~np.isclose(g.b,bmin[trait])], BLUE),
+                 ("Fixed effect scale (b)", g[np.isclose(g.b,bmin[trait]) & ~g.m.eq(50)], PINK)]
         for name, q, color in paths:
             x=q.realised_initial_sd_last10_prerelease; y=q.final_attribute_mean_last10
-            ax.scatter(x,y,s=5,alpha=.15,color=color,rasterized=True)
-            means=q.groupby("group_id").agg(x=("realised_initial_sd_last10_prerelease","mean"),y=("final_attribute_mean_last10","mean")).sort_values("x")
-            ax.plot(means.x,means.y,"o-",ms=4,lw=1,color=color,label=name)
-        ax.set(xlabel="Realized pre-release attribute SD", ylabel=labels[trait]); ax.legend(frameon=False); clean(ax)
+            ax.scatter(x,y,s=5,alpha=.12,color=color,rasterized=True)
+            lo, hi = stat.loc[trait,["common_support_min","common_support_max"]]
+            fit=q[x.between(lo,hi)].dropna(subset=["realised_initial_sd_last10_prerelease","final_attribute_mean_last10"])
+            coef=np.polyfit(fit.realised_initial_sd_last10_prerelease,fit.final_attribute_mean_last10,1)
+            xx=np.linspace(lo,hi,100); yy=np.polyval(coef,xx)
+            residual=fit.final_attribute_mean_last10-np.polyval(coef,fit.realised_initial_sd_last10_prerelease)
+            band=np.quantile(np.abs(residual),.75)
+            ax.fill_between(xx,yy-band,yy+band,color=color,alpha=.12,lw=0)
+            ax.plot(xx,yy,lw=1.4,color=color,label=name)
+            means=q.groupby("group_id").agg(x=("realised_initial_sd_last10_prerelease","mean"),y=("final_attribute_mean_last10","mean"))
+            ax.scatter(means.x,means.y,s=20,facecolors="white",edgecolors=color,zorder=4)
+        shared=g[g.m.eq(50) & np.isclose(g.b,bmin[trait])]
+        ax.scatter([shared.realised_initial_sd_last10_prerelease.mean()],
+                   [shared.final_attribute_mean_last10.mean()],marker="D",s=42,
+                   color=BLACK,label="Shared setting",zorder=6)
+        p_sd=stat.loc[trait,"realized_SD_p_Holm"]; p_arch=stat.loc[trait,"architecture_p_Holm"]
+        p_sd_text="<0.0001" if p_sd < 1e-4 else f"={p_sd:.4f}"
+        ax.text(.02,.98,f"Realized SD: Holm P {p_sd_text}\nArchitecture: Holm P={p_arch:.4f}",
+                transform=ax.transAxes,va="top",fontsize=7.2)
+        ax.set(xlabel="Realized pre-release attribute SD", ylabel=labels[trait]); clean(ax)
+    axes[0].legend(frameon=False,fontsize=6.8)
     label_panels(axes); fig.tight_layout(); save(fig,"Figure4")
 
 
 def figure5():
     data=pd.read_csv(DATA/"Figure5/source_data_per_run.csv")
     fig,axes=plt.subplots(1,2,figsize=(8.2,3.5))
-    _outcome_bar(axes[0],data[data["mode"].ne("nodrive")],["conversion","mode"])
-    rng=np.random.default_rng(5); order=["nodrive","evolving"]
+    outcomes=[("elimination",ORANGE),("drive loss",BLUE),("long-term persistence",GREEN)]
+    modes=[("uniform",-.16,"Fixed dispersal",None),("evolving",.16,"Evolving dispersal","//")]
     for yi,conversion in enumerate([.75,.85,.95,.99]):
-        q=data[data.conversion.eq(conversion) & data["mode"].eq("evolving")]
-        axes[1].scatter(q.dispersal_E_percent, yi+rng.normal(0,.04,len(q)),s=8,alpha=.45,color=GREEN)
-        axes[1].scatter([q.dispersal_E_percent.mean()],[yi],s=40,facecolors="white",edgecolors=BLACK,zorder=5)
-    axes[1].set_yticks(range(4),["0.75","0.85","0.95","0.99"]); axes[1].set(xlabel="Adult dispersal change (%)",ylabel="Drive conversion"); axes[1].axvline(0,color=GRAY,ls="--",lw=.7); clean(axes[1])
+        for mode,off,_,hatch in modes:
+            q=data[data.conversion.eq(conversion)&data["mode"].eq(mode)]
+            left=0
+            for outcome,color in outcomes:
+                width=(q.outcome.str.lower().eq(outcome)).mean()
+                axes[0].barh(yi+off,width,left=left,height=.27,color=color,edgecolor="#444",lw=.55,hatch=hatch)
+                left+=width
+    axes[0].set_yticks(range(4),["0.75","0.85","0.95","0.99"])
+    axes[0].set(xlabel="Outcome probability",ylabel="Drive conversion",xlim=(0,1))
+    axes[0].legend(handles=[Patch(fc=ORANGE,ec="#444",label="Population elimination"),Patch(fc=BLUE,ec="#444",label="Drive loss"),Patch(fc=GREEN,ec="#444",label="Long-term persistence"),Patch(fc="white",ec="#444",label="Fixed dispersal"),Patch(fc="white",ec="#444",hatch="//",label="Evolving dispersal")],frameon=False,fontsize=6.2,ncol=2)
+    rng=np.random.default_rng(5); labels=["No drive","0.75","0.85","0.95","0.99"]
+    point_colors={"long-term persistence":GREEN,"elimination":ORANGE,"drive loss":BLUE,"no drive":GREEN}
+    groups=[data[data["mode"].eq("nodrive")]]+[data[data.conversion.eq(c)&data["mode"].eq("evolving")] for c in [.75,.85,.95,.99]]
+    for yi,q in enumerate(groups):
+        for outcome,z in q.groupby(q.outcome.str.lower()):
+            face="none" if outcome=="no drive" else point_colors.get(outcome,GRAY)
+            axes[1].scatter(z.dispersal_E_percent,yi+rng.normal(0,.035,len(z)),s=9,alpha=.55,
+                            facecolors=face,edgecolors=point_colors.get(outcome,GRAY),lw=.6)
+        ltp=q[q.outcome.str.lower().isin(["long-term persistence","no drive"])].dispersal_E_percent
+        non=q[~q.outcome.str.lower().isin(["long-term persistence","no drive"])].dispersal_E_percent
+        if len(ltp): axes[1].errorbar(ltp.mean(),yi,xerr=ltp.sem(),fmt="o",mfc="white",mec=BLACK,color=BLACK,capsize=2,zorder=5)
+        if len(non): axes[1].errorbar(non.mean(),yi,xerr=non.sem(),fmt="o",mfc="white",mec=ORANGE_DARK,color=ORANGE_DARK,capsize=2,zorder=5)
+    axes[1].set_yticks(range(5),labels); axes[1].set(xlabel="Adult dispersal change (%)",ylabel="Drive conversion"); axes[1].axvline(0,color=GRAY,ls="--",lw=.7); clean(axes[1])
     label_panels(axes); fig.tight_layout(); save(fig,"Figure5")
 
 
@@ -310,25 +348,37 @@ def figure_s1():
 
 
 def figure_s2():
-    d=pd.read_csv(DATA/"Figure_S2/simulation_level_source.csv")
-    fig,axes=plt.subplots(1,3,figsize=(10.3,3.3))
-    for ax,trait in zip(axes,["dc","er","sf"]):
-        q=d[d.trait.eq(trait)].groupby(["sd_stratum","m"]).normalized_response.mean().reset_index()
-        for stratum,g in q.groupby("sd_stratum"): ax.plot(g.m,g.normalized_response,"o-",ms=3,lw=.8,label=f"SD stratum {stratum}")
-        ax.set(xscale="log",xlabel="Number of modifier loci (m)",ylabel="Normalized response",title=trait.upper()); clean(ax)
-    axes[0].legend(frameon=False); label_panels(axes); fig.tight_layout(); save(fig,"Figure_S2")
+    d=pd.read_csv(DATA/"Figure_S2/outcome_composition.csv")
+    fig,axes=plt.subplots(1,2,figsize=(10.5,5.0))
+    settings=["0.70","0.75","0.80","0.85","0.90","0.95","Emp"]
+    for ax,(figure,q) in zip(axes,d.groupby("figure",sort=False)):
+        for yi,setting in enumerate(settings):
+            for cohort,off,hatch in [("Neutral mutations",-.18,None),("Variable mutations",.18,"//")]:
+                z=q[(q.setting.eq(setting))&(q.cohort.eq(cohort))].iloc[0]
+                total=z.long_term_persistence+z.population_elimination
+                ltp=z.long_term_persistence/total
+                ax.barh(yi+off,ltp,height=.30,color=GREEN,edgecolor="#555",lw=.7,hatch=hatch)
+                if ltp<1: ax.barh(yi+off,1-ltp,left=ltp,height=.30,color=ORANGE,edgecolor="#555",lw=.7,hatch=hatch)
+                ax.text(1.02,yi+off,f"{int(total)}/20",va="center",fontsize=7.5)
+        ax.set_yticks(range(len(settings)),settings); ax.invert_yaxis(); ax.set_xlim(0,1.13)
+        ax.set(xlabel="Outcome probability",ylabel="Drive conversion",title=f"{figure} settings"); clean(ax)
+    axes[0].legend(handles=[Patch(fc=GREEN,label="Long-term persistence"),Patch(fc=ORANGE,label="Population elimination"),Patch(fc="white",ec="#555",label="Neutral mutations"),Patch(fc="white",ec="#555",hatch="//",label="Variable mutations")],frameon=False,ncol=2)
+    label_panels(axes); fig.tight_layout(); save(fig,"Figure_S2")
 
 
 def figure_s3():
     d=pd.read_csv(DATA/"Figure_S3/plot_summary.csv")
-    metrics=["dispersal_change_pct","dispersal_sd_ratio","he_over_initial","segregating_over_initial"]
-    labels=["Adult dispersal change (%)","Dispersal SD / initial","Expected heterozygosity / initial","Segregating loci / initial"]
-    fig,axes=plt.subplots(2,2,figsize=(8.2,6))
+    metrics=["dispersal_change_pct","dispersal_sd_ratio","he_over_initial","segregating_over_initial","adult_N_ratio","fertile_female_N_ratio"]
+    labels=["Adult mean dispersal change (%)","Within-population dispersal SD ratio","Expected heterozygosity retained","Segregating modifier loci retained","Adult population ratio","Fertile adult female ratio"]
+    fig,axes=plt.subplots(2,3,figsize=(10.5,5.9))
     for ax,metric,label in zip(axes.ravel(),metrics,labels):
         for arch,q in d[d.metric.eq(metric)].groupby("arch"):
-            ax.plot(q.tick,q["median"],lw=1,label=arch); ax.fill_between(q.tick,q.q25,q.q75,alpha=.1)
-        ax.set(xlabel="Tick",ylabel=label); clean(ax)
-    axes[0,0].legend(frameon=False); label_panels(axes); fig.tight_layout(); save(fig,"Figure_S3")
+            ax.plot(q.tick,q["median"],lw=1.4,color=GRAY,label=arch)
+            ax.fill_between(q.tick,q.q05,q.q95,color=GRAY,alpha=.12,lw=0)
+            ax.fill_between(q.tick,q.q25,q.q75,color=GRAY,alpha=.28,lw=0)
+        ax.set(xlim=(0,1600),xlabel="Generation",ylabel=label); clean(ax)
+    axes[0,0].legend(handles=[plt.Line2D([],[],color=GRAY,lw=1.4,label="Median across no-drive simulations"),Patch(fc=GRAY,alpha=.28,label="Interquartile range"),Patch(fc=GRAY,alpha=.12,label="5th–95th percentile range")],frameon=False,fontsize=6.7)
+    label_panels(axes); fig.tight_layout(); save(fig,"Figure_S3")
 
 
 def figure_s4():

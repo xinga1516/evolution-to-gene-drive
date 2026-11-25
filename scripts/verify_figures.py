@@ -50,8 +50,8 @@ def main() -> int:
     args = parser.parse_args()
     rows = list(csv.DictReader(MANIFEST.open(newline="", encoding="utf-8-sig")))
     failures: list[str] = []
-    if len(rows) != 45:
-        failures.append(f"manifest row count {len(rows)} != 45")
+    if len(rows) != 46:
+        failures.append(f"manifest row count {len(rows)} != 46")
     if len({row["record_id"] for row in rows}) != len(rows):
         failures.append("duplicate record_id")
     for row in rows:
@@ -84,6 +84,13 @@ def main() -> int:
                     candidate = temp_root / subdir / accepted.name
                     if not candidate.is_file() or sha256(candidate) != sha256(accepted):
                         failures.append(f"rerender mismatch {subdir}/{accepted.name}")
+            tables=temp_root/"tables"
+            subprocess.run([sys.executable, str(REPO / "scripts/build_supplementary_tables.py"),
+                            "--output-dir", str(tables)], cwd=REPO, check=True)
+            for accepted in sorted((REPO / "data/source_data").glob("Table_S*.xlsx")):
+                candidate=tables/accepted.name
+                if not candidate.is_file() or sha256(candidate) != sha256(accepted):
+                    failures.append(f"table rerender mismatch {accepted.name}")
     report = REPO / "results" / "figures" / "verification_report.txt"
     report.write_text("\n".join([f"checks={len(rows)} records + deterministic rerender", f"failures={len(failures)}", *failures]) + "\n", encoding="utf-8")
     print(report.read_text(encoding="utf-8"), end="")

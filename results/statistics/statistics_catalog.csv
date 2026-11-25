@@ -25,13 +25,14 @@ F6D,Figure 6,D,final relative population size,recomputed,results/statistics/all_
 S1A,Supplementary Figure S1,A,Figure 1 spatial final NNI,descriptive_not_applicable,not applicable
 S1B,Supplementary Figure S1,B,Figure 2E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
 S1C,Supplementary Figure S1,C,Figure 3E setting-level final NNI,recomputed,results/statistics/all_inferential_tests.csv
-S2A,Supplementary Figure S2,A,outcome composition setting group A,recomputed,results/statistics/all_inferential_tests.csv
-S2B,Supplementary Figure S2,B,outcome composition setting group B,recomputed,results/statistics/all_inferential_tests.csv
-S2C,Supplementary Figure S2,C,outcome composition setting group C,recomputed,results/statistics/all_inferential_tests.csv
+S2A,Supplementary Figure S2,A,Figure 2E outcome composition by setting and mutation cohort,descriptive_not_applicable,not applicable
+S2B,Supplementary Figure S2,B,Figure 3E outcome composition by setting and mutation cohort,descriptive_not_applicable,not applicable
 S3A,Supplementary Figure S3,A,adult mean dispersal change,descriptive_not_applicable,not applicable
 S3B,Supplementary Figure S3,B,within-population dispersal SD ratio,descriptive_not_applicable,not applicable
 S3C,Supplementary Figure S3,C,expected heterozygosity retained,descriptive_not_applicable,not applicable
 S3D,Supplementary Figure S3,D,segregating modifier loci retained,descriptive_not_applicable,not applicable
+S3E,Supplementary Figure S3,E,adult population ratio,descriptive_not_applicable,not applicable
+S3F,Supplementary Figure S3,F,fertile adult female ratio,descriptive_not_applicable,not applicable
 S4A,Supplementary Figure S4,A,pre-release virtual haploid load,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
 S4B,Supplementary Figure S4,B,pre-release mutation copies per individual,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv
 S4C,Supplementary Figure S4,C,pre-release population size,operational_diagnostic_in_Table_S3,results/statistics/Table_S3.csv

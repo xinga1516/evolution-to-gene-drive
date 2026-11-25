@@ -124,11 +124,14 @@ python scripts/compute_final_statistics.py
 python scripts/build_workbook_tables.py
 python scripts/build_external_raw_manifest.py
 node scripts/build_source_workbooks.mjs
+python scripts/build_supplementary_tables.py
 node scripts/verify_source_workbooks.mjs
 python scripts/verify_source_data.py
 python scripts/verify_statistics.py
 ```
 
-Workbook export uses the repository's spreadsheet-artifact workflow. All
+Figure workbooks use the spreadsheet-artifact workflow; Supplementary Tables
+S1–S3 are then rebuilt deterministically from their canonical CSV staging
+tables by `build_supplementary_tables.py`. All
 canonical file hashes and dimensions must match `source_data_catalog.csv` after
 regeneration.

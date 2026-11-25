@@ -98,15 +98,3 @@ Supplementary Figure S1,C,S1C_0.85,simulation,20.0,20.0,40.0,tested,Monte-Carlo 
 Supplementary Figure S1,C,S1C_0.9,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
 Supplementary Figure S1,C,S1C_0.95,simulation,20.0,20.0,40.0,tested,Monte-Carlo plus-one P value
 Supplementary Figure S1,C,S1C_0.99,simulation,17.0,20.0,37.0,tested,Monte-Carlo plus-one P value
-Supplementary Figure S2,A,S2_dc_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,A,S2_dc_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,A,S2_dc_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,A,S2_dc_5,setting mean,,,1.0,not estimable,Only one setting in stratum
-Supplementary Figure S2,B,S2_er_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,B,S2_er_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,B,S2_er_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,B,S2_er_5,setting mean,,,1.0,not estimable,Only one setting in stratum
-Supplementary Figure S2,C,S2_sf_2,setting mean,,,4.0,tested,"setting simulation counts=[100, 100, 100, 100]"
-Supplementary Figure S2,C,S2_sf_3,setting mean,,,3.0,tested,"setting simulation counts=[100, 100, 100]"
-Supplementary Figure S2,C,S2_sf_4,setting mean,,,2.0,tested,"setting simulation counts=[100, 100]"
-Supplementary Figure S2,C,S2_sf_5,setting mean,,,1.0,not estimable,Only one setting in stratum

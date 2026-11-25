@@ -1,7 +1,7 @@
 {
-  "inferential_records": 111,
-  "tested_records": 107,
-  "not_estimable_records": 4,
+  "inferential_records": 99,
+  "tested_records": 98,
+  "not_estimable_records": 1,
   "p_raw_out_of_range": 0,
   "p_adjusted_out_of_range": 0,
   "p_reported_as_zero": 0,

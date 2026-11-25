@@ -56,7 +56,8 @@ def copy_source(source: Path, relative_target: str, *, gzip_csv: bool = False) -
 def write_frame(frame: pd.DataFrame, relative_target: str) -> Path:
     target = FILES / relative_target
     target.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_csv(target, index=False, encoding="utf-8-sig")
+    compression = {"method": "gzip", "mtime": 0} if target.suffix == ".gz" else None
+    frame.to_csv(target, index=False, encoding="utf-8-sig", compression=compression)
     return target
 
 
@@ -274,7 +275,7 @@ def build() -> list[dict]:
         ("Figure6/panelB_outcome_summary.csv", "Figure 6B", "plot-summary", WORKSPACE / "文章终稿数据/Figure6/retest_20rep_20260914_final/processed/Figure6_panelB_source_data.csv", False),
         ("Figure6/panelC_replicate_trajectories.csv.gz", "Figure 6C", "replicate-trajectory", WORKSPACE / "文章终稿数据/Figure6/retest_20rep_20260914_final/processed/Figure6_panelC_trajectory_source_data.csv", True),
         ("Figure6/panelD_final20_replicates.csv", "Figure 6D", "replicate", WORKSPACE / "文章终稿数据/Figure6/retest_20rep_20260914_final/processed/Figure6_panelD_source_data.csv", False),
-        ("Figure_S2/simulation_level_source.csv", "Supplementary Figure S2A-C", "replicate", WORKSPACE / "文章终稿数据/Supplementary/Figure S2/data/Figure_S2_simulation_level_source.csv", False),
+        ("Figure4/architecture_parameter_metadata.csv", "Figure 4A-C", "parameter-metadata", WORKSPACE / "文章终稿数据/Supplementary/Figure S2/data/Figure_S2_simulation_level_source.csv", False),
         ("Figure_S4/pre_release_block_replicates.csv", "Supplementary Figure S4A-D; Supplementary Table S3", "replicate-block", WORKSPACE / "single_panel_outputs/S4_recreated/S4_pre_release_blocks_revised.csv", False),
         ("Table_S1/parameter_definitions.csv", "Supplementary Table S1", "parameter", WORKSPACE / "supplementary_final/Supplementary_Table_S1.csv", False),
     ]
@@ -293,21 +294,32 @@ def build() -> list[dict]:
         path = write_frame(frame, target)
         add(path, panels, "replicate")
 
+    s2_outcomes = pd.DataFrame([
+        {"figure": figure, "setting": setting, "cohort": cohort,
+         "long_term_persistence": 20, "population_elimination": 0}
+        for figure in ["Figure 2E", "Figure 3E"]
+        for setting in ["0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "Emp"]
+        for cohort in ["Neutral mutations", "Variable mutations"]
+    ])
+    path = write_frame(s2_outcomes, "Figure_S2/outcome_composition.csv")
+    add(path, "Supplementary Figure S2A-B", "outcome-count")
+
     s3_source = WORKSPACE / "supplementary_final/source_data/S3_reference_per_run.csv"
     s3 = pd.read_csv(s3_source, usecols=[
         "arch", "run", "tick", "dispersal_change_pct", "dispersal_sd_ratio",
-        "he_over_initial", "segregating_over_initial",
+        "he_over_initial", "segregating_over_initial", "adult_N_ratio",
+        "fertile_female_N_ratio", "n_age_gt0", "n_fertile_females",
     ])
     s3 = s3[s3["tick"].between(1, 1600)].copy()
     path = write_frame(s3, "Figure_S3/replicate_trajectories.csv.gz")
-    add(path, "Supplementary Figure S3A-D", "replicate-trajectory")
+    add(path, "Supplementary Figure S3A-F", "replicate-trajectory")
     s3_summary = quantile_summary(
         s3,
         ["arch", "tick"],
-        ["dispersal_change_pct", "dispersal_sd_ratio", "he_over_initial", "segregating_over_initial"],
+        ["dispersal_change_pct", "dispersal_sd_ratio", "he_over_initial", "segregating_over_initial", "adult_N_ratio", "fertile_female_N_ratio"],
     )
     path = write_frame(s3_summary, "Figure_S3/plot_summary.csv")
-    add(path, "Supplementary Figure S3A-D", "plot-summary")
+    add(path, "Supplementary Figure S3A-F", "plot-summary")
 
     trajectory_source = WORKSPACE / "supplementary_final/source_data/S3_S4_S5_trajectory_values.csv"
     usecols = [

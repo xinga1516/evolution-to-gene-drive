@@ -143,14 +143,10 @@ def build() -> dict:
 
     for sheet, name in [("Panel_A", "panelA"), ("Panel_B", "panelB"), ("Panel_C", "panelC")]:
         add("Figure_S1", sheet, pd.read_csv(FILES / f"Figure_S1/{name}_final20_replicates.csv"), f"Supplementary Figure S1{sheet[-1]}")
-    s2 = pd.read_csv(FILES / "Figure_S2/simulation_level_source.csv")
-    s2_columns = [
-        "group_id", "replicate", "is_ltp", "trait", "b", "m",
-        "stable_cell_index", "delta_z", "normalized_response", "sd_stratum",
-    ]
-    add("Figure_S2", "Panels_A_C", s2[s2_columns], "Supplementary Figure S2A-C")
+    s2 = pd.read_csv(FILES / "Figure_S2/outcome_composition.csv")
+    add("Figure_S2", "Panels_A_B", s2, "Supplementary Figure S2A-B")
     s3 = pd.read_csv(FILES / "Figure_S3/plot_summary.csv")
-    add("Figure_S3", "Panels_A_D", s3[(s3["tick"] % 10).eq(0)], "Supplementary Figure S3A-D (decimated workbook view; exact table in files/)")
+    add("Figure_S3", "Panels_A_F", s3[(s3["tick"] % 10).eq(0)], "Supplementary Figure S3A-F (decimated workbook view; exact table in files/)")
     add("Figure_S4", "Panels_A_D", pd.read_csv(FILES / "Figure_S4/pre_release_block_replicates.csv"), "Supplementary Figure S4A-D")
 
     s5 = pd.read_csv(FILES / "Figure_S5/plot_summary.csv.gz")

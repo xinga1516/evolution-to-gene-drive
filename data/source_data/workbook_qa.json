@@ -330,20 +330,20 @@
     "expected_sheets": [
       "README",
       "INDEX",
-      "Panels_A_C"
+      "Panels_A_B"
     ],
     "actual_sheets": [
       "README",
       "INDEX",
-      "Panels_A_C"
+      "Panels_A_B"
     ],
     "sheets": [
       {
-        "sheet": "Panels_A_C",
-        "expected_rows": 4500,
-        "actual_rows": 4500,
-        "expected_columns": 10,
-        "actual_columns": 10,
+        "sheet": "Panels_A_B",
+        "expected_rows": 28,
+        "actual_rows": 28,
+        "expected_columns": 5,
+        "actual_columns": 5,
         "header_match": true,
         "formula_error_tokens": 0,
         "pass": true
@@ -356,18 +356,18 @@
     "expected_sheets": [
       "README",
       "INDEX",
-      "Panels_A_D"
+      "Panels_A_F"
     ],
     "actual_sheets": [
       "README",
       "INDEX",
-      "Panels_A_D"
+      "Panels_A_F"
     ],
     "sheets": [
       {
-        "sheet": "Panels_A_D",
-        "expected_rows": 640,
-        "actual_rows": 640,
+        "sheet": "Panels_A_F",
+        "expected_rows": 960,
+        "actual_rows": 960,
         "expected_columns": 9,
         "actual_columns": 9,
         "header_match": true,
@@ -570,8 +570,8 @@
     "sheets": [
       {
         "sheet": "All_P_values",
-        "expected_rows": 111,
-        "actual_rows": 111,
+        "expected_rows": 99,
+        "actual_rows": 99,
         "expected_columns": 34,
         "actual_columns": 34,
         "header_match": true,
