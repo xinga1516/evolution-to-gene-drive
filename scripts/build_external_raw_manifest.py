@@ -114,7 +114,7 @@ def build(retrieval_uri: str = "") -> pd.DataFrame:
                 "availability_status": (
                     "public_external_archive"
                     if retrieval_uri
-                    else "local_verified_external_deposit_pending"
+                    else "retrieval_uri_intentionally_omitted"
                 ),
             })
 

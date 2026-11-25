@@ -1,5 +1,5 @@
 {
-  "archive": "D:\\缓存\\xwechat_files\\wxid_n64yngopmpoh12_ff3d\\msg\\file\\2026-10\\checkpoints.zip",
+  "archive_name": "checkpoints.zip",
   "archive_sha256": "7684e5c164a8c0fcfe99a4b9d53fc93630e9aa8f12e5cc2e037fefc5390b6811",
   "expected_modes": [
     "evolving",

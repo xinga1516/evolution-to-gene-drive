@@ -16,14 +16,14 @@ directory, under the parent `final/` tree, so they were not included in the
 download. This is a transfer-scope omission, not loss of the final replicate
 data or their parameter provenance.
 
-A local historical archive has since been identified at
-`D:\缓存\xwechat_files\wxid_n64yngopmpoh12_ff3d\msg\file\2026-10\checkpoints.zip`.
-Its SHA256 is
+A local historical checkpoint archive has been verified. Its SHA256 is
 `7684e5c164a8c0fcfe99a4b9d53fc93630e9aa8f12e5cc2e037fefc5390b6811`.
 It contains 200 non-empty checkpoints (100 per mode), all seeds 61001--61100,
 and the corresponding trait histories and run metadata. The metadata records
 the expected pinned-model hash. The pinned model and historical runner are not
-inside that archive and still need recovery from the cluster or another backup.
+inside that archive. They may be recovered from the cluster for optional
+historical reruns, but this is not required by the current GitHub archive
+policy.
 The historical extension worker is retained locally as
 `10-zpg-off-c075-to100.sh` (SHA256
 `ce7d91e6990ca43cf0210bc50691d92d7109aadb8e9b2ee9d0d03d45b093cdbd`);
@@ -43,6 +43,6 @@ checkpoint tree. A passing package contains the exact model, the historical
 runner and 200 complete checkpoint directories, including `data_traits.csv`,
 `data_metadata.csv` and `status.json`. The generated `SHA256SUMS.txt` records
 the runner hash because no independent historical runner hash is currently
-available. Deposit the resulting archive with the
-external raw simulation data and record its retrieval URI and archive SHA256
-in `data/README.md`. Do not commit the checkpoint binaries to Git.
+available. Do not commit the checkpoint binaries to Git. If these optional
+runtime assets are deposited later, record their archive SHA256 and retrieval
+information at that time.

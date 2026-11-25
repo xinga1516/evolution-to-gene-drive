@@ -98,7 +98,7 @@ The launch layer will contain only:
 - Superseded drawings, temporary render directories, patch graphics and historical candidate decks are not publication source data.
 - A summary table is not accepted as Source Data if the plotted independent-replicate values are recoverable.
 
-Raw simulation data will instead be represented by checksummed external provenance records and a documented retrieval path.
+Raw simulation data is represented by checksummed provenance records. A retrieval path is intentionally omitted under the current archive policy.
 
 ## Process-1 acceptance condition
 

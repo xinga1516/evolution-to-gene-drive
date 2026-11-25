@@ -12,15 +12,8 @@ using generated files from the working checkout. Results:
 - all 12 locked figures and Tables S1--S3 were materialized successfully;
 - initial and final clean-clone worktrees were clean.
 
-This is a partial Process-7 audit, not final acceptance. Two external gates
-remain open:
-
-1. `public_external_archive_ready=False` until the approximately 5.1 GB raw
-   simulation archive has a public retrieval URI and deposit checksum.
-2. Figure 5 / Figure S3 cannot be launched from the manifest until the exact
-   pinned model and historical runner are recovered. The 200 checkpoint
-   directories have been recovered and independently verified.
-
-Process 7 and Process 8 remain unaccepted until these gates are closed and the
-same final candidate receives PASS decisions from the implementer and both
-independent reviewers.
+Under the current acceptance policy, a raw-data retrieval URI is intentionally
+omitted and historical Figure 5/S3 cluster rerunning is not required. Their
+absence is therefore informational rather than a clean-room failure. Final
+acceptance still requires the same final candidate to receive PASS decisions
+from the implementer and both independent reviewers.

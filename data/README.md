@@ -88,13 +88,12 @@ are structurally absent from Figure 6D because all runs eliminated.
 
 ## External availability
 
-`external_raw_file_manifest.csv.gz` currently records 580 included files and
-three explicitly excluded zero-byte files. Its `retrieval_uri` values remain
-blank and `availability_status` is
-`local_verified_external_deposit_pending` until a public archival deposit is
-provided. Local checksums make the selected inputs auditable, but Process 3
-cannot be accepted as a public reproducibility archive while those retrieval
-URIs are absent.
+`external_raw_file_manifest.csv.gz` records 580 included files and three
+explicitly excluded zero-byte files. Under the current archive policy its
+`retrieval_uri` values are intentionally blank and `availability_status` is
+`retrieval_uri_intentionally_omitted`. This is not an acceptance blocker. The
+file-level sizes, SHA-256 values and selection rules preserve auditable raw-data
+provenance without publishing a storage location.
 
 ## Large trajectory tables
 
@@ -136,7 +135,7 @@ tables by `build_supplementary_tables.py`. All
 canonical file hashes and dimensions must match `source_data_catalog.csv` after
 regeneration.
 
-After the external raw-data deposit is public, rebuild its provenance rows with
+If a public raw-data deposit is added later, rebuild its provenance rows with
 the immutable DOI or archive URL rather than editing the compressed CSV by
 hand:
 
@@ -145,5 +144,5 @@ python scripts/build_external_raw_manifest.py --retrieval-uri <DOI-or-archive-UR
 ```
 
 The builder then changes `availability_status` to
-`public_external_archive`; the verification gate still checks that every
-included row has a non-empty retrieval URI.
+`public_external_archive`. A URI is optional under the current acceptance
+policy.

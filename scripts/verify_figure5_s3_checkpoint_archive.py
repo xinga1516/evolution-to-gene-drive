@@ -96,7 +96,7 @@ def main() -> int:
     if model_hashes != {EXPECTED_MODEL_SHA256}:
         failures.append(f"unexpected_model_hashes:{sorted(model_hashes)}")
     report = {
-        "archive": str(args.archive.resolve()),
+        "archive_name": args.archive.name,
         "archive_sha256": sha256(args.archive),
         "expected_modes": list(MODES),
         "expected_seed_range": [61001, 61100],

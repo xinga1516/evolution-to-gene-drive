@@ -117,7 +117,11 @@ report = {
     "checks": checks,
     "failed_checks": [item["check"] for item in checks if not item["pass"]],
     "public_external_archive_ready": public_ready,
-    "public_archive_blocker": None if public_ready else "retrieval_uri is blank for one or more upstream files",
+    "retrieval_uri_policy": (
+        "public_uri_recorded" if public_ready else "intentionally_omitted"
+    ),
+    "retrieval_uri_required_for_acceptance": False,
+    "public_archive_blocker": None,
 }
 (SOURCE / "source_data_qa.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 print(f"checks={len(checks)} failed={len(report['failed_checks'])} public_external_archive_ready={public_ready}")

@@ -55,7 +55,7 @@ order and platform.  The audited Figure 6 retest uses its historical
 The manifest records intended replicate counts separately from observed usable
 replicates.  Missing or zero-byte historical outputs are not imputed.
 
-## Model provenance and current limitation
+## Model provenance
 
 The executable rows use the two frozen, hash-checked SLiM 4-compatible models:
 
@@ -67,12 +67,13 @@ the selected manifest rows (4.0.1 for the current executable rows).
 
 Figure 5 and Supplementary Figure S3 used a distinct checkpoint-based SLiM 5.0
 model, `reprising.formal_experiment.pinned.slim`, with recorded SHA-256
-`94E465EC...EF8812`.  Its complete historical commands are preserved in the
-manifest, but the model text and pre-release checkpoint files are not present
-in the current local archive.  Those nine rows are labelled
-`external_model_required` and the runner will not silently substitute another
-model.  Exact rerunning of those rows requires recovery of that hash-matched
-model and its 100 evolving/uniform checkpoints.
+`94E465EC...EF8812`. Its complete historical commands, parameters and seed
+rules are preserved in the manifest. The checkpoint archive contains 200
+complete checkpoint directories (100 evolving and 100 uniform), but the model
+text remains on the cluster and is not required for acceptance of this GitHub
+archive. Those nine rows are labelled `external_model_required` so the local
+runner never silently substitutes another model; they are provenance records,
+not locally executable launch targets.
 
 The checked-in Source Data, final statistics and final figures do not depend on
 rerunning SLiM; they rebuild from the frozen replicate-level summaries.

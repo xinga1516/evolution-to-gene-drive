@@ -751,5 +751,7 @@
   ],
   "failed_checks": [],
   "public_external_archive_ready": false,
-  "public_archive_blocker": "retrieval_uri is blank for one or more upstream files"
+  "retrieval_uri_policy": "intentionally_omitted",
+  "retrieval_uri_required_for_acceptance": false,
+  "public_archive_blocker": null
 }

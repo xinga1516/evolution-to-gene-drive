@@ -32,7 +32,8 @@ comparison.
 SLiM is an external simulation dependency and is not installed by the Conda
 environment.  The parameterized launch layer is documented in
 `docs/RUNNING_SLIM.md`.  Its executable rows hash-check the frozen panmictic
-and spatial model files before planning or running commands.  Figure 5/S3 used
-a separate SLiM 5.0 checkpoint model; the manifest preserves its expected hash
-and commands and marks the rows non-executable until the exact model and
-checkpoints are recovered.
+and spatial model files before planning or running commands. Figure 5/S3 was
+run historically on the cluster with a separate SLiM 5.0 checkpoint model.
+The manifest preserves its expected hash, parameters, seeds and commands as
+provenance. Local rerunning of those historical cluster rows is outside the
+current archive acceptance scope.
