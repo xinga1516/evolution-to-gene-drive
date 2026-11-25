@@ -32,9 +32,11 @@ python scripts/run_slim.py --run-id f6_p70_l --replicate 1 \
 ```
 
 Omit `--replicate` to run every declared replicate for the selected condition.
-Use repeated `--run-id` arguments to select several cells.  `--all --execute`
-is intentionally explicit and should normally be submitted through the local
-scheduler rather than run on a login node.
+Use repeated `--run-id` arguments to select several cells.  While unresolved
+external-model rows exist, `--all` refuses to proceed unless
+`--allow-incomplete` explicitly acknowledges that only executable rows will
+run.  Large batches should normally be submitted through the local scheduler
+rather than run on a login node.
 
 Each replicate is isolated in its own directory and produces:
 

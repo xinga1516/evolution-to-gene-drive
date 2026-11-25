@@ -208,10 +208,24 @@ def command_for(row: dict[str, str], replicate: int, slim_bin: str) -> list[str]
 
 
 def selected_rows(
-    rows: list[dict[str, str]], run_ids: list[str], run_all: bool
+    rows: list[dict[str, str]],
+    run_ids: list[str],
+    run_all: bool,
+    allow_incomplete: bool,
 ) -> list[dict[str, str]]:
     simulations = [row for row in rows if row["execution_role"] == "simulation"]
     if run_all:
+        unresolved = [
+            row["run_id"]
+            for row in rows
+            if row["execution_role"] == "external_model_required"
+        ]
+        if unresolved and not allow_incomplete:
+            raise ManifestError(
+                "--all refused because external-model rows are unresolved: "
+                + ", ".join(unresolved)
+                + "; use --allow-incomplete to run only executable rows"
+            )
         return simulations
     wanted = set(run_ids)
     selected = [row for row in simulations if row["run_id"] in wanted]
@@ -263,6 +277,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--run-id", action="append", default=[])
     parser.add_argument("--all", action="store_true", help="select all simulation rows")
+    parser.add_argument(
+        "--allow-incomplete",
+        action="store_true",
+        help="with --all, explicitly accept skipping external-model-required rows",
+    )
     parser.add_argument("--replicate", type=int, action="append", default=[])
     parser.add_argument("--slim-bin", default=os.environ.get("SLIM_BIN", "slim"))
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
@@ -293,7 +312,7 @@ def main() -> int:
     if args.validate_only:
         return 0
     try:
-        selected = selected_rows(rows, args.run_id, args.all)
+        selected = selected_rows(rows, args.run_id, args.all, args.allow_incomplete)
     except ManifestError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
