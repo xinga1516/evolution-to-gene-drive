@@ -16,11 +16,11 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 |---|---|---|---|---|---|
 | 1 | Freeze publication scope; create panel-level `config/figure_data_map.csv`; quarantine superseded numbering/window definitions | PASS | PASS | PASS | YES |
 | 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
-| 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
+| 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PASS | PASS | PASS | YES |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PASS | PASS | PASS | YES |
 | 5 | Freeze final plotting scripts, environment and figure-data mapping | PASS | PASS | PASS | YES |
-| 6 | Build parameterized SLiM runner, run manifest and short run guide | PENDING | PENDING | PENDING | NO |
-| 7 | End-to-end clean-room reproduction and repository completeness audit | PENDING | PENDING | PENDING | NO |
+| 6 | Build parameterized SLiM runner, run manifest and short run guide | PASS | PASS | PASS | YES |
+| 7 | End-to-end clean-room reproduction and repository completeness audit | PASS | PASS | PASS | YES |
 | 8 | Commit, push and final remote verification | PENDING | PENDING | PENDING | NO |
 
 ## Review record format
@@ -325,9 +325,53 @@ evolving and uniform seeds 61001--61100, their trait histories, successful
 checkpoint status records and the expected pinned-model hash. The previously
 reported checkpoint blocker is therefore resolved.
 
-Process 6 remains `NO`: the exact
+At that earlier strict-scope review, Process 6 remained `NO`: the exact
 `reprising.formal_experiment.pinned.slim` (expected SHA256
 `94e465ec99eaef5646cdfc1828c8121cb0b7df4b4290a0f7622e04624def8812`)
-and `formal_drive_task1.py` have not yet been recovered. The nine external
-Figure 5/S3 rows cannot be promoted to executable rows until those assets are
-available and pass a new same-candidate three-party review.
+and `formal_drive_task1.py` had not been recovered. The nine external Figure
+5/S3 rows therefore could not be promoted to executable rows. That local-rerun
+requirement was subsequently superseded by the final project policy recorded
+below.
+
+## Processes 3, 6 and 7 accepted under the final project policy
+
+Candidate commit: `178ea8d94f85059cb8f0c27bee3f3104920db78c`
+
+The project owner clarified that historical cluster simulations do not need
+to be locally rerunnable and raw-data retrieval locations are intentionally
+omitted for now. The prior stricter requirements remain documented above as
+historical review findings but are not acceptance requirements for this
+candidate.
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: fresh clone with clean initial/final worktree; 101/101
+  Source Data checks; 59/59 statistics checks; 15/15 workbooks; 46 mapped
+  figure/table records and deterministic rerender; 12 locked figures and
+  Tables S1--S3; 134-row launch manifest; optional-URI policy and nonlocal
+  Figure 5/S3 provenance semantics.
+- Blocking findings: none under the final project policy.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer
+  (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: exact candidate; Source Data 101/101; statistics 59/59;
+  workbooks 15/15; 134 manifest rows; 46 deterministic figure/table records;
+  17 PowerPoint pages matched to frozen references; clean worktree; URI marked
+  intentionally omitted and Figure 5/S3 rows transparently provenance-only.
+- Blocking findings: none.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer
+  (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: independent clean clone; Source Data 101/101; statistics
+  59/59 including 99 inferential records and 8 stability diagnostics; 15
+  workbooks; all 46 `FINAL_VERIFIED` mappings; 12 figures and Tables S1--S3;
+  17-page PowerPoint comparison; environment and launch-layer completeness.
+- Blocking findings: none.

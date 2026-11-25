@@ -1,6 +1,6 @@
 # Clean-room audit
 
-Candidate scientific revision: `db7c4b4`
+Candidate scientific revision: `178ea8d94f85059cb8f0c27bee3f3104920db78c`
 
 The candidate was cloned into a new temporary directory and checked without
 using generated files from the working checkout. Results:
