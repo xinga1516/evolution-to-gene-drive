@@ -75,6 +75,7 @@ try {
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
 }
-if (existingReport !== reportText) await fs.writeFile(output, reportText, "utf8");
+const normalizedExistingReport = existingReport?.replace(/\r\n/g, "\n");
+if (normalizedExistingReport !== reportText) await fs.writeFile(output, reportText, "utf8");
 console.log(`Verified ${report.length} workbooks; failures=${report.filter((item) => !item.pass).length}`);
 if (failed) process.exitCode = 1;

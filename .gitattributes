@@ -1,2 +1,3 @@
 *.svg -whitespace
 data/source_data/files/Figure_S2/outcome_composition.csv text eol=lf
+data/source_data/workbook_qa.json text eol=lf
