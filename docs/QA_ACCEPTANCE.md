@@ -269,3 +269,48 @@ Candidate commit: `478b45fbdf5dd0651b70fc39f9efd81f80306e5b`
   final clean worktree.
 - Blocking findings: none. The pending public external-archive retrieval URI
   remains a Process-3 issue and is outside this Process-5 decision.
+
+## Process 6 incomplete-launch failed review record
+
+Candidate commit: `c542b280789b9d9a6ebafa1200486fe89d41e3d7`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `FAIL`
+- Evidence checked: 120-row manifest validation; clean-clone model hashes;
+  Figure 4 architecture-grid identity; Figure 6 historical seed rule; default
+  dry-run and explicit incomplete-batch guard; local and remote-repository
+  search for the Figure 5 pinned model.
+- Blocking findings: the Figure 5/S3 SLiM 5 pinned model and its 100 matched
+  checkpoints are absent, so the full publication scope cannot be rerun.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer
+  (`github_structure_reviewer`)
+- Decision: `FAIL`
+- Evidence checked: fresh clone; manifest identities and lineage IDs; frozen
+  model hashes; runner validation and dry runs; derived references and Figure
+  6 seeds; incomplete-run refusal.
+- Blocking findings: nine Figure 5/S3 rows lack the hash-matched model and
+  checkpoints and contain non-executable checkpoint descriptions; Tables S1
+  and S2 lacked explicit no-simulation mappings; exact SLiM version was not
+  enforced.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer
+  (`local_archive_reviewer`)
+- Decision: `FAIL`
+- Evidence checked: fresh clone; F1/S1 missingness; Figure 2E and Figure 3E
+  cell counts; Figure 4's 45 parameter cells; Figure 6 seeds; deterministic
+  dry runs and receipts; incomplete-run refusal.
+- Blocking findings: the Figure 5/S3 model, checkpoints and per-replicate
+  executable checkpoint/branch parameters are absent. The runner therefore
+  cannot execute those nine cells even if incomplete runs are acknowledged.
+
+Post-review repairs in `ec71369` separate Figure 2A (100 replicates per cell),
+Figure 2B--C (20 per cell) and Figure 2D (100 per spatial cell), add explicit
+Table S1 and S2 no-simulation mappings, and enforce SLiM 4.0.1 for executable
+rows. The Figure 5/S3 asset blocker remains; Process 6 stays unaccepted.
