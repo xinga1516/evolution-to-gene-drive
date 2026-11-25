@@ -3,10 +3,14 @@
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const artifactModule = "C:/Users/jim ma/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs";
 const { SpreadsheetFile, Workbook } = await import(pathToFileURL(artifactModule));
+const runtimeNodeModules = "C:/Users/jim ma/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
+const runtimeRequire = createRequire(path.join(runtimeNodeModules, "package.json"));
+const JSZip = runtimeRequire("jszip");
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repo = path.resolve(scriptDir, "..");
@@ -22,6 +26,66 @@ const borderColor = "#D9E2F3";
 
 function repoRelative(absolutePath) {
   return path.relative(repo, absolutePath).split(path.sep).join("/");
+}
+
+async function normalizeXlsx(filePath) {
+  const source = await JSZip.loadAsync(await fs.readFile(filePath));
+  const payloads = new Map();
+  for (const name of Object.keys(source.files).sort()) {
+    const entry = source.files[name];
+    if (!entry.dir) payloads.set(name, await entry.async("uint8array"));
+  }
+
+  // artifact-tool assigns fresh UUID-like relationship IDs on every export.
+  // Canonicalize each .rels part in its existing relationship order and apply
+  // the same mapping to the XML part that owns those relationships.
+  const decoder = new TextDecoder("utf-8");
+  const encoder = new TextEncoder();
+  for (const relName of [...payloads.keys()].filter((name) => name.endsWith(".rels")).sort()) {
+    const mapping = new Map();
+    let nextId = 1;
+    let relText = decoder.decode(payloads.get(relName));
+    relText = relText.replace(/(<Relationship\b[^>]*\bId=")([^"]+)(")/g, (_all, prefix, oldId, suffix) => {
+      const newId = `rId${nextId}`;
+      nextId += 1;
+      mapping.set(oldId, newId);
+      return `${prefix}${newId}${suffix}`;
+    });
+    payloads.set(relName, encoder.encode(relText));
+
+    if (relName !== "_rels/.rels") {
+      const match = relName.match(/^(.*)_rels\/([^/]+)\.rels$/);
+      const ownerName = match ? `${match[1]}${match[2]}` : null;
+      if (ownerName && payloads.has(ownerName)) {
+        let ownerText = decoder.decode(payloads.get(ownerName));
+        for (const [oldId, newId] of mapping) ownerText = ownerText.split(oldId).join(newId);
+        payloads.set(ownerName, encoder.encode(ownerText));
+      }
+    }
+  }
+
+  const normalized = new JSZip();
+  const fixedDate = new Date(1980, 0, 1, 0, 0, 0);
+  for (const name of Object.keys(source.files).sort()) {
+    const entry = source.files[name];
+    if (entry.dir) {
+      normalized.folder(name.replace(/\/$/, ""));
+      continue;
+    }
+    normalized.file(name, payloads.get(name), {
+      date: fixedDate,
+      createFolders: false,
+      compression: "DEFLATE",
+      compressionOptions: { level: 9 },
+    });
+  }
+  const bytes = await normalized.generateAsync({
+    type: "nodebuffer",
+    compression: "DEFLATE",
+    compressionOptions: { level: 9 },
+    platform: "DOS",
+  });
+  await fs.writeFile(filePath, bytes);
 }
 
 function columnName(index) {
@@ -162,6 +226,7 @@ async function buildWorkbook(bookName, entries) {
   const outputPath = path.join(sourceDir, `${bookName}.xlsx`);
   const exported = await SpreadsheetFile.exportXlsx(workbook);
   await exported.save(outputPath);
+  await normalizeXlsx(outputPath);
 
   const bookPreviewDir = path.join(previewDir, bookName);
   await fs.mkdir(bookPreviewDir, { recursive: true });

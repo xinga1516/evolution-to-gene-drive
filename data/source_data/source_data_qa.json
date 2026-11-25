@@ -181,6 +181,24 @@
       "pass": true
     },
     {
+      "check": "exists:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "rows:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
+      "observed": 4500,
+      "expected": 4500,
+      "pass": true
+    },
+    {
+      "check": "sha256:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
+      "observed": "e540d60c4a9312f690cc766cd30d3ca59596747b482380cb7bcab0c04b51decb",
+      "expected": "e540d60c4a9312f690cc766cd30d3ca59596747b482380cb7bcab0c04b51decb",
+      "pass": true
+    },
+    {
       "check": "exists:data/source_data/files/Figure4/simulation_level_source.csv",
       "observed": true,
       "expected": true,
@@ -266,8 +284,8 @@
     },
     {
       "check": "sha256:data/source_data/files/Figure6/panelC_replicate_trajectories.csv.gz",
-      "observed": "8baed6914fdbaca0595768fa9bf6e224e4541cd4181d278a461eb0dc203ed5b3",
-      "expected": "8baed6914fdbaca0595768fa9bf6e224e4541cd4181d278a461eb0dc203ed5b3",
+      "observed": "85ab160a28b66373b4d8a6c3bb26eb89b7995836167e983f91bf243991653a70",
+      "expected": "85ab160a28b66373b4d8a6c3bb26eb89b7995836167e983f91bf243991653a70",
       "pass": true
     },
     {
@@ -340,24 +358,6 @@
       "check": "sha256:data/source_data/files/Figure_S1/panelC_final20_replicates.csv",
       "observed": "4a7795e605b9c7e3c1524c527014e6a1c740e1baa68bd5d70ea6e657a8c3cadc",
       "expected": "4a7795e605b9c7e3c1524c527014e6a1c740e1baa68bd5d70ea6e657a8c3cadc",
-      "pass": true
-    },
-    {
-      "check": "exists:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
-      "observed": true,
-      "expected": true,
-      "pass": true
-    },
-    {
-      "check": "rows:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
-      "observed": 4500,
-      "expected": 4500,
-      "pass": true
-    },
-    {
-      "check": "sha256:data/source_data/files/Figure4/architecture_parameter_metadata.csv",
-      "observed": "e540d60c4a9312f690cc766cd30d3ca59596747b482380cb7bcab0c04b51decb",
-      "expected": "e540d60c4a9312f690cc766cd30d3ca59596747b482380cb7bcab0c04b51decb",
       "pass": true
     },
     {
@@ -446,8 +446,8 @@
     },
     {
       "check": "sha256:data/source_data/files/Figure_S5/plot_summary.csv.gz",
-      "observed": "93adff912dd7f686c683c6a9dc95f9aec5e5c3009d4c64e34de5309e0a185035",
-      "expected": "93adff912dd7f686c683c6a9dc95f9aec5e5c3009d4c64e34de5309e0a185035",
+      "observed": "bf182daa3ea7001d9d78af157e8d6044959815822f83cf1a9bdc01b7a34c2e0d",
+      "expected": "bf182daa3ea7001d9d78af157e8d6044959815822f83cf1a9bdc01b7a34c2e0d",
       "pass": true
     },
     {
@@ -482,8 +482,8 @@
     },
     {
       "check": "sha256:data/source_data/files/Figure_S6/replicate_trajectories.csv.gz",
-      "observed": "471ae1665cb9c9a8a69e4bc7cb6e5b985bf9b58ecf1576ae85ad5ca201be81d4",
-      "expected": "471ae1665cb9c9a8a69e4bc7cb6e5b985bf9b58ecf1576ae85ad5ca201be81d4",
+      "observed": "7410616475ab7f65bc061592838459a06d5913a0597b85f7dad576e7b3138e34",
+      "expected": "7410616475ab7f65bc061592838459a06d5913a0597b85f7dad576e7b3138e34",
       "pass": true
     },
     {

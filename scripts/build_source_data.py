@@ -46,18 +46,42 @@ def copy_source(source: Path, relative_target: str, *, gzip_csv: bool = False) -
     target = FILES / relative_target
     target.parent.mkdir(parents=True, exist_ok=True)
     if gzip_csv and source.suffix != ".gz":
-        with source.open("rb") as src, gzip.open(target, "wb", compresslevel=9) as dst:
-            shutil.copyfileobj(src, dst)
+        # ``gzip.open(path, "wb")`` embeds both the current time and the
+        # output filename in the member header.  That made an otherwise
+        # identical Source Data rebuild differ byte-for-byte on every run.
+        # Use an explicitly anonymous member with a fixed timestamp so the
+        # repository checksum is reproducible across machines and dates.
+        with source.open("rb") as src, target.open("wb") as raw_target:
+            with gzip.GzipFile(
+                filename="",
+                mode="wb",
+                compresslevel=9,
+                fileobj=raw_target,
+                mtime=0,
+            ) as dst:
+                shutil.copyfileobj(src, dst)
     else:
         shutil.copy2(source, target)
     return target
 
 
-def write_frame(frame: pd.DataFrame, relative_target: str) -> Path:
+def write_frame(
+    frame: pd.DataFrame,
+    relative_target: str,
+    *,
+    encoding: str = "utf-8-sig",
+    lineterminator: str | None = None,
+) -> Path:
     target = FILES / relative_target
     target.parent.mkdir(parents=True, exist_ok=True)
     compression = {"method": "gzip", "mtime": 0} if target.suffix == ".gz" else None
-    frame.to_csv(target, index=False, encoding="utf-8-sig", compression=compression)
+    frame.to_csv(
+        target,
+        index=False,
+        encoding=encoding,
+        compression=compression,
+        lineterminator=lineterminator,
+    )
     return target
 
 
@@ -301,7 +325,14 @@ def build() -> list[dict]:
         for setting in ["0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "Emp"]
         for cohort in ["Neutral mutations", "Variable mutations"]
     ])
-    path = write_frame(s2_outcomes, "Figure_S2/outcome_composition.csv")
+    # This small table is byte-locked as UTF-8 without BOM and LF line endings
+    # so its catalog checksum is identical on Windows, macOS and Linux.
+    path = write_frame(
+        s2_outcomes,
+        "Figure_S2/outcome_composition.csv",
+        encoding="utf-8",
+        lineterminator="\n",
+    )
     add(path, "Supplementary Figure S2A-B", "outcome-count")
 
     s3_source = WORKSPACE / "supplementary_final/source_data/S3_reference_per_run.csv"

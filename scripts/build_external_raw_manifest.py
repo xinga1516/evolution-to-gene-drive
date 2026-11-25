@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import gzip
 import hashlib
+import io
 from pathlib import Path
 
 import pandas as pd
@@ -32,7 +33,13 @@ def sha256_and_seed_blocks(path: Path) -> tuple[str, int]:
 
 def resolve(path_text: str) -> Path:
     path = Path(path_text)
-    return path if path.is_absolute() else WORKSPACE / path
+    if path.is_absolute():
+        return path
+    # Lineage rows may point either to an archived repository artifact or to
+    # a large external workspace input.  Prefer the repository-local target
+    # when it exists, then fall back to the adjacent external workspace.
+    repository_candidate = REPO / path
+    return repository_candidate if repository_candidate.exists() else WORKSPACE / path
 
 
 def selected_files(dataset_id: str, root: Path) -> list[tuple[Path, str]]:
@@ -110,8 +117,19 @@ def build() -> pd.DataFrame:
         ["dataset_id", "selected_file"], kind="stable"
     )
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(OUTPUT, "wt", encoding="utf-8-sig", newline="") as handle:
-        frame.to_csv(handle, index=False)
+    # Freeze the gzip member header as well as the CSV line endings.  The
+    # former implementation embedded the build time, so a provenance rebuild
+    # changed its own checksum even when every selected input was unchanged.
+    with OUTPUT.open("wb") as raw_output:
+        with gzip.GzipFile(
+            filename="",
+            mode="wb",
+            compresslevel=9,
+            fileobj=raw_output,
+            mtime=0,
+        ) as compressed:
+            with io.TextIOWrapper(compressed, encoding="utf-8-sig", newline="") as handle:
+                frame.to_csv(handle, index=False, lineterminator="\n")
     print(
         f"wrote {len(frame)} rows; included={(frame.selection_status == 'included').sum()}; "
         f"excluded_zero_byte={(frame.selection_status == 'excluded_zero_byte').sum()}"
