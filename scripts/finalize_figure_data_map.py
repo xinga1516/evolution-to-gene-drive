@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import csv
+import io
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -34,9 +35,12 @@ def main() -> None:
             row["statistics_candidate"] = row["repository_statistics_target"]
             row["plot_script_candidate"] = "scripts/build_source_workbooks.mjs"
         row["trace_status"] = "FINAL_VERIFIED"
-    with TARGET.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
-        writer.writeheader(); writer.writerows(rows)
+    buffer=io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=list(rows[0]), lineterminator="\n")
+    writer.writeheader(); writer.writerows(rows)
+    payload=buffer.getvalue()
+    if TARGET.read_text(encoding="utf-8-sig") != payload:
+        TARGET.write_text(payload,encoding="utf-8",newline="")
     print(f"finalized {len(rows)} map records")
 
 

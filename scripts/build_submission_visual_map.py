@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -41,9 +42,12 @@ def main() -> None:
                      "source_deck_sha256":DECK_SHA256,"slide_number":slide,
                      "visual_reference":rel.as_posix(),"visual_reference_sha256":digest(REPO/rel),
                      "status":"LOCKED_FINAL"})
-    with OUT.open("w",newline="",encoding="utf-8") as handle:
-        writer=csv.DictWriter(handle,fieldnames=list(rows[0]),lineterminator="\n")
-        writer.writeheader(); writer.writerows(rows)
+    buffer=io.StringIO(newline="")
+    writer=csv.DictWriter(buffer,fieldnames=list(rows[0]),lineterminator="\n")
+    writer.writeheader(); writer.writerows(rows)
+    payload=buffer.getvalue()
+    if not OUT.is_file() or OUT.read_text(encoding="utf-8-sig") != payload:
+        OUT.write_text(payload,encoding="utf-8",newline="")
     print(f"wrote {OUT.relative_to(REPO)}: {len(rows)} references")
 
 

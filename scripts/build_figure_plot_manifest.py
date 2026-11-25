@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 from pathlib import Path
 from PIL import Image
 
@@ -92,10 +93,12 @@ def main() -> None:
                 "visual_lineage": "locked final-deck slide plus scripts/plotting/authoritative_sources" if is_figure else "locked final-deck slide when present",
                 "qa_status": "FINAL_VERIFIED",
             })
-    fields = list(rows[0])
-    with OUT.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
-        writer.writeheader(); writer.writerows(rows)
+    fields = list(rows[0]); buffer=io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=fields, lineterminator="\n")
+    writer.writeheader(); writer.writerows(rows)
+    payload=buffer.getvalue()
+    if not OUT.is_file() or OUT.read_text(encoding="utf-8-sig") != payload:
+        OUT.write_text(payload,encoding="utf-8",newline="")
     print(f"wrote {OUT.relative_to(REPO)}: {len(rows)} records")
 
 
