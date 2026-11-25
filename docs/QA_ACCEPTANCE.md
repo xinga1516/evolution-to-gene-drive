@@ -18,7 +18,7 @@ Reviewers must not convert `PENDING`, `NOT ASSESSABLE` or a conditional approval
 | 2 | Resolve one authoritative data and plotting lineage for every mapped row | PASS | PASS | PASS | YES |
 | 3 | Build `data/source_data/` and data dictionary with external raw-data provenance | PENDING | PENDING | PENDING | NO |
 | 4 | Freeze statistical code and numerical outputs in `results/statistics/` | PASS | PASS | PASS | YES |
-| 5 | Freeze final plotting scripts, environment and figure-data mapping | PENDING | PENDING | PENDING | NO |
+| 5 | Freeze final plotting scripts, environment and figure-data mapping | PASS | PASS | PASS | YES |
 | 6 | Build parameterized SLiM runner, run manifest and short run guide | PENDING | PENDING | PENDING | NO |
 | 7 | End-to-end clean-room reproduction and repository completeness audit | PENDING | PENDING | PENDING | NO |
 | 8 | Commit, push and final remote verification | PENDING | PENDING | PENDING | NO |
@@ -228,3 +228,44 @@ Candidate commit: `df1162922907d646808c64d4597dd73efc9daad5`
   independent-unit preservation; F6 outcome-conditioned inclusion; F3E/S1C
   n=17 and no imputation; final-20 versus final-100 isolation.
 - Blocking findings: none.
+
+## Process 5 accepted review record
+
+Candidate commit: `478b45fbdf5dd0651b70fc39f9efd81f80306e5b`
+
+### Implementer
+
+- Reviewer: primary Codex agent (`root`)
+- Decision: `PASS`
+- Evidence checked: fresh Windows clone initially and finally clean; 99
+  inferential records and 8 stability diagnostics rebuilt; 101/101 Source
+  Data checks; 59/59 statistics checks; 15 workbooks with 61 sheets rebuilt
+  deterministically; 46-row figure/table manifest and deterministic rerender
+  with zero failures; PowerPoint COM export of all 17 mapped pages matched the
+  frozen references exactly.
+- Blocking findings: none.
+
+### Reviewer 1
+
+- Reviewer: independent data/code-provenance reviewer
+  (`github_structure_reviewer`)
+- Decision: `PASS`
+- Evidence checked: independent fresh Windows clone; initial/final clean
+  worktree; S2 targeted-LF checksum; two consecutive workbook builds with
+  identical hashes; 101/59/15/46/17 verification gates; fixed gzip headers;
+  unchanged decompressed scientific data; unchanged XLSX sheet structure,
+  values, data types, styles and number formats.
+- Blocking findings: none.
+
+### Reviewer 2
+
+- Reviewer: independent statistics/reproducibility reviewer
+  (`local_archive_reviewer`)
+- Decision: `PASS`
+- Evidence checked: independent fresh Windows clone; full statistical rebuild;
+  deterministic 15-workbook sequence; 124 canonical and resolved XLSX
+  relationships; exact 17-page PowerPoint comparison; 46-row deterministic
+  figure/table rebuild; S2 A--B descriptive-only scope and S3 A--F consistency;
+  final clean worktree.
+- Blocking findings: none. The pending public external-archive retrieval URI
+  remains a Process-3 issue and is outside this Process-5 decision.
