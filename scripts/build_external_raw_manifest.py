@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import gzip
 import hashlib
@@ -72,7 +73,7 @@ def selected_files(dataset_id: str, root: Path) -> list[tuple[Path, str]]:
     raise ValueError(f"No explicit selection rule implemented for directory dataset {dataset_id}: {root}")
 
 
-def build() -> pd.DataFrame:
+def build(retrieval_uri: str = "") -> pd.DataFrame:
     with LINEAGE.open("r", encoding="utf-8-sig", newline="") as handle:
         lineage = list(csv.DictReader(handle))
 
@@ -109,8 +110,12 @@ def build() -> pd.DataFrame:
                 "seed_blocks_detected": seed_blocks if path.suffix.lower() == ".out" else "",
                 "retained_seed_blocks": retained_blocks,
                 "block_selection_rule": block_selection_rule,
-                "retrieval_uri": "",
-                "availability_status": "local_verified_external_deposit_pending",
+                "retrieval_uri": retrieval_uri,
+                "availability_status": (
+                    "public_external_archive"
+                    if retrieval_uri
+                    else "local_verified_external_deposit_pending"
+                ),
             })
 
     frame = pd.DataFrame.from_records(records).sort_values(
@@ -138,4 +143,14 @@ def build() -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--retrieval-uri",
+        default="",
+        help=(
+            "public DOI or immutable archive URL shared by every selected file; "
+            "omit while the deposit is pending"
+        ),
+    )
+    args = parser.parse_args()
+    build(args.retrieval_uri.strip())

@@ -135,3 +135,15 @@ S1–S3 are then rebuilt deterministically from their canonical CSV staging
 tables by `build_supplementary_tables.py`. All
 canonical file hashes and dimensions must match `source_data_catalog.csv` after
 regeneration.
+
+After the external raw-data deposit is public, rebuild its provenance rows with
+the immutable DOI or archive URL rather than editing the compressed CSV by
+hand:
+
+```text
+python scripts/build_external_raw_manifest.py --retrieval-uri <DOI-or-archive-URL>
+```
+
+The builder then changes `availability_status` to
+`public_external_archive`; the verification gate still checks that every
+included row has a non-empty retrieval URI.
