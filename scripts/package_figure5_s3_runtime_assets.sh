@@ -39,17 +39,34 @@ cp -- "$RUNNER" "$STAGE/model/$RUNNER_NAME"
 
 for mode in evolving uniform; do
     for seed in $(seq 61001 61100); do
-        src="$CHECKPOINT_ROOT/$mode/seed_$seed/checkpoint.bin"
-        dst="$STAGE/checkpoints/$mode/seed_$seed"
-        [[ -s "$src" ]] || { echo "ERROR: missing/non-empty checkpoint required: $src" >&2; exit 1; }
-        mkdir -p -- "$dst"
-        cp -- "$src" "$dst/checkpoint.bin"
+        src_dir="$CHECKPOINT_ROOT/$mode/seed_$seed"
+        checkpoint="$src_dir/checkpoint.bin"
+        traits="$src_dir/data_traits.csv"
+        metadata="$src_dir/data_metadata.csv"
+        status="$src_dir/status.json"
+        [[ -s "$checkpoint" ]] || { echo "ERROR: missing/non-empty checkpoint required: $checkpoint" >&2; exit 1; }
+        [[ -s "$traits" ]] || { echo "ERROR: missing/non-empty trait history required: $traits" >&2; exit 1; }
+        [[ -s "$metadata" ]] || { echo "ERROR: missing/non-empty metadata required: $metadata" >&2; exit 1; }
+        [[ -s "$status" ]] || { echo "ERROR: missing/non-empty status required: $status" >&2; exit 1; }
+        metadata_hash="$(awk -F, '$1 == "source_sha256" {gsub(/\r/, "", $2); print $2}' "$metadata")"
+        [[ "$metadata_hash" == "$EXPECTED_MODEL_SHA256" ]] || {
+            echo "ERROR: checkpoint metadata model hash mismatch: $metadata" >&2
+            exit 1
+        }
+        # Preserve the complete seed directory: uniform branches require the
+        # evolving data_traits.csv to recover their fixed-dispersal value.
+        cp -a -- "$src_dir" "$STAGE/checkpoints/$mode/seed_$seed"
     done
 done
 
 checkpoint_count="$(find "$STAGE/checkpoints" -type f -name checkpoint.bin | wc -l | tr -d ' ')"
 [[ "$checkpoint_count" == "200" ]] || {
     echo "ERROR: expected 200 checkpoints, found $checkpoint_count" >&2
+    exit 1
+}
+traits_count="$(find "$STAGE/checkpoints" -type f -name data_traits.csv | wc -l | tr -d ' ')"
+[[ "$traits_count" == "200" ]] || {
+    echo "ERROR: expected 200 trait histories, found $traits_count" >&2
     exit 1
 }
 
@@ -60,6 +77,6 @@ checkpoint_count="$(find "$STAGE/checkpoints" -type f -name checkpoint.bin | wc 
 tar -czf "$ARCHIVE" -C "$STAGE" .
 sha256sum "$ARCHIVE" > "$ARCHIVE.sha256"
 
-echo "PASS: recovered hash-matched model, runner and 200 checkpoints"
+echo "PASS: recovered hash-matched model, checksummed runner and 200 complete checkpoint directories"
 echo "Archive: $ARCHIVE"
 echo "Checksum: $ARCHIVE.sha256"
