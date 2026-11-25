@@ -43,6 +43,7 @@ REQUIRED_COLUMNS = {
     "model",
     "slim_script",
     "slim_sha256",
+    "required_slim_version",
     "parameter_profile",
     "condition_label",
     "replicate_count",
@@ -107,7 +108,13 @@ def validate_manifest(rows: list[dict[str, str]], repo_root: Path) -> list[str]:
     for row in rows:
         run_id = row["run_id"] or "<blank>"
         role = row["execution_role"]
-        if role not in {"simulation", "derived_reuse", "external_model_required"}:
+        if role not in {
+            "simulation",
+            "derived_reuse",
+            "documentation_only",
+            "analysis_derived",
+            "external_model_required",
+        }:
             errors.append(f"{run_id}: invalid execution_role {role!r}")
             continue
         try:
@@ -117,6 +124,10 @@ def validate_manifest(rows: list[dict[str, str]], repo_root: Path) -> list[str]:
             continue
         if role == "simulation" and replicates <= 0:
             errors.append(f"{run_id}: simulation row needs replicate_count > 0")
+        if role in {"documentation_only", "analysis_derived"}:
+            if replicates != 0:
+                errors.append(f"{run_id}: {role} row must have replicate_count 0")
+            continue
         if role == "derived_reuse":
             if replicates != 0:
                 errors.append(f"{run_id}: derived_reuse row must have replicate_count 0")
@@ -144,6 +155,8 @@ def validate_manifest(rows: list[dict[str, str]], repo_root: Path) -> list[str]:
         if model not in MODEL_HASHES:
             errors.append(f"{run_id}: unknown model {model!r}")
             continue
+        if row["required_slim_version"] != "4.0.1":
+            errors.append(f"{run_id}: executable frozen models require SLiM 4.0.1")
         script = (repo_root / row["slim_script"]).resolve()
         if not script.is_file():
             errors.append(f"{run_id}: missing SLiM script {row['slim_script']}")
@@ -253,7 +266,11 @@ def shell_join(command: list[str]) -> str:
 
 
 def receipt(
-    row: dict[str, str], replicate: int, command: list[str], exit_code: int | None
+    row: dict[str, str],
+    replicate: int,
+    command: list[str],
+    exit_code: int | None,
+    actual_slim_version: str,
 ) -> dict[str, Any]:
     script = (REPO_ROOT / row["slim_script"]).resolve()
     return {
@@ -268,6 +285,8 @@ def receipt(
         "defines": parse_defines(row),
         "slim_script": str(script),
         "slim_sha256": sha256_file(script),
+        "required_slim_version": row["required_slim_version"],
+        "actual_slim_version": actual_slim_version,
         "exit_code": exit_code,
     }
 
@@ -317,9 +336,10 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 
+    actual_slim_version = "not executed (dry run)"
     if args.execute:
         try:
-            subprocess.run(
+            version_result = subprocess.run(
                 [args.slim_bin, "-v"],
                 check=True,
                 stdout=subprocess.PIPE,
@@ -328,6 +348,27 @@ def main() -> int:
             )
         except (OSError, subprocess.CalledProcessError) as exc:
             print(f"ERROR: cannot execute {args.slim_bin!r}: {exc}", file=sys.stderr)
+            return 2
+        actual_slim_version = version_result.stdout.strip()
+        required_versions = {row["required_slim_version"] for row in selected}
+        if len(required_versions) != 1:
+            print(
+                f"ERROR: selected rows require multiple SLiM versions: "
+                f"{sorted(required_versions)}",
+                file=sys.stderr,
+            )
+            return 2
+        required_version = next(iter(required_versions))
+        if not re.search(
+            rf"\bSLiM\s+version\s+{re.escape(required_version)}\b",
+            actual_slim_version,
+            flags=re.IGNORECASE,
+        ):
+            print(
+                f"ERROR: selected rows require SLiM {required_version}; got "
+                f"{actual_slim_version!r}",
+                file=sys.stderr,
+            )
             return 2
 
     total = 0
@@ -348,7 +389,9 @@ def main() -> int:
             if not args.execute:
                 continue
             run_dir.mkdir(parents=True, exist_ok=True)
-            pending = receipt(row, replicate, command, None)
+            pending = receipt(
+                row, replicate, command, None, actual_slim_version
+            )
             receipt_path.write_text(
                 json.dumps(pending, indent=2, sort_keys=True) + "\n", encoding="utf-8"
             )
@@ -361,7 +404,9 @@ def main() -> int:
                     check=False,
                     text=True,
                 )
-            completed = receipt(row, replicate, command, result.returncode)
+            completed = receipt(
+                row, replicate, command, result.returncode, actual_slim_version
+            )
             receipt_path.write_text(
                 json.dumps(completed, indent=2, sort_keys=True) + "\n", encoding="utf-8"
             )

@@ -24,7 +24,7 @@ command but does not create files or start a simulation.
 
 ## Execute
 
-Install SLiM and either place `slim` on `PATH` or give its executable explicitly:
+Install SLiM 4.0.1 and either place `slim` on `PATH` or give its executable explicitly:
 
 ```bash
 python scripts/run_slim.py --run-id f6_p70_l --replicate 1 \
@@ -61,6 +61,9 @@ The executable rows use the two frozen, hash-checked SLiM 4-compatible models:
 
 - panmictic: `C29CEF8B...3FBBDD8`;
 - spatial: `93FB3142...734CB6`.
+
+Execution is refused unless `slim -v` reports the exact version recorded by
+the selected manifest rows (4.0.1 for the current executable rows).
 
 Figure 5 and Supplementary Figure S3 used a distinct checkpoint-based SLiM 5.0
 model, `reprising.formal_experiment.pinned.slim`, with recorded SHA-256
