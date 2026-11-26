@@ -2,9 +2,8 @@
 """Render repository-native scientific figures from canonical Source Data.
 
 These renders preserve the frozen data, endpoints, final-20 definitions,
-grouping, colours and statistical labels.  The submitted PowerPoint remains
-the authority for manual page placement; archived historical scripts under
-``authoritative_sources`` preserve the exact late-stage aesthetic lineage.
+grouping, colours and statistical labels. All inputs are read directly from
+the published Source Data workbooks.
 """
 
 from __future__ import annotations
@@ -21,10 +20,10 @@ import numpy as np
 import pandas as pd
 
 
-REPO = Path(__file__).resolve().parents[2]
-DATA = REPO / "data" / "source_data" / "files"
+REPO = Path(__file__).resolve().parents[1]
+DATA = REPO / "data" / "source_data"
 STATS = REPO / "results" / "statistics"
-OUT = REPO / "results" / "figures"
+OUT = REPO / "output" / "figures"
 
 GREEN = "#67C5A3"
 GREEN_DARK = "#2A9D8F"
@@ -55,6 +54,11 @@ mpl.rcParams.update({
 def clean(ax):
     ax.spines[["top", "right"]].set_visible(False)
     ax.tick_params(width=.7, length=3)
+
+
+def source(item: str, sheet: str) -> pd.DataFrame:
+    """Read one published Source Data sheet."""
+    return pd.read_excel(DATA / f"{item}.xlsx", sheet_name=sheet)
 
 
 def label_panels(axes):
@@ -155,12 +159,12 @@ def _jitter_panel(ax, data, metric, ylabel=None):
 
 
 def figure1():
-    endpoint = pd.read_csv(DATA / "Figure1/endpoint_replicates.csv")
+    endpoint = source("Figure1", "Panel_A")
     endpoint["outcome"] = np.select(
         [endpoint.elimination.astype(bool), endpoint.drive_loss.astype(bool)],
         ["Elimination", "Drive loss"], default="Long-term persistence")
-    final = pd.read_csv(DATA / "Figure1/final20_replicates.csv")
-    traj = pd.read_csv(DATA / "Figure1/nni_plot_summary.csv")
+    final = source("Figure1", "Panels_B_C")
+    traj = source("Figure1", "Panel_D")
     fig, axes = plt.subplots(2, 2, figsize=(8.3, 6.1))
     _outcome_bar(axes[0, 0], endpoint, ["model", "conversion", "treatment"])
     _jitter_panel(axes[0, 1], final, "final20_attribute_weighted")
@@ -177,8 +181,7 @@ def figure1():
     clean(axes[1, 1]); label_panels(axes); fig.tight_layout(); save(fig, "Figure1")
 
 
-def _association(ax, source, stats_row, ylabel):
-    data = pd.read_csv(source)
+def _association(ax, data, stats_row, ylabel):
     neutral = data[data.cohort.eq("Neutral mutations")].groupby("setting").agg(x=("final20_nni", "mean"), xse=("final20_nni", "sem"))
     variable = data[data.cohort.eq("Variable mutations")].groupby("setting").agg(y=("final20_attribute_weighted", "mean"), yse=("final20_attribute_weighted", "sem"))
     joined = neutral.join(variable)
@@ -192,30 +195,29 @@ def _association(ax, source, stats_row, ylabel):
 
 
 def figure2():
-    endpoint = pd.read_csv(DATA / "Figure2/endpoint_replicates.csv")
+    endpoint = source("Figure2", "Panel_A")
     endpoint["model"] = endpoint["model_std"]
-    endpoint["h"] = endpoint["drive_conversion"]
-    final = pd.read_csv(DATA / "Figure2/final20_replicates.csv")
-    traj = pd.read_csv(DATA / "Figure2/nni_replicate_trajectories.csv.gz")
-    stats_table = pd.read_csv(STATS / "Figure2.csv")
+    final = source("Figure2", "Panels_B_C")
+    traj = source("Figure2", "Panel_D")
+    stats_table = pd.read_csv(STATS / "all_inferential_tests.csv")
     fig = plt.figure(figsize=(10.5, 6.2)); grid = fig.add_gridspec(2, 3)
     axes = np.array([fig.add_subplot(grid[0, 0]), fig.add_subplot(grid[0, 1]), fig.add_subplot(grid[0, 2]), fig.add_subplot(grid[1, :2]), fig.add_subplot(grid[1, 2])], dtype=object)
     _outcome_bar(axes[0], endpoint, ["model", "h", "treatment"])
     _jitter_panel(axes[1], final, "final20_attribute_weighted"); axes[1].set_xlabel("Final embryo resistance\n(final 20 records; population-size weighted)")
     _jitter_panel(axes[2], final, "final20_n_over_k"); axes[2].set_xlabel("Final relative population size\n(final 20 records)")
-    summary = traj.groupby(["model", "h", "treatment", "week"]).nni.median().reset_index()
+    summary = traj.rename(columns={"median": "nni"})
     for key, group in summary.groupby(["model", "h", "treatment"]):
         axes[3].plot(group.week, group.nni, lw=.8, alpha=.75, label=" | ".join(map(str,key)))
     axes[3].set(xlabel="Weeks after release", ylabel="NNI"); clean(axes[3])
     stat = stats_table[stats_table.test_id.eq("Figure2E_exact_spearman")].iloc[0]
-    _association(axes[4], DATA / "Figure2/panelE_final20_replicates.csv", stat, "Final embryo resistance\n(Variable mutations)")
+    _association(axes[4], source("Figure2", "Panel_E"), stat, "Final embryo resistance\n(Variable mutations)")
     label_panels(axes); fig.tight_layout(); save(fig, "Figure2")
 
 
 def figure3():
-    final = pd.read_csv(DATA / "Figure3/final20_replicates.csv")
-    traj = pd.read_csv(DATA / "Figure3/nni_replicate_trajectories.csv.gz", low_memory=False)
-    stats_table = pd.read_csv(STATS / "Figure3.csv")
+    final = source("Figure3", "Panels_A_C")
+    traj = source("Figure3", "Panel_D")
+    stats_table = pd.read_csv(STATS / "all_inferential_tests.csv")
     fig = plt.figure(figsize=(10.5, 6.2)); grid = fig.add_gridspec(2, 3)
     axes = np.array([fig.add_subplot(grid[0, 0]), fig.add_subplot(grid[0, 1]), fig.add_subplot(grid[0, 2]), fig.add_subplot(grid[1, :2]), fig.add_subplot(grid[1, 2])], dtype=object)
     _outcome_bar(axes[0], final, ["model", "h", "treatment"])
@@ -223,20 +225,23 @@ def figure3():
     axes[1].text(.02, 1.02, "0.99/0.96 = female/male", transform=axes[1].transAxes,
                  ha="left", va="bottom", fontsize=7.5, fontweight="normal")
     _jitter_panel(axes[2], final, "final20_n_over_k"); axes[2].set_xlabel("Final relative population size\n(final 20 records)")
-    summary = traj.groupby(["model", "h", "treatment", "week"]).nni.median().reset_index()
+    summary = traj.rename(columns={"median": "nni"})
     for key, group in summary.groupby(["model", "h", "treatment"]):
         axes[3].plot(group.week, group.nni, lw=.8, alpha=.75, label=" | ".join(map(str,key)))
     axes[3].set(xlabel="Weeks after release", ylabel="NNI"); clean(axes[3])
     stat = stats_table[stats_table.test_id.eq("Figure3E_exact_spearman")].iloc[0]
-    _association(axes[4], DATA / "Figure3/panelE_final20_replicates.csv", stat, "Final female heterozygote fitness\n(Variable mutations)")
+    _association(axes[4], source("Figure3", "Panel_E"), stat, "Final female heterozygote fitness\n(Variable mutations)")
     label_panels(axes); fig.tight_layout(); save(fig, "Figure3")
 
 
 def figure4():
-    raw = pd.read_csv(DATA / "Figure4/simulation_level_source.csv")
-    meta = pd.read_csv(DATA / "Figure4/architecture_parameter_metadata.csv")[["group_id","trait","b","m"]].drop_duplicates("group_id")
-    data = raw.merge(meta, on="group_id"); data = data[data.is_ltp.astype(bool)]
-    stat = pd.read_csv(STATS / "Figure4_common_support_statistical_summary.csv").set_index("trait")
+    data = source("Figure4", "Panels_A_C")
+    parts = data.group_id.str.extract(r"_(dc|er|sf)_.*_b([0-9p]+)_m(\d+)$")
+    data["trait"] = parts[0]
+    data["b"] = parts[1].str.replace("p", ".", regex=False).astype(float)
+    data["m"] = parts[2].astype(int)
+    data = data[data.is_ltp.astype(bool)]
+    stat = pd.read_csv(STATS / "all_inferential_tests.csv")
     labels = {"dc":"Final drive conversion", "er":"Final embryo resistance", "sf":"Final female heterozygote fitness"}
     bmin = {"dc":.0048, "er":.0140, "sf":.0113}
     fig, axes = plt.subplots(1, 3, figsize=(10.5, 3.3))
@@ -247,7 +252,8 @@ def figure4():
         for name, q, color in paths:
             x=q.realised_initial_sd_last10_prerelease; y=q.final_attribute_mean_last10
             ax.scatter(x,y,s=5,alpha=.12,color=color,rasterized=True)
-            lo, hi = stat.loc[trait,["common_support_min","common_support_max"]]
+            ranges = g.assign(Path=np.where(g.m.eq(50), "fixed_m", "fixed_b")).groupby("Path").realised_initial_sd_last10_prerelease.agg(["min", "max"])
+            lo, hi = float(ranges["min"].max()), float(ranges["max"].min())
             fit=q[x.between(lo,hi)].dropna(subset=["realised_initial_sd_last10_prerelease","final_attribute_mean_last10"])
             coef=np.polyfit(fit.realised_initial_sd_last10_prerelease,fit.final_attribute_mean_last10,1)
             xx=np.linspace(lo,hi,100); yy=np.polyval(coef,xx)
@@ -261,7 +267,8 @@ def figure4():
         ax.scatter([shared.realised_initial_sd_last10_prerelease.mean()],
                    [shared.final_attribute_mean_last10.mean()],marker="D",s=42,
                    color=BLACK,label="Shared setting",zorder=6)
-        p_sd=stat.loc[trait,"realized_SD_p_Holm"]; p_arch=stat.loc[trait,"architecture_p_Holm"]
+        p_sd=float(stat.loc[stat.test_id.eq(f"F4{dict(dc='A',er='B',sf='C')[trait]}_{trait}_realized_sd"),"p_adjusted"].iloc[0])
+        p_arch=float(stat.loc[stat.test_id.eq(f"F4{dict(dc='A',er='B',sf='C')[trait]}_{trait}_architecture"),"p_adjusted"].iloc[0])
         p_sd_text="<0.0001" if p_sd < 1e-4 else f"={p_sd:.4f}"
         ax.text(.02,.98,f"Realized SD: Holm P {p_sd_text}\nArchitecture: Holm P={p_arch:.4f}",
                 transform=ax.transAxes,va="top",fontsize=7.2)
@@ -271,7 +278,7 @@ def figure4():
 
 
 def figure5():
-    data=pd.read_csv(DATA/"Figure5/source_data_per_run.csv")
+    data=source("Figure5", "Panels_A_B")
     fig,axes=plt.subplots(1,2,figsize=(8.2,3.5))
     outcomes=[("elimination",ORANGE),("drive loss",BLUE),("long-term persistence",GREEN)]
     modes=[("uniform",-.16,"Fixed dispersal",None),("evolving",.16,"Evolving dispersal","//")]
@@ -303,8 +310,8 @@ def figure5():
 
 
 def figure6():
-    a=pd.read_csv(DATA/"Figure6/panelA_replicates.csv"); b=pd.read_csv(DATA/"Figure6/panelB_outcome_summary.csv")
-    c=pd.read_csv(DATA/"Figure6/panelC_replicate_trajectories.csv.gz"); d=pd.read_csv(DATA/"Figure6/panelD_final20_replicates.csv")
+    a=source("Figure6", "Panel_A"); b=source("Figure6", "Panel_B")
+    c=source("Figure6", "Panel_C"); d=source("Figure6", "Panel_D")
     fig,axes=plt.subplots(2,2,figsize=(8.2,6.1)); rng=np.random.default_rng(6)
     groups=["P70","P85","S70","S85"]
     for yi,g in enumerate(groups):
@@ -317,7 +324,7 @@ def figure6():
                 axes[0,0].scatter(z,yi+off+rng.normal(0,.02,len(z)),s=12,marker=marker,color=GREEN_DARK)
     axes[0,0].set_yticks(range(4),groups); axes[0,0].set_xlabel("Minimum post-release relative population size"); clean(axes[0,0])
     _outcome_bar(axes[0,1],a,["group","load"])
-    summary=c[c.week_relative_release.between(0,1500)].groupby(["condition_id","week_relative_release"]).B.median().reset_index()
+    summary=c[c.week_relative_release.between(0,1500)].rename(columns={"median":"B"})
     for condition,q in summary.groupby("condition_id"): axes[1,0].plot(q.week_relative_release,q.B,lw=1,label=condition)
     axes[1,0].set(xlabel="Weeks after release",ylabel="Haploid inbreeding load, B",ylim=(0,2.0)); axes[1,0].legend(frameon=False); clean(axes[1,0])
     for yi,g in enumerate(["P70","S70","S85"]):
@@ -335,7 +342,7 @@ def figure6():
 def figure_s1():
     fig,axes=plt.subplots(1,3,figsize=(10.5,3.4))
     for ax,panel,title in zip(axes,["A","B","C"],["Figure 1 spatial","Figure 2E","Figure 3E"]):
-        d=pd.read_csv(DATA/f"Figure_S1/panel{panel}_final20_replicates.csv")
+        d=source("Figure_S1", f"Panel_{panel}")
         for cohort,marker in [("Neutral mutations","o"),("Variable mutations","x")]:
             q=d[d.cohort.eq(cohort)]
             if marker == "o":
@@ -348,7 +355,7 @@ def figure_s1():
 
 
 def figure_s2():
-    d=pd.read_csv(DATA/"Figure_S2/outcome_composition.csv")
+    d=source("Figure_S2", "Panels_A_B")
     fig,axes=plt.subplots(1,2,figsize=(10.5,5.0))
     settings=["0.70","0.75","0.80","0.85","0.90","0.95","Emp"]
     for ax,(figure,q) in zip(axes,d.groupby("figure",sort=False)):
@@ -367,7 +374,7 @@ def figure_s2():
 
 
 def figure_s3():
-    d=pd.read_csv(DATA/"Figure_S3/plot_summary.csv")
+    d=source("Figure_S3", "Panels_A_F")
     metrics=["dispersal_change_pct","dispersal_sd_ratio","he_over_initial","segregating_over_initial","adult_N_ratio","fertile_female_N_ratio"]
     labels=["Adult mean dispersal change (%)","Within-population dispersal SD ratio","Expected heterozygosity retained","Segregating modifier loci retained","Adult population ratio","Fertile adult female ratio"]
     fig,axes=plt.subplots(2,3,figsize=(10.5,5.9))
@@ -382,7 +389,7 @@ def figure_s3():
 
 
 def figure_s4():
-    d=pd.read_csv(DATA/"Figure_S4/pre_release_block_replicates.csv")
+    d=source("Figure_S4", "Panels_A_D")
     metrics=["virtual_haploid_load","copies_per_individual","population_N","mean_genetic_viability"]
     labels=["Virtual haploid load","Mutation copies per individual","Population size","Mean genetic viability (W_load)"]
     fig,axes=plt.subplots(2,2,figsize=(8.2,6))
@@ -397,7 +404,7 @@ def figure_s4():
 
 
 def figure_s5():
-    d=pd.read_csv(DATA/"Figure_S5/plot_summary.csv.gz")
+    d=pd.concat([source("Figure_S5", name) for name in ["Panel_A", "Panel_B", "Panel_C"]], ignore_index=True)
     metrics=["B","mutation_copies_per_individual","mean_Wload"]
     labels=["Virtual haploid load","Mutation copies per individual","Recorded mean genetic viability"]
     colors={"P70_L":"#0072B2","S70_L":"#D55E00","S85_L":"#CC79A7"}
@@ -411,7 +418,7 @@ def figure_s5():
 
 
 def figure_s6():
-    d=pd.read_csv(DATA/"Figure_S6/replicate_trajectories.csv.gz")
+    d=source("Figure_S6", "Replicate_trajectories")
     fig,axes=plt.subplots(1,2,figsize=(8.4,3.7))
     panels=[
         ("pan",axes[0],[("P70_N",S6_P70_WITHOUT,"0.70, without recessive load"),("P70_L",S6_P70_WITH,"0.70, with recessive load")]),

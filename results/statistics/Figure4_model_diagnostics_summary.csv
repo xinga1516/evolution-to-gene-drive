@@ -1,4 +1,0 @@
-﻿trait,model_formula,covariance,n,design_rank,condition_number,common_support_min,common_support_max,SD_reference_median
-dc,endpoint ~ SD_001 * Path,HC3,784,4,5.70012639781245,0.01293363,0.08202849,0.03297087
-er,endpoint ~ SD_001 * Path,HC3,795,4,16.135382905228184,0.0347831,0.2405065,0.09369822
-sf,endpoint ~ SD_001 * Path,HC3,792,4,13.765911272559814,0.0263802,0.20092,0.076897855
