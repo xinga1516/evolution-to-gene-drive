@@ -4,6 +4,8 @@ This branch is the reproducibility archive for the locked final figures and
 supplementary material. Canonical panel values are under
 `data/source_data/files/`, accepted tests are under `results/statistics/`, and
 the 46-row panel/table lineage is recorded in `config/figure_data_map.csv`.
+For a concise directory guide—what to inspect first, what is authoritative,
+and what can normally be ignored—see `docs/REPOSITORY_GUIDE.md`.
 
 Build the data-driven redraws and the pixel-exact locked submission pages:
 
