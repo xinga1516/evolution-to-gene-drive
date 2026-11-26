@@ -2,5 +2,7 @@ data/source_data/workbook_previews/
 __pycache__/
 *.pyc
 runs/
+output/
+results/figures/
 docs/visual_references/final_ppt_slides/
 docs/visual_references/final_ppt_contact_sheet.png

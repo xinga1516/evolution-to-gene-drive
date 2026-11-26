@@ -24,7 +24,8 @@ from scipy.stats import fisher_exact, rankdata, spearmanr, ttest_rel
 
 
 REPO = Path(__file__).resolve().parents[1]
-FILES = REPO / "data" / "source_data" / "files"
+SOURCE_DATA = REPO / "data" / "source_data"
+FILES = SOURCE_DATA / "files"  # legacy identifiers are mapped to workbook sheets below
 OUT = REPO / "results" / "statistics"
 N_PERM = 10_000
 N_PERM_F6 = 200_000
@@ -37,6 +38,40 @@ STANDARD_COLUMNS = [
     "df", "ci_level", "ci_low", "ci_high", "status", "notes", "source_file",
     "source_sha256", "source_file_2", "source_sha256_2", "analysis_script", "software",
 ]
+
+
+SOURCE_SHEETS = {
+    ("Figure1", "endpoint_replicates.csv"): ("Figure1", "Panel_A"),
+    ("Figure1", "final20_replicates.csv"): ("Figure1", "Panels_B_C"),
+    ("Figure2", "endpoint_replicates.csv"): ("Figure2", "Panel_A"),
+    ("Figure2", "final20_replicates.csv"): ("Figure2", "Panels_B_C"),
+    ("Figure2", "panelE_final20_replicates.csv"): ("Figure2", "Panel_E"),
+    ("Figure3", "final20_replicates.csv"): ("Figure3", "Panels_A_C"),
+    ("Figure3", "panelE_final20_replicates.csv"): ("Figure3", "Panel_E"),
+    ("Figure4", "simulation_level_source.csv"): ("Figure4", "Panels_A_C"),
+    ("Figure5", "source_data_per_run.csv"): ("Figure5", "Panels_A_B"),
+    ("Figure6", "panelA_replicates.csv"): ("Figure6", "Panel_A"),
+    ("Figure6", "panelD_final20_replicates.csv"): ("Figure6", "Panel_D"),
+    ("Figure_S1", "panelB_final20_replicates.csv"): ("Figure_S1", "Panel_B"),
+    ("Figure_S1", "panelC_final20_replicates.csv"): ("Figure_S1", "Panel_C"),
+    ("Figure_S4", "pre_release_block_replicates.csv"): ("Figure_S4", "Panels_A_D"),
+}
+
+
+def load_source(path: Path) -> pd.DataFrame:
+    item, sheet = SOURCE_SHEETS[(path.parent.name, path.name)]
+    return pd.read_excel(SOURCE_DATA / f"{item}.xlsx", sheet_name=sheet)
+
+
+def source_reference(path: Path | str) -> str:
+    path = Path(path)
+    if path.suffix.lower() == ".xlsx":
+        return path.relative_to(REPO).as_posix() if path.is_absolute() else path.as_posix()
+    key = (path.parent.name, path.name)
+    if key in SOURCE_SHEETS:
+        item, _ = SOURCE_SHEETS[key]
+        return f"data/source_data/{item}.xlsx"
+    return path.relative_to(REPO).as_posix() if path.is_absolute() else path.as_posix()
 
 
 def significance(p: float | None) -> str:
@@ -171,7 +206,7 @@ def normalized_text_sha256(path: Path) -> str:
 
 
 def continuous_modifier_tests(item: str, source: Path, metric: str, *, seed_base: int, panel: str):
-    data = pd.read_csv(source)
+    data = load_source(source)
     rows = []
     for index, ((model, h), group) in enumerate(data.groupby(["model", "h"], sort=True)):
         neutral = group[group["treatment"].eq("Neutral control")][metric].dropna()
@@ -190,7 +225,7 @@ def continuous_modifier_tests(item: str, source: Path, metric: str, *, seed_base
             p_raw=p, p_adjusted=p, adjustment="none; four prespecified condition contrasts",
             permutations_or_enumerations=N_PERM, extreme_permutations=extreme, seed=seed, status="tested",
             notes="Monte-Carlo plus-one P value; final 20 records",
-            source_file=source.relative_to(REPO).as_posix(),
+            source_file=source_reference(source),
         ))
     adjusted = holm([x["p_raw"] for x in rows])
     for result, p_adj in zip(rows, adjusted):
@@ -200,10 +235,10 @@ def continuous_modifier_tests(item: str, source: Path, metric: str, *, seed_base
 
 
 def outcome_global_tests(item: str, source: Path, *, panel: str):
-    data = pd.read_csv(source)
+    data = load_source(source)
     if "model_std" in data:
         data["model"] = data["model_std"]
-        data["h"] = data["drive_conversion"]
+        data["h"] = data["h"]
     elif "conversion" in data:
         data = data.rename(columns={"conversion": "h"})
     if "outcome" not in data:
@@ -239,7 +274,7 @@ def outcome_global_tests(item: str, source: Path, *, panel: str):
             estimate=np.nan, statistic=np.nan, p_raw=p,
             permutations_or_enumerations=enumerations, seed=np.nan, status="tested",
             notes=f"fixed-margin exact test; table={table.tolist()}",
-            source_file=source.relative_to(REPO).as_posix(),
+            source_file=source_reference(source),
         ))
     adjusted = holm([x["p_raw"] for x in rows])
     for result, p_adj in zip(rows, adjusted):
@@ -249,7 +284,7 @@ def outcome_global_tests(item: str, source: Path, *, panel: str):
 
 
 def panel_e_test(item: str, source: Path, trait_label: str):
-    data = pd.read_csv(source)
+    data = load_source(source)
     summary = data.groupby(["setting", "cohort"], sort=True).agg(
         n=("replicate", "size"),
         mean_nni=("final20_nni", "mean"),
@@ -273,7 +308,7 @@ def panel_e_test(item: str, source: Path, trait_label: str):
         extreme_permutations=extreme, seed=np.nan, status="tested",
         notes=("Final-20-record setting means. Observed per-cell simulation n: " +
                "; ".join(f"{s:g}: neutral {int(neutral.loc[s,'n'])}, variable {int(variable.loc[s,'n'])}" for s in settings)),
-        source_file=source.relative_to(REPO).as_posix(),
+        source_file=source_reference(source),
     )
     setting = pd.DataFrame({
         "setting": settings,
@@ -286,7 +321,7 @@ def panel_e_test(item: str, source: Path, trait_label: str):
 
 
 def figure3_outcomes():
-    data = pd.read_csv(FILES / "Figure3/final20_replicates.csv")
+    data = load_source(FILES / "Figure3/final20_replicates.csv")
     rows = []
     for model, h in sorted(data[["model", "h"]].drop_duplicates().itertuples(index=False, name=None)):
         group = data[data.model.eq(model) & data.h.eq(h)]
@@ -301,7 +336,7 @@ def figure3_outcomes():
             independent_unit="simulation", n_group1=len(variable), n_group2=len(neutral),
             n_total=len(variable) + len(neutral), estimate=odds, statistic=odds, p_raw=p,
             permutations_or_enumerations=np.nan, seed=np.nan, status="tested",
-            notes=f"2x2 table={table}", source_file="data/source_data/files/Figure3/final20_replicates.csv",
+            notes=f"2x2 table={table}", source_file="data/source_data/Figure3.xlsx",
         ))
     adjusted = holm([x["p_raw"] for x in rows])
     for result, p_adj in zip(rows, adjusted):
@@ -361,11 +396,11 @@ def _f4_design(data: pd.DataFrame) -> pd.DataFrame:
 
 
 def figure4_tests():
-    raw = pd.read_csv(FILES / "Figure4/simulation_level_source.csv")
-    metadata = pd.read_csv(FILES / "Figure4/architecture_parameter_metadata.csv")[[
-        "group_id", "trait", "b", "m"
-    ]].drop_duplicates("group_id")
-    raw = raw.merge(metadata, on="group_id", validate="many_to_one")
+    raw = load_source(FILES / "Figure4/simulation_level_source.csv")
+    parsed = raw.group_id.str.extract(r"_(dc|er|sf)_.*_b([0-9p]+)_m(\d+)$")
+    raw["trait"] = parsed[0]
+    raw["b"] = parsed[1].str.replace("p", ".", regex=False).astype(float)
+    raw["m"] = parsed[2].astype(int)
     raw = raw[raw.is_ltp.astype(bool)].copy()
     raw = raw.rename(columns={
         "realised_initial_sd_last10_prerelease": "realized_sd",
@@ -458,19 +493,10 @@ def figure4_tests():
     summary["realized_SD_p_Holm"] = holm(summary.realized_SD_p_raw.tolist())
     summary["architecture_p_Holm"] = holm(summary.architecture_p_raw.tolist())
     summary["interaction_p_Holm"] = holm(summary.interaction_p_raw.tolist())
-    summary.to_csv(OUT / "Figure4_common_support_statistical_summary.csv", index=False, encoding="utf-8-sig")
     coefficient_output = pd.DataFrame(coefficients)
     coefficient_output.loc[coefficient_output.p_value.eq(0), "p_value"] = 1e-300
-    coefficient_output.to_csv(OUT / "Figure4_model_coefficients_HC3.csv", index=False, encoding="utf-8-sig")
-    pd.DataFrame(contrasts).to_csv(OUT / "Figure4_conditional_path_contrasts.csv", index=False, encoding="utf-8-sig")
-    pd.DataFrame(sensitivities).to_csv(OUT / "Figure4_full_range_sensitivity.csv", index=False, encoding="utf-8-sig")
-    pd.DataFrame(diagnostics).to_csv(OUT / "Figure4_model_diagnostics_summary.csv", index=False, encoding="utf-8-sig")
-    source = "data/source_data/files/Figure4/simulation_level_source.csv"
-    source_2 = "data/source_data/files/Figure4/architecture_parameter_metadata.csv"
-    pd.DataFrame([
-        {"role": "endpoint simulations", "source_file": source, "source_sha256": file_sha256(REPO / source)},
-        {"role": "group_id to trait/b/m metadata", "source_file": source_2, "source_sha256": file_sha256(REPO / source_2)},
-    ]).to_csv(OUT / "Figure4_input_provenance.csv", index=False, encoding="utf-8-sig")
+    source = "data/source_data/Figure4.xlsx"
+    source_2 = np.nan
     for _, record in summary.iterrows():
         trait = record.trait
         for suffix, comparison, statistic, df, raw_p, adjusted_p, family in [
@@ -536,7 +562,7 @@ def figure4_tests():
 
 
 def figure5_tests():
-    data = pd.read_csv(FILES / "Figure5/source_data_per_run.csv")
+    data = load_source(FILES / "Figure5/source_data_per_run.csv")
     rows = []
     comparisons = []
     for conversion in [0.95, 0.99]:
@@ -565,7 +591,7 @@ def figure5_tests():
             estimate=only_a - only_b, statistic=np.nan, p_raw=p, p_adjusted=p_adj,
             adjustment="Holm across four prespecified outcome contrasts", status="tested",
             notes=f"discordant evolving-only={only_a}; fixed-only={only_b}",
-            source_file="data/source_data/files/Figure5/source_data_per_run.csv",
+            source_file="data/source_data/Figure5.xlsx",
         ))
     nodrive = data[data["mode"].eq("nodrive")].set_index("origin_seed")
     paired_rows = []
@@ -594,7 +620,7 @@ def figure5_tests():
             n_group1=n, n_group2=n, n_total=n, estimate=effect, statistic=statistic,
             p_raw=p, p_adjusted=p_adj, adjustment="Holm across six estimable prespecified contrasts",
             status="tested", notes="Pairing by origin_seed",
-            source_file="data/source_data/files/Figure5/source_data_per_run.csv",
+            source_file="data/source_data/Figure5.xlsx",
         ))
         if n <= 20:
             observed = abs(float(np.mean(differences)))
@@ -617,13 +643,13 @@ def figure5_tests():
                 adjustment="none; prespecified small-n sensitivity analysis",
                 permutations_or_enumerations=total, extreme_permutations=extreme,
                 status="tested", notes="Sensitivity analysis reported alongside the primary paired t test",
-                source_file="data/source_data/files/Figure5/source_data_per_run.csv",
+                source_file="data/source_data/Figure5.xlsx",
             ))
     return rows
 
 
 def figure6_tests():
-    a = pd.read_csv(FILES / "Figure6/panelA_replicates.csv")
+    a = load_source(FILES / "Figure6/panelA_replicates.csv")
     rows = []
     panel_a = []
     for index, group_name in enumerate(["P70", "P85", "S70", "S85"]):
@@ -639,7 +665,7 @@ def figure6_tests():
             n_group1=len(present), n_group2=len(absent), n_total=len(present)+len(absent),
             estimate=estimate, statistic=estimate, p_raw=p,
             permutations_or_enumerations=N_PERM_F6, extreme_permutations=extreme, seed=seed, status="tested",
-            notes="Monte-Carlo plus-one P value", source_file="data/source_data/files/Figure6/panelA_replicates.csv",
+            notes="Monte-Carlo plus-one P value", source_file="data/source_data/Figure6.xlsx",
         ))
     adjusted = holm([x["p_raw"] for x in panel_a])
     for result, p_adj in zip(panel_a, adjusted):
@@ -659,10 +685,10 @@ def figure6_tests():
         n_group1=len(present), n_group2=len(absent), n_total=len(present)+len(absent),
         estimate=odds, statistic=odds, p_raw=p, p_adjusted=p,
         adjustment="none; one prespecified contrast", status="tested", notes=f"2x2 table={table}",
-        source_file="data/source_data/files/Figure6/panelA_replicates.csv",
+        source_file="data/source_data/Figure6.xlsx",
     ))
 
-    d = pd.read_csv(FILES / "Figure6/panelD_final20_replicates.csv")
+    d = load_source(FILES / "Figure6/panelD_final20_replicates.csv")
     panel_d = []
     for index, group_name in enumerate(["P70", "S70", "S85"]):
         group = d[d.group.eq(group_name)]
@@ -678,7 +704,7 @@ def figure6_tests():
             estimate=estimate, statistic=estimate, p_raw=p,
             permutations_or_enumerations=N_PERM_F6, extreme_permutations=extreme, seed=seed, status="tested",
             notes="Outcome-conditioned final-20-week relative population size; plus-one P value",
-            source_file="data/source_data/files/Figure6/panelD_final20_replicates.csv",
+            source_file="data/source_data/Figure6.xlsx",
         ))
     adjusted = holm([x["p_raw"] for x in panel_d])
     for result, p_adj in zip(panel_d, adjusted):
@@ -691,7 +717,7 @@ def figure6_tests():
         estimand="mean(with load)-mean(without load)", test="two-sided independent permutation test",
         independent_unit="simulation", n_group1=0, n_group2=0, n_total=0, status="not estimable",
         notes="Both P85 conditions ended in population elimination; no persistent endpoint exists.",
-        source_file="data/source_data/files/Figure6/panelD_final20_replicates.csv",
+        source_file="data/source_data/Figure6.xlsx",
     ))
     return rows
 
@@ -700,7 +726,7 @@ def s1_tests():
     rows = []
     for panel in ["B", "C"]:
         source = FILES / f"Figure_S1/panel{panel}_final20_replicates.csv"
-        data = pd.read_csv(source)
+        data = load_source(source)
         panel_rows = []
         for index, (setting, group) in enumerate(data.groupby("setting", sort=True)):
             neutral = group[group.cohort.eq("Neutral mutations")].final20_nni
@@ -716,7 +742,7 @@ def s1_tests():
                 n_total=len(variable)+len(neutral), estimate=estimate, statistic=estimate,
                 p_raw=p, permutations_or_enumerations=N_PERM, extreme_permutations=extreme, seed=seed, status="tested",
                 notes="Monte-Carlo plus-one P value",
-                source_file=source.relative_to(REPO).as_posix(),
+                source_file=source_reference(source),
             ))
         adjusted = holm([x["p_raw"] for x in panel_rows])
         for result, p_adj in zip(panel_rows, adjusted):
@@ -728,7 +754,7 @@ def s1_tests():
 
 def s2_tests():
     source = FILES / "Figure_S2/simulation_level_source.csv"
-    data = pd.read_csv(source)
+    data = load_source(source)
     summary = data[data.sd_stratum.gt(1)].groupby(
         ["trait", "sd_stratum", "m", "b"], sort=True
     ).agg(n_simulations=("replicate", "size"), normalized_response_mean=("normalized_response", "mean")).reset_index()
@@ -743,7 +769,7 @@ def s2_tests():
                 comparison=f"{trait}, SD stratum {stratum:g}", estimand="Spearman rank correlation",
                 test="two-sided exact Spearman permutation", independent_unit="setting mean",
                 n_total=len(group), status="not estimable", notes="Only one setting in stratum",
-                source_file=source.relative_to(REPO).as_posix(),
+                source_file=source_reference(source),
             ))
             continue
         x = rankdata(group.m.to_numpy(), method="average")
@@ -757,7 +783,7 @@ def s2_tests():
             adjustment="none; descriptive sensitivity trend by stratum",
             permutations_or_enumerations=total, extreme_permutations=extreme, status="tested",
             notes=f"setting simulation counts={group.n_simulations.tolist()}",
-            source_file=source.relative_to(REPO).as_posix(),
+            source_file=source_reference(source),
         ))
     for trait in ["dc", "er", "sf"]:
         selected = [x for x in rows if x["panel"] == panel_for_trait[trait] and x["family_id"] == f"S2_{trait}_lower_SD" and x["status"] == "tested"]
@@ -770,9 +796,9 @@ def s2_tests():
 
 def table_s3():
     source = FILES / "Figure_S4/pre_release_block_replicates.csv"
-    data = pd.read_csv(source)
-    source_relative = source.relative_to(REPO).as_posix()
-    source_hash = file_sha256(source)
+    data = load_source(source)
+    source_relative = source_reference(source)
+    source_hash = file_sha256(REPO / source_relative)
     script_relative = Path(__file__).resolve().relative_to(REPO).as_posix()
     script_hash = normalized_text_sha256(Path(__file__).resolve())
     labels = {
@@ -842,6 +868,8 @@ def write_outputs():
     results["record_id"] = results["test_id"]
     results["analysis_script"] = "scripts/compute_final_statistics.py"
     results["software"] = f"Python {platform.python_version()}; numpy {np.__version__}; pandas {pd.__version__}; scipy {stats.__version__ if hasattr(stats, '__version__') else '1.14.1'}"
+    results["source_file"] = results.source_file.map(lambda x: source_reference(x) if pd.notna(x) else x)
+    results["source_file_2"] = results.source_file_2.map(lambda x: source_reference(x) if pd.notna(x) else x)
     source_hashes = {}
     for source in results.source_file.dropna().unique():
         path = REPO / source
@@ -856,61 +884,11 @@ def write_outputs():
     results["significance_adjusted"] = results.p_adjusted.map(significance)
     results.to_csv(OUT / "all_inferential_tests.csv", index=False, encoding="utf-8-sig")
 
-    for publication, group in results.groupby("publication_item", sort=False):
-        safe = publication.replace("Supplementary Figure ", "Figure_").replace("Figure ", "Figure").replace(" ", "_")
-        group.to_csv(OUT / f"{safe}.csv", index=False, encoding="utf-8-sig")
-
     # Supplementary Table S2 is a direct filtered view of the common result table.
     table_s2 = results[results.status.isin(["tested", "not estimable"])].copy()
     table_s2.to_csv(OUT / "Table_S2.csv", index=False, encoding="utf-8-sig")
-    f2e_settings.to_csv(OUT / "Figure2_panelE_setting_summary.csv", index=False, encoding="utf-8-sig")
-    f3e_settings.to_csv(OUT / "Figure3_panelE_setting_summary.csv", index=False, encoding="utf-8-sig")
     stability = table_s3()
     stability.to_csv(OUT / "Table_S3.csv", index=False, encoding="utf-8-sig")
-
-    sample_sizes = results[[
-        "publication_item", "panel", "test_id", "independent_unit", "n_group1", "n_group2", "n_total", "status", "notes"
-    ]]
-    sample_sizes.to_csv(OUT / "sample_sizes.csv", index=False, encoding="utf-8-sig")
-
-    mapping = pd.read_csv(REPO / "config/figure_data_map.csv")
-    tested = set(zip(results.publication_item, results.panel.astype(str)))
-    catalog = []
-    for _, mapped in mapping.iterrows():
-        panel = str(mapped.panel)
-        key = (mapped.publication_item, panel)
-        if mapped.publication_item == "Supplementary Figure S4":
-            status = "operational_diagnostic_in_Table_S3"
-        elif mapped.statistics_candidate == "not applicable":
-            status = "descriptive_not_applicable"
-        elif key in tested or mapped.publication_item in {"Supplementary Table S2", "Supplementary Table S3"}:
-            status = "recomputed"
-        else:
-            status = "covered_by_companion_panel_or_table"
-        catalog.append({
-            "record_id": mapped.record_id, "publication_item": mapped.publication_item,
-            "panel": panel, "current_content": mapped.current_content,
-            "statistics_status": status, "statistics_file": (
-                "results/statistics/Table_S3.csv" if mapped.record_id == "TS3" or mapped.publication_item == "Supplementary Figure S4" else
-                "results/statistics/Table_S2.csv" if mapped.record_id == "TS2" else
-                "results/statistics/all_inferential_tests.csv" if status == "recomputed" else "not applicable"
-            ),
-        })
-    pd.DataFrame(catalog).to_csv(OUT / "statistics_catalog.csv", index=False, encoding="utf-8-sig")
-    qa = {
-        "inferential_records": int(len(results)),
-        "tested_records": int(results.status.eq("tested").sum()),
-        "not_estimable_records": int(results.status.eq("not estimable").sum()),
-        "p_raw_out_of_range": int((results.p_raw.dropna().between(0, 1) == False).sum()),
-        "p_adjusted_out_of_range": int((results.p_adjusted.dropna().between(0, 1) == False).sum()),
-        "p_reported_as_zero": int(results.p_raw.eq(0).sum() + results.p_adjusted.eq(0).sum()),
-        "missing_source_hashes": int(results.source_sha256.isna().sum()),
-        "figure2E_expected": bool(np.isclose(results.loc[results.test_id.eq("Figure2E_exact_spearman"), "p_raw"].iloc[0], 62/5040)),
-        "figure3E_expected": bool(np.isclose(results.loc[results.test_id.eq("Figure3E_exact_spearman"), "p_raw"].iloc[0], 2/5040)),
-        "figure3E_variable_h099_n": int(pd.read_csv(FILES / "Figure3/panelE_final20_replicates.csv").query("setting == 0.99 and cohort == 'Variable mutations'").shape[0]),
-        "table_s3_records": int(len(stability)),
-    }
-    (OUT / "qa_summary.json").write_text(json.dumps(qa, indent=2), encoding="utf-8")
     print(f"wrote {len(results)} inferential-test records and {len(stability)} stability diagnostics")
 
 
